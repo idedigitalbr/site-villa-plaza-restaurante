@@ -1,0 +1,2955 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wine Experience | Experiência Enogastronômica em Belém</title>
+    <meta name="description" content="The Wine Experience - Uma jornada sensorial por rótulos selecionados, gastronomia autoral contemporânea e momentos memoráveis no mezanino do +B Supermercados em Belém.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+    <style>
+        /* ========================================
+           DESIGN SYSTEM & VARIABLES
+           ======================================== */
+        :root {
+            --wine-black: #000000;
+            --wine-ink: #050505;
+            --wine-panel: #0B0A08;
+            --wine-panel-2: #11100D;
+            --wine-gold: #D3B97B;
+            --wine-gold-dark: #A98445;
+            --wine-gold-soft: #F1D093;
+            --wine-white: #FFFFFF;
+            --wine-cream: #F1E6D5;
+            --wine-muted: rgba(255, 255, 255, 0.7);
+            --wine-border: rgba(211, 185, 123, 0.35);
+            --wine-glow: 0 0 30px rgba(211, 185, 123, 0.22);
+            
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Albert Sans', sans-serif;
+            --font-script: 'Pinyon Script', cursive;
+            
+            --container: 1100px;
+            --transition-premium: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* ========================================
+           RESET & BASIC STYLING
+           ======================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--wine-black);
+            color: var(--wine-white);
+            font-family: var(--font-body);
+            font-weight: 300;
+            line-height: 1.7;
+            letter-spacing: 0.04em;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition-premium);
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        button {
+            cursor: pointer;
+            font-family: inherit;
+            border: none;
+            background: none;
+            transition: var(--transition-premium);
+        }
+
+        /* Utility script/calligraphy style */
+        .italic-script {
+            font-family: var(--font-script);
+            font-size: 3.8rem;
+            color: var(--wine-gold);
+            font-style: normal;
+            font-weight: 400;
+            vertical-align: middle;
+            margin: 0 0.15em;
+            line-height: 0.5;
+            display: inline-block;
+        }
+
+        /* ========================================
+           TYPOGRAPHY & UTILITIES
+           ======================================== */
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 300;
+            letter-spacing: 0.05em;
+        }
+
+        .section {
+            padding: 9.5rem 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-dark {
+            background-color: var(--wine-black);
+        }
+
+        /* ========================================
+           BUTTONS & ACTIONS
+           ======================================== */
+        .btn-gold-fill {
+            background-color: var(--wine-gold);
+            color: var(--wine-black);
+            border: 1px solid var(--wine-gold);
+            padding: 1.15rem 2.8rem;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            font-weight: 600;
+            border-radius: 0;
+        }
+
+        .btn-gold-fill:hover {
+            background-color: var(--wine-white);
+            border-color: var(--wine-white);
+            color: var(--wine-black);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-gold-outline {
+            background: transparent;
+            color: var(--wine-white);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            padding: 1.15rem 2.8rem;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            font-weight: 500;
+            border-radius: 0;
+        }
+
+        .btn-gold-outline:hover {
+            border-color: var(--wine-gold);
+            color: var(--wine-gold);
+            background-color: rgba(221, 185, 118, 0.05);
+            transform: translateY(-2px);
+            box-shadow: var(--wine-glow);
+        }
+
+        /* ========================================
+           HEADER & NAVIGATION (NAVBAR)
+           ======================================== */
+         .header {
+             position: fixed;
+             top: 0;
+             left: 0;
+             right: 0;
+             z-index: 100;
+             background: transparent;
+             border-bottom: none;
+             transition: var(--transition-premium);
+             height: 96px;
+             display: flex;
+             align-items: center;
+         }
+
+         /* Top-to-bottom dark gradient overlay (simulating Sapporo) */
+         .header::before {
+             content: '';
+             position: absolute;
+             top: 0;
+             left: 0;
+             right: 0;
+             height: 180px;
+             background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 45%, rgba(0, 0, 0, 0) 100%);
+             z-index: -1;
+             pointer-events: none;
+             transition: var(--transition-premium);
+         }
+ 
+         .header.scrolled {
+             background: rgba(5, 5, 5, 0.92);
+             backdrop-filter: blur(12px);
+             -webkit-backdrop-filter: blur(12px);
+             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+             height: 76px;
+         }
+
+         .header.scrolled::before {
+             height: 76px;
+             background: rgba(5, 5, 5, 0.92);
+             opacity: 0;
+         }
+
+         .header.header-hidden {
+             transform: translateY(-100%);
+         }
+ 
+         .header-container {
+             max-width: 1400px;
+             width: 100%;
+             margin: 0 auto;
+             padding: 0 4rem;
+             display: grid;
+             grid-template-columns: 1fr auto 1fr;
+             align-items: center;
+         }
+ 
+         .header-logo {
+             width: 130px;
+             height: auto;
+             display: flex;
+             align-items: center;
+             justify-self: start;
+         }
+ 
+         .header-logo img {
+             width: 100%;
+             height: auto;
+         }
+ 
+         .nav-menu {
+             display: flex;
+             gap: 1.4rem;
+             list-style: none;
+             justify-self: center;
+         }
+ 
+         .nav-link {
+             font-size: 11px;
+             font-weight: 500;
+             text-transform: uppercase;
+             letter-spacing: 0.25em;
+             color: var(--wine-muted);
+             padding: 0.5rem 0;
+         }
+ 
+         .nav-link:hover,
+         .nav-link.active {
+             color: var(--wine-gold);
+         }
+
+         .header-right-side {
+             display: flex;
+             align-items: center;
+             gap: 1.8rem;
+             justify-self: end;
+         }
+
+         .header-separator {
+             color: rgba(255, 255, 255, 0.25);
+             font-size: 14px;
+             font-weight: 300;
+             margin-right: 0.1rem;
+             pointer-events: none;
+         }
+
+         .header-social-link {
+             color: var(--wine-gold);
+             opacity: 0.9;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             transition: var(--transition-premium);
+         }
+
+         .header-social-link:hover {
+             color: var(--wine-white);
+             opacity: 1;
+             transform: scale(1.15);
+         }
+
+         .header-social-icon {
+             width: 14px;
+             height: 14px;
+         }
+
+        /* Hamburger button */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 24px;
+            height: 16px;
+            z-index: 150;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 1.5px;
+            background-color: var(--wine-white);
+            transition: var(--transition-premium);
+        }
+
+        /* Mobile Drawer */
+        .mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.92);
+            z-index: 95;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-premium);
+            backdrop-filter: blur(8px);
+        }
+
+        .mobile-overlay.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -320px;
+            width: 320px;
+            height: 100%;
+            background: var(--wine-panel);
+            z-index: 98;
+            display: flex;
+            flex-direction: column;
+            padding: 8rem 3rem;
+            gap: 2.2rem;
+            border-left: 1px solid var(--wine-border);
+            transition: right 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .mobile-nav.open {
+            right: 0;
+        }
+
+        .mobile-nav-link {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--wine-cream);
+            opacity: 0.8;
+        }
+
+        .mobile-nav-link:hover,
+        .mobile-nav-link.active {
+             color: var(--wine-gold);
+             opacity: 1;
+             padding-left: 4px;
+         }
+
+        /* ========================================
+           HERO SECTION (TELA CHEIA)
+           ======================================== */
+        .hero {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.35);
+        }
+
+        .hero-overlay-dark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 60%, var(--wine-black) 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 5;
+            text-align: center;
+            width: 90%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 3.5rem;
+        }
+
+        .hero-logo {
+            width: 440px;
+            max-width: 90%;
+            height: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-logo img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Diamond horizontal divider with lines */
+        .hero-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 420px;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-divider .line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--wine-gold), transparent);
+            flex: 1;
+            opacity: 0.6;
+        }
+
+        .hero-divider .diamonds {
+            color: var(--wine-gold);
+            font-size: 0.65rem;
+            letter-spacing: 0.35em;
+        }
+
+        .hero-tagline {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.45em;
+            color: var(--wine-gold);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subheadline {
+            font-size: 14px;
+            color: var(--wine-muted);
+            max-width: 550px;
+            margin-bottom: 3.8rem;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        /* Mouse Scroll Down Indicator */
+        .hero-explore-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .hero-explore-indicator span {
+            font-size: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--wine-gold);
+            opacity: 0.8;
+        }
+
+        .mouse-icon {
+            width: 19px;
+            height: 32px;
+            border: 1.5px solid rgba(255, 255, 255, 0.35);
+            border-radius: 12px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .mouse-wheel {
+            width: 1.5px;
+            height: 6px;
+            background-color: var(--wine-gold);
+            border-radius: 1px;
+            position: absolute;
+            top: 6px;
+            animation: scrollWheelAnim 1.8s infinite ease-in-out;
+        }
+
+        .hero-explore-line {
+            width: 1px;
+            height: 32px;
+            background: linear-gradient(180deg, var(--wine-gold) 0%, transparent 100%);
+            margin-top: 0.3rem;
+        }
+
+        @keyframes scrollWheelAnim {
+            0% { opacity: 0; transform: translateY(0); }
+            15% { opacity: 1; }
+            50% { opacity: 1; transform: translateY(6px); }
+            80%, 100% { opacity: 0; transform: translateY(6px); }
+        }
+
+        /* ========================================
+           SEÇÃO SOBRE / HISTÓRIA (16:9 / 100VH)
+           ======================================== */
+        .historia-section {
+            position: relative;
+            width: 100%;
+            background-color: var(--wine-black);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            z-index: 10;
+            overflow: hidden;
+        }
+
+        .historia-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.7) 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .historia-content {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .historia-ornament {
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .historia-mini-title {
+            font-family: var(--font-display);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.45em;
+            color: var(--wine-gold);
+            font-weight: 500;
+            margin-bottom: 0.2rem;
+        }
+
+        .divider-glow {
+            width: 100%;
+            max-width: 320px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--wine-gold) 50%, transparent);
+            margin: 0.8rem auto;
+            position: relative;
+            opacity: 0.7;
+        }
+
+        .divider-glow::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 12px;
+            background: radial-gradient(circle, rgba(221, 185, 118, 0.4) 0%, transparent 70%);
+            filter: blur(1px);
+            pointer-events: none;
+        }
+
+        .historia-headline {
+            font-family: var(--font-display);
+            font-size: 2.6rem;
+            color: var(--wine-white);
+            letter-spacing: 0.05em;
+            font-weight: 300;
+            margin: 0.2rem 0;
+            text-transform: uppercase;
+        }
+
+        .divider-diamond {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.2rem;
+            width: 100%;
+            max-width: 480px;
+            margin: 1.0rem auto;
+        }
+
+        .divider-diamond .line {
+            height: 1px;
+            flex: 1;
+            background: linear-gradient(90deg, transparent, var(--wine-gold));
+            opacity: 0.6;
+        }
+
+        .divider-diamond .line.right {
+            background: linear-gradient(90deg, var(--wine-gold), transparent);
+        }
+
+        .divider-diamond .diamond {
+            width: 7px;
+            height: 7px;
+            background-color: var(--wine-gold);
+            transform: rotate(45deg);
+            box-shadow: 0 0 12px var(--wine-gold);
+        }
+
+        .historia-paragraph {
+            font-family: var(--font-display);
+            font-size: 1.22rem;
+            color: var(--wine-white);
+            max-width: 700px;
+            line-height: 1.85;
+            font-weight: 300;
+            letter-spacing: 0.03em;
+            margin: 0.2rem auto;
+        }
+
+        .highlighted-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            width: 100%;
+            max-width: 820px;
+            margin: 0.2rem auto;
+        }
+
+        .highlighted-text {
+            font-family: var(--font-display);
+            font-size: 1.45rem;
+            color: var(--wine-gold);
+            line-height: 1.7;
+            font-weight: 300;
+            letter-spacing: 0.04em;
+        }
+
+        .bracket-svg {
+            flex-shrink: 0;
+            height: 90px;
+            width: 30px;
+        }
+
+        @media (min-height: 800px) and (min-width: 992px) {
+            .historia-section {
+                height: 100vh;
+            }
+        }
+
+        @media (max-height: 799px), (max-width: 991px) {
+            .historia-section {
+                height: auto;
+                min-height: 100vh;
+                padding: 8rem 2rem;
+            }
+            .historia-headline {
+                font-size: 2.1rem;
+            }
+            .historia-paragraph {
+                font-size: 1.15rem;
+                line-height: 1.7;
+            }
+            .highlighted-text {
+                font-size: 1.25rem;
+            }
+            .bracket-svg {
+                height: 80px;
+                width: 25px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .highlighted-container {
+                gap: 0.8rem;
+            }
+            .bracket-svg {
+                display: none;
+            }
+            .highlighted-text {
+                border-left: 1px solid var(--wine-border);
+                border-right: 1px solid var(--wine-border);
+                padding: 0 1rem;
+            }
+            .divider-diamond {
+                margin: 1.2rem auto;
+            }
+            .divider-glow {
+                margin: 0.8rem auto;
+            }
+        }
+
+        /* ========================================
+           SEÇÃO 3: GASTRONOMIA, VINHOS E AMBIENTE
+           ======================================== */
+        .mvv-section {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Container Externo Sem Bordas (Tamanho total da tela / dobra) */
+        .mvv-outer-container {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000000;
+        }
+
+        /* Grid Principal de 3 Colunas */
+        .mvv-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Coluna Estilo Base (Sem bordas divisórias no fundo) */
+        .mvv-column {
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3.5rem 2rem;
+            cursor: pointer;
+        }
+
+        /* Imagem de Fundo (Normal) */
+        .mvv-bg-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            transition: transform 1.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                        filter 1s cubic-bezier(0.25, 1, 0.5, 1);
+            filter: brightness(0.9) contrast(1.02) saturate(0.9);
+        }
+
+        /* Imagem de Fundo no Hover (Fica 100% potente / vívida / colorida) */
+        .mvv-column:hover .mvv-bg-img {
+            transform: scale(1.08);
+            filter: brightness(1) contrast(1.15) saturate(1.1);
+        }
+
+        /* Overlay Escuro Adicional no Fundo (Normal: 40% de escurecimento) */
+        .mvv-column-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 2;
+            transition: background 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* Overlay no Hover (Nulo para a imagem brilhar com 100% de visibilidade) */
+        .mvv-column:hover .mvv-column-overlay {
+            background: rgba(0, 0, 0, 0);
+        }
+
+        /* Card Inset Estilo Glassmorphism (Único local com bordas) */
+        .mvv-card {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            height: 100%;
+            border: 1px solid rgba(221, 185, 118, 0.08);
+            border-radius: 16px;
+            background: rgba(11, 10, 8, 0.06);
+            backdrop-filter: blur(1.5px);
+            -webkit-backdrop-filter: blur(1.5px);
+            padding: 4.5rem 2.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+                        background 0.15s ease, 
+                        backdrop-filter 0.15s ease, 
+                        border-color 0.15s ease, 
+                        box-shadow 0.15s ease;
+            will-change: transform, background, backdrop-filter;
+        }
+
+        /* Efeito de translação no hover */
+        .mvv-column:hover .mvv-card {
+            transform: translateY(-4px);
+        }
+
+        /* Ícone Dourado */
+        .mvv-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1.2rem;
+            color: var(--wine-gold);
+            transition: var(--transition-premium);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mvv-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: currentColor;
+            stroke-width: 1.2;
+            fill: none;
+        }
+
+        .mvv-column:hover .mvv-icon {
+            transform: scale(1.06);
+        }
+
+        /* Divisor Dourado (Linhas e Losango) */
+        .mvv-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 1.8rem;
+            gap: 12px;
+        }
+
+        .mvv-divider .line {
+            height: 1px;
+            width: 35px;
+            background: linear-gradient(90deg, rgba(221, 185, 118, 0) 0%, rgba(221, 185, 118, 0.6) 100%);
+        }
+
+        .mvv-divider .line:last-child {
+            background: linear-gradient(90deg, rgba(221, 185, 118, 0.6) 0%, rgba(221, 185, 118, 0) 100%);
+        }
+
+        .mvv-divider .diamond {
+            width: 6px;
+            height: 6px;
+            background-color: var(--wine-gold);
+            transform: rotate(45deg);
+            box-shadow: 0 0 8px rgba(221, 185, 118, 0.6);
+        }
+
+        /* Título do Card */
+        .mvv-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-weight: 400;
+            color: var(--wine-white);
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.04em;
+            transition: var(--transition-premium);
+        }
+
+        .mvv-column:hover .mvv-card h3 {
+            color: var(--wine-gold);
+        }
+
+        /* Texto de Descrição */
+        .mvv-card p {
+            font-family: 'Albert Sans', sans-serif;
+            font-size: 14.5px;
+            color: var(--wine-muted);
+            line-height: 1.75;
+            font-weight: 300;
+            transition: var(--transition-premium);
+        }
+
+        .mvv-column:hover .mvv-card p {
+            color: var(--wine-white);
+        }
+
+        /* Responsividade para a seção MVV */
+        @media (max-width: 992px) {
+            .mvv-section {
+                height: auto;
+            }
+            .mvv-outer-container {
+                height: auto;
+            }
+            .mvv-grid {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+            .mvv-column {
+                min-height: 520px;
+                height: auto;
+                padding: 3rem 1.5rem;
+            }
+            .mvv-card {
+                padding: 3.5rem 1.5rem;
+                background: rgba(11, 10, 8, 0.4) !important;
+                backdrop-filter: blur(4px) !important;
+                -webkit-backdrop-filter: blur(4px) !important;
+                border-color: rgba(221, 185, 118, 0.25) !important;
+            }
+            .mvv-column:hover .mvv-card {
+                background: rgba(11, 10, 8, 0.65) !important;
+                backdrop-filter: blur(6px) !important;
+                -webkit-backdrop-filter: blur(6px) !important;
+                border-color: var(--wine-gold) !important;
+            }
+        }
+
+        /* ========================================
+           EFEITO PARALLAX FLUIDO (SUPORTE GERAL)
+           ======================================== */
+        .parallax-container {
+            position: relative;
+            overflow: hidden !important;
+        }
+
+        .parallax-img {
+            position: absolute !important;
+            top: -15% !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 130% !important;
+            object-fit: cover !important;
+            z-index: 1;
+            transform: translate3d(0, 0, 0);
+            will-change: transform;
+            pointer-events: none;
+            transition: none !important;
+        }
+
+        @media (max-width: 992px) {
+            /* Desativa translação no mobile para economizar processamento e manter legível */
+            .parallax-img {
+                position: absolute !important;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+                transform: none !important;
+                transition: none !important;
+            }
+        }
+
+        /* ========================================
+           SEÇÃO 4: HARMONIZAÇÕES EXCLUSIVAS (SPLIT LAYOUT)
+           ======================================== */
+        .split-section {
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background-color: var(--wine-black);
+            min-height: 540px;
+        }
+
+        .split-img-side {
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .split-img-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .split-content-side {
+            padding: 6.5rem 5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: var(--wine-ink);
+            position: relative;
+        }
+
+        .split-tag {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--wine-gold);
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+
+        .split-title {
+            font-size: 2.6rem;
+            color: var(--wine-white);
+            margin-bottom: 1.5rem;
+            line-height: 1.25;
+        }
+
+        .split-text {
+            font-size: 14px;
+            color: var(--wine-muted);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            max-width: 450px;
+        }
+
+        .split-content-side .glass-watermark {
+            position: absolute;
+            bottom: 2.5rem;
+            right: 2.5rem;
+            width: 100px;
+            height: 200px;
+            opacity: 0.8;
+            pointer-events: none;
+        }
+
+        /* ========================================
+           SEÇÃO 5: CARDÁPIO À LA CARTE (SECÇÃO CREME)
+           ======================================== */
+        .section-cream {
+            background: radial-gradient(circle at 20% 10%, #fff8ed 0%, var(--wine-cream) 46%, #d6c2aa 100%);
+            color: #15110C;
+            padding: 9.5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cream-container {
+            max-width: var(--container);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 5rem;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .cream-watermark-left {
+            position: absolute;
+            top: 15%;
+            left: 28%;
+            width: 260px;
+            height: auto;
+            opacity: 0.038;
+            pointer-events: none;
+            z-index: 1;
+            transform: rotate(-12deg);
+        }
+
+        .cream-watermark-right {
+            position: absolute;
+            bottom: 12%;
+            right: 5%;
+            width: 230px;
+            height: auto;
+            opacity: 0.038;
+            pointer-events: none;
+            z-index: 1;
+            transform: rotate(6deg);
+        }
+
+        .cream-left-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .cream-left-info .split-tag {
+            color: var(--wine-gold-dark);
+        }
+
+        .cream-left-info h2 {
+            font-size: 2.8rem;
+            color: #15110C;
+            margin-bottom: 1.2rem;
+            line-height: 1.2;
+        }
+
+        .cream-left-info p {
+            font-size: 14px;
+            color: #4A3E31;
+            margin-bottom: 2.2rem;
+            line-height: 1.7;
+            max-width: 380px;
+        }
+
+        .cream-left-info .link-cardapio-btn {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #15110C;
+            font-weight: 700;
+            border-bottom: 1.5px solid #15110C;
+            padding-bottom: 3px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .cream-left-info .link-cardapio-btn:hover {
+            color: var(--wine-gold-dark);
+            border-color: var(--wine-gold-dark);
+        }
+
+        .cream-right-visual {
+            display: flex;
+            justify-content: center;
+        }
+
+        .cream-right-visual.parallax-container {
+            width: 100%;
+            max-width: 380px;
+            height: 480px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            margin: 0 auto;
+        }
+
+        .cream-right-visual img {
+            max-width: 380px;
+            height: auto;
+            filter: drop-shadow(0 15px 30px rgba(21, 17, 12, 0.16));
+            transition: var(--transition-premium);
+        }
+
+        .cream-right-visual:hover img {
+            transform: scale(1.02);
+            filter: drop-shadow(0 20px 45px rgba(21, 17, 12, 0.22));
+        }
+
+        /* ========================================
+           SEÇÃO 6: EVENTOS & EXPERIÊNCIAS ESPECIAIS
+           ======================================== */
+        .eventos-section {
+            background-color: var(--wine-black);
+            padding: 9.5rem 2rem;
+            position: relative;
+        }
+
+        .eventos-container-split {
+            max-width: var(--container);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.25fr 0.75fr;
+            gap: 5.5rem;
+            align-items: center;
+        }
+
+        .eventos-left-side {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .eventos-left-side h2 {
+            font-size: 2.8rem;
+            color: var(--wine-white);
+            margin-bottom: 4rem;
+            line-height: 1.2;
+        }
+
+        .eventos-row-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.8rem;
+            width: 100%;
+            margin-bottom: 4rem;
+        }
+
+        .evento-item-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .evento-item-icon {
+            width: 44px;
+            height: 44px;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--wine-gold);
+        }
+
+        .evento-item-icon svg {
+            width: 34px;
+            height: 34px;
+            stroke: var(--wine-gold);
+        }
+
+        .evento-item-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--wine-muted);
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .eventos-right-side-img {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(221, 185, 118, 0.1);
+            height: 440px;
+        }
+
+        .eventos-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            z-index: 1;
+        }
+
+        .eventos-slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .eventos-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.85);
+            transition: var(--transition-premium);
+        }
+
+        .eventos-right-side-img:hover img {
+            transform: scale(1.03);
+            filter: brightness(1.0);
+        }
+
+        /* ========================================
+           SEÇÃO 7: RESERVE SUA EXPERIÊNCIA (MESA ESPERANDO)
+           ======================================== */
+        .reserva-banner-section {
+            background-color: #100E0C;
+            background: linear-gradient(135deg, #090807 0%, #151310 100%);
+            position: relative;
+            padding: 9.5rem 2rem;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-top: 1px solid rgba(221, 185, 118, 0.08);
+            border-bottom: 1px solid rgba(221, 185, 118, 0.08);
+        }
+
+        .reserva-edge-left {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 220px;
+            pointer-events: none;
+            z-index: 5;
+            opacity: 0.95;
+        }
+
+        .reserva-edge-left img {
+            width: 100%;
+            height: auto;
+        }
+
+        .reserva-edge-right {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 220px;
+            pointer-events: none;
+            z-index: 5;
+            opacity: 0.95;
+        }
+
+        .reserva-edge-right img {
+            width: 100%;
+            height: auto;
+        }
+
+        .reserva-center-box {
+            text-align: center;
+            max-width: 580px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .reserva-center-box .split-tag {
+            color: var(--wine-gold);
+            margin-bottom: 1rem;
+        }
+
+        .reserva-center-box h2 {
+            font-size: 2.8rem;
+            color: var(--wine-white);
+            margin-bottom: 1.2rem;
+            line-height: 1.25;
+        }
+
+        .reserva-center-box p {
+            font-size: 14px;
+            color: var(--wine-muted);
+            margin-bottom: 3.2rem;
+            line-height: 1.7;
+        }
+
+        .reserva-center-box .btn-reserva-final {
+            background-color: var(--wine-black);
+            color: var(--wine-white);
+            border: 1px solid var(--wine-border);
+            padding: 1.15rem 3.8rem;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            font-weight: 600;
+            border-radius: 0;
+        }
+
+        .reserva-center-box .btn-reserva-final:hover {
+            background-color: var(--wine-gold);
+            color: var(--wine-black);
+            border-color: var(--wine-gold);
+            box-shadow: var(--wine-glow);
+            transform: translateY(-2px);
+        }
+
+        /* ========================================
+           SEÇÃO 8: INSTAGRAM / FEED VISUAL
+           ======================================== */
+        .instagram-section {
+            background-color: var(--wine-black);
+            padding: 9.5rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .instagram-header {
+            text-align: center;
+            margin-bottom: 4.5rem;
+        }
+
+        .instagram-header .split-tag {
+            color: var(--wine-gold-dark);
+            margin-bottom: 0.6rem;
+        }
+
+        .instagram-header h2 {
+            font-size: 2.6rem;
+            color: var(--wine-white);
+            margin-bottom: 0.5rem;
+        }
+
+        .instagram-handle {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--wine-gold);
+            font-weight: 600;
+        }
+
+        .instagram-grid-row {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            width: 100%;
+            max-width: 1400px;
+            padding: 0 4rem;
+            gap: 1.2rem;
+            margin-bottom: 4rem;
+        }
+
+        .instagram-item {
+            position: relative;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            border-radius: 0;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .instagram-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-premium);
+        }
+
+        .instagram-item-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.45);
+            opacity: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-premium);
+            z-index: 5;
+        }
+
+        .instagram-item:hover img {
+            transform: scale(1.04);
+        }
+
+        .instagram-item:hover .instagram-item-overlay {
+            opacity: 1;
+        }
+
+        .play-icon-svg {
+            width: 52px;
+            height: 52px;
+            fill: none;
+            stroke: var(--wine-white);
+            stroke-width: 1.2;
+            background: rgba(0,0,0,0.55);
+            border-radius: 50%;
+            padding: 12px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.22);
+            transition: var(--transition-premium);
+        }
+
+        .instagram-item:hover .play-icon-svg {
+            transform: scale(1.08);
+            background: var(--wine-gold);
+            stroke: var(--wine-black);
+            border-color: var(--wine-gold);
+        }
+
+        .instagram-icon-hover-text {
+            font-size: 1.3rem;
+            color: var(--wine-white);
+        }
+
+        .btn-instagram-profile {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--wine-gold);
+            border: 1px solid var(--wine-border);
+            padding: 1rem 3rem;
+            font-weight: 600;
+            border-radius: 0;
+        }
+
+        .btn-instagram-profile:hover {
+            border-color: var(--wine-gold);
+            background-color: rgba(221, 185, 118, 0.05);
+            color: var(--wine-white);
+            box-shadow: var(--wine-glow);
+        }
+
+        /* ========================================
+           SEÇÃO 9: LOCALIZAÇÃO & FOOTER
+           ======================================== */
+        .localizacao-section {
+            background-color: var(--wine-ink);
+            border-top: 1px solid rgba(221, 185, 118, 0.08);
+            padding: 7rem 4rem 5rem;
+        }
+
+        .localizacao-grid-cols {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr 1.15fr 0.85fr;
+            gap: 4rem;
+        }
+
+        .loc-col h3 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--wine-gold);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .loc-col p {
+            font-size: 14px;
+            color: var(--wine-cream);
+            line-height: 1.7;
+        }
+
+        .loc-col p span.sub-info {
+            display: block;
+            font-size: 13px;
+            color: var(--wine-muted);
+            margin-top: 0.4rem;
+        }
+
+        .loc-col .btn-chegar-maps {
+            margin-top: 1.5rem;
+            display: inline-flex;
+            padding: 0.75rem 1.6rem;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            border: 1px solid var(--wine-border);
+            color: var(--wine-gold-soft);
+            border-radius: 0;
+            font-weight: 500;
+        }
+
+        .loc-col .btn-chegar-maps:hover {
+            border-color: var(--wine-gold);
+            color: var(--wine-white);
+            transform: translateY(-2px);
+        }
+
+        .loc-map-thumbnail {
+            width: 100%;
+            height: 140px;
+            border-radius: 0;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            filter: grayscale(1) invert(0.9) contrast(1.1);
+            margin-top: 0.5rem;
+        }
+
+        .loc-map-thumbnail iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .loc-contact-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+        }
+
+        .loc-contact-list li {
+            font-size: 14px;
+            color: var(--wine-cream);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .loc-contact-list li span.contact-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--wine-muted);
+            margin-bottom: 0.2rem;
+        }
+
+        .loc-brand-area {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
+            height: 100%;
+        }
+
+        .loc-brand-logo {
+            width: 155px;
+            height: auto;
+            opacity: 0.9;
+            margin-top: 2rem;
+        }
+
+        /* Footer Line & Links */
+        .footer {
+            background-color: #000000;
+            border-top: 1px solid rgba(221, 185, 118, 0.05);
+            padding: 2.8rem 4rem;
+            color: var(--wine-muted);
+            font-size: 11px;
+        }
+
+        .footer-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-legal-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .footer-legal-links a:hover {
+            color: var(--wine-gold);
+        }
+
+        /* ========================================
+           RESERVAS POPUP MODAL (GLASSMORPHISM)
+           ======================================== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            z-index: 250;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-premium);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-card {
+            background: rgba(11, 10, 8, 0.68);
+            border: 1px solid var(--wine-border);
+            box-shadow: var(--wine-glow);
+            border-radius: 0;
+            max-width: 620px;
+            width: 100%;
+            padding: 3.5rem;
+            position: relative;
+            transform: translateY(30px);
+            transition: var(--transition-premium);
+            text-align: center;
+        }
+
+        .modal-overlay.active .modal-card {
+            transform: translateY(0);
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            color: var(--wine-muted);
+            font-size: 1.6rem;
+            cursor: pointer;
+            line-height: 1;
+            transition: var(--transition-premium);
+        }
+
+        .modal-close-btn:hover {
+            color: var(--wine-gold);
+            transform: rotate(90deg);
+        }
+
+        .modal-card h3 {
+            font-size: 2.4rem;
+            color: var(--wine-white);
+            margin-bottom: 0.8rem;
+            font-weight: 300;
+        }
+
+        .modal-card p {
+            font-size: 13px;
+            color: var(--wine-muted);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        .modal-booking-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            text-align: left;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--wine-gold);
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            background-color: rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(221, 185, 118, 0.2);
+            color: var(--wine-white);
+            padding: 0.85rem 1rem;
+            font-family: inherit;
+            font-size: 13px;
+            outline: none;
+            transition: var(--transition-premium);
+            border-radius: 0;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--wine-gold);
+            box-shadow: 0 0 10px rgba(221, 185, 118, 0.1);
+        }
+
+        .form-group select option {
+            background-color: var(--wine-panel-2);
+            color: var(--wine-white);
+        }
+
+        .form-group textarea {
+            height: 90px;
+            resize: none;
+        }
+
+        .booking-actions {
+            grid-column: span 2;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .btn-submit-booking {
+            background-color: var(--wine-gold);
+            color: var(--wine-black);
+            width: 100%;
+            padding: 1.1rem;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            font-weight: 700;
+            border-radius: 0;
+            transition: var(--transition-premium);
+        }
+
+        .btn-submit-booking:hover {
+            background-color: var(--wine-white);
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp-booking {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--wine-white);
+            width: 100%;
+            padding: 1.1rem;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            font-weight: 600;
+            border-radius: 0;
+        }
+
+        .btn-whatsapp-booking img {
+            width: 16px;
+            height: 16px;
+        }
+
+        .btn-whatsapp-booking:hover {
+            border-color: var(--wine-white);
+            background-color: rgba(255,255,255,0.03);
+        }
+
+        /* Success Toast Notification */
+        .toast-notification {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: var(--wine-panel-2);
+            border: 1px solid var(--wine-gold);
+            padding: 1.4rem 2rem;
+            border-radius: 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            z-index: 300;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            transform: translateX(120%);
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .toast-notification.visible {
+            transform: translateX(0);
+        }
+
+        .toast-icon {
+            font-size: 1.5rem;
+            color: var(--wine-gold);
+        }
+
+        .toast-text h4 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            color: var(--wine-white);
+            margin-bottom: 0.15rem;
+        }
+
+        .toast-text p {
+            font-size: 11px;
+            color: var(--wine-muted);
+        }
+
+        /* Floating buttons & WhatsApp link */
+        .whatsapp-float-btn {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            width: 48px;
+            height: 48px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 90;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: var(--transition-premium);
+        }
+
+        .whatsapp-float-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-float-btn img {
+            width: 25px;
+            height: 25px;
+        }
+
+        /* ========================================
+           SCROLL REVEAL ANIMATIONS
+           ======================================== */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .reveal-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========================================
+           RESPONSIVE CONFIGURATIONS
+           ======================================== */
+        @media (max-width: 992px) {
+            .nav-menu, .header-right-side {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .header {
+                height: 76px;
+            }
+
+            .header::before {
+                height: 140px;
+            }
+
+            .header-container {
+                padding: 0 2rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                grid-template-columns: none;
+            }
+
+            .hero-logo {
+                width: 280px;
+            }
+
+            .experiencia-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .split-section, .cream-container, .eventos-container-split, .localizacao-grid-cols {
+                grid-template-columns: 1fr;
+            }
+
+            .split-content-side, .cream-left-info, .eventos-left-side {
+                padding: 5rem 2rem;
+            }
+
+            .instagram-grid-row {
+                grid-template-columns: repeat(3, 1fr);
+                padding: 0 2rem;
+            }
+
+            .reserva-edge-left, .reserva-edge-right {
+                width: 140px;
+            }
+
+            .localizacao-section {
+                padding: 6rem 2rem 5rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-logo {
+                width: 240px;
+            }
+
+            .hero-tagline {
+                font-size: 10px;
+                letter-spacing: 0.35em;
+            }
+
+            .hero-subheadline {
+                font-size: 13px;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                width: 100%;
+                gap: 1rem;
+            }
+
+            .btn-gold-fill, .btn-gold-outline {
+                width: 100%;
+                text-align: center;
+            }
+
+            .section-tag-center, .split-title, .cream-left-info h2, .eventos-left-side h2, .reserva-center-box h2 {
+                font-size: 2.1rem;
+            }
+
+            .eventos-row-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.8rem;
+            }
+
+            .instagram-grid-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .reserva-edge-left, .reserva-edge-right {
+                display: none;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .footer-legal-links {
+                flex-direction: column;
+                gap: 0.8rem;
+                align-items: center;
+            }
+
+            .modal-card {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .modal-booking-form {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full-width, .booking-actions {
+                grid-column: span 1;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <!-- ========================================
+         HEADER & NAVIGATION
+         ======================================== -->
+    <header class="header" id="navbar">
+        <div class="header-container">
+            <a href="#home" class="header-logo" aria-label="Voltar ao topo">
+                <img src="assets/Logos/logo_the_wine_branco_dourado_transparente.webp" alt="The Wine Experience Logo">
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="#experiencia" class="nav-link">Experiência</a></li>
+                <li><a href="#gastronomia" class="nav-link">Gastronomia</a></li>
+                <li><a href="#vinhos" class="nav-link">Vinhos</a></li>
+                <li><a href="#eventos" class="nav-link">Eventos</a></li>
+                <li><a href="#" class="nav-link trigger-modal">Reservas</a></li>
+                <li><a href="#localizacao" class="nav-link">Contato e Localização</a></li>
+            </ul>
+
+            <div class="header-right-side">
+                <span class="header-separator">|</span>
+                <a href="https://facebook.com/thewinebelem" target="_blank" class="header-social-link" aria-label="Siga-nos no Facebook">
+                    <svg class="header-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                </a>
+                <a href="https://instagram.com/thewinebelem" target="_blank" class="header-social-link" aria-label="Siga-nos no Instagram">
+                    <svg class="header-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=5591984040710" target="_blank" class="header-social-link" aria-label="Fale conosco no WhatsApp">
+                    <svg class="header-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+                        <path d="M9 10a.5.5 0 0 0 1 0v-1a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Hamburger Button -->
+            <button class="hamburger" id="hamburgerBtn" aria-label="Abrir Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Overlay & Drawer -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="#sobre" class="mobile-nav-link">Sobre</a>
+        <a href="#experiencia" class="mobile-nav-link">Experiência</a>
+        <a href="#gastronomia" class="mobile-nav-link">Gastronomia</a>
+        <a href="#vinhos" class="mobile-nav-link">Vinhos</a>
+        <a href="#eventos" class="mobile-nav-link">Eventos</a>
+        <a href="#localizacao" class="mobile-nav-link">Contato e Localização</a>
+        <button class="mobile-nav-link trigger-modal" style="color: var(--wine-gold); margin-top: 1rem; text-align: left;">Reservar Mesa</button>
+        <div class="mobile-socials" style="margin-top: auto; display: flex; gap: 1.5rem; padding-top: 2rem;">
+            <a href="https://facebook.com/thewinebelem" target="_blank" style="color: var(--wine-cream);" aria-label="Siga-nos no Facebook">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 22px; height: 22px;">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+            </a>
+            <a href="https://instagram.com/thewinebelem" target="_blank" style="color: var(--wine-cream);" aria-label="Siga-nos no Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 22px; height: 22px;">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=5591984040710" target="_blank" style="color: var(--wine-cream);" aria-label="Fale conosco no WhatsApp">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 22px; height: 22px;">
+                    <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+                    <path d="M9 10a.5.5 0 0 0 1 0v-1a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+    <!-- ========================================
+         HERO SECTION
+         ======================================== -->
+    <section id="home" class="hero parallax-container">
+        <div class="hero-bg">
+            <img src="assets/S1 TOPO HERO/hero-restaurant-oficial.webp" class="parallax-img" alt="Salão The Wine Experience">
+        </div>
+        
+        <div class="hero-overlay-dark"></div>
+
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="assets/Logos/logo_the_wine_branco_dourado_transparente.webp" alt="THE WINE Xperience Logo">
+            </div>
+            
+            <div class="hero-divider">
+                <span class="line"></span>
+                <span class="diamonds">◆ ◆ ◆</span>
+                <span class="line"></span>
+            </div>
+        </div>
+
+        <div class="hero-explore-indicator">
+            <div class="mouse-icon">
+                <div class="mouse-wheel"></div>
+            </div>
+            <span>Role para saber mais...</span>
+            <div class="hero-explore-line"></div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SEÇÃO 2: NOSSA HISTÓRIA (SOBRE)
+         ======================================== -->
+    <section id="sobre" class="historia-section parallax-container">
+        <img src="assets/S2 Sobre Nossa Historia/bg-sobernoszinho-internet.webp" class="parallax-img" alt="Nossa História">
+        <div class="historia-overlay"></div>
+        <div class="historia-content">
+            <!-- Ornamento de Folhas (SVG) -->
+            <div class="historia-ornament reveal-up">
+                <svg width="120" height="24" viewBox="0 0 120 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Ramo Central (Vertical) -->
+                    <path d="M 60 12 C 57.5 9, 57.5 4, 60 2 C 62.5 4, 62.5 9, 60 12" fill="var(--wine-gold)" opacity="0.9"/>
+                    <!-- Ramo Esquerdo (Diagonal) -->
+                    <path d="M 60 12 C 56 11, 51 8, 48 10.5 C 50.5 13, 55.5 13, 60 12" fill="var(--wine-gold)" opacity="0.9"/>
+                    <!-- Ramo Direito (Diagonal) -->
+                    <path d="M 60 12 C 64 11, 69 8, 72 10.5 C 69.5 13, 64.5 13, 60 12" fill="var(--wine-gold)" opacity="0.9"/>
+                    <!-- Linhas Laterais Fading -->
+                    <path d="M 15 12 L 42 12" stroke="url(#leaf-grad-left)" stroke-width="1.2"/>
+                    <path d="M 78 12 L 105 12" stroke="url(#leaf-grad-right)" stroke-width="1.2"/>
+                    
+                    <defs>
+                        <linearGradient id="leaf-grad-left" x1="15" y1="12" x2="42" y2="12" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="var(--wine-gold)" stop-opacity="0"/>
+                            <stop offset="100%" stop-color="var(--wine-gold)" stop-opacity="0.85"/>
+                        </linearGradient>
+                        <linearGradient id="leaf-grad-right" x1="78" y1="12" x2="105" y2="12" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="var(--wine-gold)" stop-opacity="0.85"/>
+                            <stop offset="100%" stop-color="var(--wine-gold)" stop-opacity="0"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+
+            <!-- Mini-Título -->
+            <h3 class="historia-mini-title reveal-up" style="transition-delay: 0.05s;">NOSSA HISTÓRIA</h3>
+
+            <!-- Divisória Simples com Brilho -->
+            <div class="divider-glow reveal-up" style="transition-delay: 0.1s;"></div>
+
+            <!-- Headline Principal -->
+            <h2 class="historia-headline reveal-up" style="transition-delay: 0.15s;">SOBRE THE WINE EXPERIENCE</h2>
+
+            <!-- Parágrafo de Texto -->
+            <p class="historia-paragraph reveal-up" style="transition-delay: 0.2s;">
+                No coração de Belém-PA, o The Wine Experience nasceu para transformar encontros em experiências memoráveis. Em um ambiente sofisticado e acolhedor, reunimos grandes rótulos, gastronomia autoral e harmonizações cuidadosamente pensadas.
+            </p>
+
+            <!-- Divisória com Diamante -->
+            <div class="divider-diamond reveal-up" style="transition-delay: 0.25s;">
+                <span class="line left"></span>
+                <span class="diamond"></span>
+                <span class="line right"></span>
+            </div>
+
+            <!-- Bloco Destacado com Colchetes -->
+            <div class="highlighted-container reveal-up" style="transition-delay: 0.3s;">
+                <!-- Colchete Esquerdo -->
+                <svg class="bracket-svg bracket-left" width="30" height="90" viewBox="0 0 30 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 28 8 L 8 8 L 8 82 L 28 82" stroke="var(--wine-gold)" stroke-width="1.2" stroke-linecap="square"/>
+                    <circle cx="8" cy="8" r="2.5" fill="var(--wine-gold)"/>
+                    <circle cx="8" cy="82" r="2.5" fill="var(--wine-gold)"/>
+                    <circle cx="28" cy="8" r="1.5" fill="var(--wine-gold)"/>
+                    <circle cx="28" cy="82" r="1.5" fill="var(--wine-gold)"/>
+                </svg>
+                
+                <p class="highlighted-text">
+                    Mais do que um jantar, um convite para desacelerar,<br>brindar e celebrar a arte de viver bem.
+                </p>
+
+                <!-- Colchete Direito -->
+                <svg class="bracket-svg bracket-right" width="30" height="90" viewBox="0 0 30 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 2 8 L 22 8 L 22 82 L 2 82" stroke="var(--wine-gold)" stroke-width="1.2" stroke-linecap="square"/>
+                    <circle cx="22" cy="8" r="2.5" fill="var(--wine-gold)"/>
+                    <circle cx="22" cy="82" r="2.5" fill="var(--wine-gold)"/>
+                    <circle cx="2" cy="8" r="1.5" fill="var(--wine-gold)"/>
+                    <circle cx="2" cy="82" r="1.5" fill="var(--wine-gold)"/>
+                </svg>
+            </div>
+
+            <!-- Divisória Simples com Brilho Inferior -->
+            <div class="divider-glow reveal-up" style="transition-delay: 0.35s; margin-top: 2rem;"></div>
+        </div>
+    </section>
+
+
+    <!-- ========================================
+         SEÇÃO 3: GASTRONOMIA, VINHOS E AMBIENTE (3 CARDS)
+         ======================================== -->
+    <section id="experiencia" class="mvv-section">
+        <div class="mvv-outer-container">
+            <div class="mvv-grid">
+                
+                <!-- Coluna 1: Gastronomia -->
+                <div class="mvv-column">
+                    <img src="assets/S3 Experiencia/IAG_6967-oficial.webp" class="mvv-bg-img" alt="Gastronomia The Wine Experience">
+                    <div class="mvv-column-overlay"></div>
+                    <div class="mvv-card">
+                        <div class="mvv-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                                <path d="M3 16c0-4.97 4.03-9 9-9s9 4.03 9 9" />
+                                <path d="M2 16h20" />
+                                <path d="M4 16v1a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-1" />
+                            </svg>
+                        </div>
+                        <div class="mvv-divider">
+                            <span class="line"></span>
+                            <span class="diamond"></span>
+                            <span class="line"></span>
+                        </div>
+                        <h3>Gastronomia</h3>
+                        <p>Menu autoral pensado para realçar sabores e transformar cada encontro em uma experiência memorável.</p>
+                    </div>
+                </div>
+
+                <!-- Coluna 2: Carta de Vinhos -->
+                <div class="mvv-column">
+                    <img src="assets/S3 Experiencia/IAG_6530-oficial.webp" class="mvv-bg-img" alt="Carta de Vinhos The Wine Experience">
+                    <div class="mvv-column-overlay"></div>
+                    <div class="mvv-card">
+                        <div class="mvv-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                                <!-- Garrafa maior -->
+                                <path d="M7 21h4.5V9.5c0-.8-.4-1.5-1-2V3.5h-2.5V7.5c-.6.5-1 1.2-1 2V21z" />
+                                <path d="M8 3.5h2.5" />
+                                <!-- Garrafa menor com sobreposição -->
+                                <path d="M12.5 21h3.5v-8.5c0-.6-.3-1.1-.8-1.5V5h-1.9v6c-.5.4-.8.9-.8 1.5V21z" />
+                                <path d="M13.2 5h1.9" />
+                                <!-- Taça de vinho à direita -->
+                                <path d="M15.5 15a2.5 2.5 0 0 0 5 0v-5h-5v5z" />
+                                <path d="M18 15v6" />
+                                <path d="M16 21h4" />
+                            </svg>
+                        </div>
+                        <div class="mvv-divider">
+                            <span class="line"></span>
+                            <span class="diamond"></span>
+                            <span class="line"></span>
+                        </div>
+                        <h3>Carta de Vinhos</h3>
+                        <p>Curadoria especial de rótulos nacionais e internacionais para harmonizações sofisticadas e momentos especiais.</p>
+                    </div>
+                </div>
+
+                <!-- Coluna 3: Ambiente -->
+                <div class="mvv-column">
+                    <img src="assets/S6 Local/Sessão The Wine 15032023 - 156-oficial.webp" class="mvv-bg-img" alt="Ambiente The Wine Experience">
+                    <div class="mvv-column-overlay"></div>
+                    <div class="mvv-card">
+                        <div class="mvv-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2c-.6 1.8-2 3-2 4.5s1 2.5 2 2.5 2-1 2-2.5S12.6 3.8 12 2z" />
+                                <line x1="12" y1="7" x2="12" y2="9.5" />
+                                <path d="M10 9.5h4v7h-4z" />
+                                <path d="M6 16.5h12c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5H6c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5z" />
+                                <path d="M18 18c1.5 0 2.5-.7 2.5-1.5S19.5 15 18 15h-.5" />
+                            </svg>
+                        </div>
+                        <div class="mvv-divider">
+                            <span class="line"></span>
+                            <span class="diamond"></span>
+                            <span class="line"></span>
+                        </div>
+                        <h3>Ambiente</h3>
+                        <p>Atmosfera intimista e acolhedora, perfeita para brindar, desacelerar e celebrar bons encontros.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SEÇÃO 4: HARMONIZAÇÕES EXCLUSIVAS (SPLIT LAYOUT)
+         ======================================== -->
+    <section id="gastronomia" class="split-section">
+        <!-- Imagem lado Esquerdo -->
+        <div class="split-img-side reveal-up">
+            <img src="assets/S4 Gastronomia/IMG_3986-oficial.webp" alt="Vinho sendo vertido em taça à mesa">
+        </div>
+        
+        <!-- Conteúdo lado Direito -->
+        <div class="split-content-side reveal-up" style="transition-delay: 0.1s;">
+            <span class="split-tag">Harmonizações exclusivas</span>
+            <h2 class="split-title">Cada detalhe pensado para <span class="italic-script">encantar</span> seu paladar</h2>
+            <p class="split-text">
+                Nossos sommeliers e chefs trabalham juntos para criar harmonizações que despertam sentidos e elevam cada momento à sua melhor versão.
+            </p>
+
+            <div style="align-self: flex-start;">
+                <button class="btn-gold-outline trigger-modal">Explorar Harmonizações</button>
+            </div>
+
+            <!-- Fina Marca D'água Taça de Vinho -->
+            <div class="glass-watermark">
+                <svg viewBox="0 0 100 200" fill="none" stroke="rgba(221, 185, 118, 0.04)" stroke-width="1.2">
+                    <path d="M25 20h50v50c0 20-15 38-35 41v64H25m15 0h20" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SEÇÃO 5: CARDÁPIO À LA CARTE (SECÇÃO CREME CLARO)
+         ======================================== -->
+    <section id="vinhos" class="section-cream">
+        <!-- Marcas d'água orientais nas laterais do fundo -->
+        <img class="cream-watermark-left" src="assets/S5 Vinhos/130842_7bc1e45c708742af9ab36151670e7eb0_mv2.webp" alt="Watermark Kanji">
+        <img class="cream-watermark-right" src="assets/S5 Vinhos/130842_7bc1e45c708742af9ab36151670e7eb0_mv2.webp" alt="Watermark Kanji">
+
+        <div class="cream-container">
+            <!-- Informações Lado Esquerdo -->
+            <div class="cream-left-info reveal-up">
+                <span class="split-tag">Menu</span>
+                <h2>Cardápio à la carte</h2>
+                <p>
+                    Pratos autorais elaborados com ingredientes selecionados e apresentação impecável.
+                </p>
+                <button class="link-cardapio-btn trigger-modal">Ver Cardápio →</button>
+            </div>
+
+            <!-- Imagem Lado Direito (Vinho Oficial) -->
+            <div class="cream-right-visual reveal-up" style="transition-delay: 0.1s;">
+                <img src="assets/S5 Vinhos/IMG_7386-oficial.webp" alt="Vinho selecionado The Wine Experience">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SEÇÃO 6: EVENTOS & EXPERIÊNCIAS ESPECIAIS
+         ======================================== -->
+    <section id="eventos" class="eventos-section">
+        <div class="eventos-container-split">
+            <!-- Conteúdos e Ícones SVGs Lado Esquerdo -->
+            <div class="eventos-left-side reveal-up">
+                <span class="split-tag">Eventos & Experiências</span>
+                <h2>Momentos que se tornam <span class="italic-script">memórias</span></h2>
+                
+                <div class="eventos-row-grid">
+                    <!-- Item 1: Jantares Harmonizados -->
+                    <div class="evento-item-col">
+                        <div class="evento-item-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2v20M4 2v6a4 4 0 0 0 4 4h0a4 4 0 0 0 4-4V2M8 2v10" />
+                            </svg>
+                        </div>
+                        <span class="evento-item-label">Jantares Harmonizados</span>
+                    </div>
+
+                    <!-- Item 2: Wine Tasting -->
+                    <div class="evento-item-col">
+                        <div class="evento-item-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M8 2h8M12 15v7M8 22h8M12 15a5 5 0 0 0 5-5V2H7v8a5 5 0 0 0 5 5z" />
+                            </svg>
+                        </div>
+                        <span class="evento-item-label">Wine Tasting</span>
+                    </div>
+
+                    <!-- Item 3: Eventos Corporativos -->
+                    <div class="evento-item-col">
+                        <div class="evento-item-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                            </svg>
+                        </div>
+                        <span class="evento-item-label">Eventos Corporativos</span>
+                    </div>
+
+                    <!-- Item 4: Celebrações Privadas -->
+                    <div class="evento-item-col">
+                        <div class="evento-item-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="14" r="7" />
+                                <path d="M12 2l3 3-3 3-3-3z" />
+                            </svg>
+                        </div>
+                        <span class="evento-item-label">Celebrações Privadas</span>
+                    </div>
+                </div>
+
+                <button class="btn-gold-outline trigger-modal">Saiba mais sobre eventos</button>
+            </div>
+
+            <!-- Imagem Lado Direito (Eventos Slideshow) -->
+            <div class="eventos-right-side-img reveal-up" style="transition-delay: 0.1s;">
+                <div class="eventos-slide active">
+                    <img src="assets/S6 Local/Sessão The Wine 15032023 - 162-oficial.webp" alt="Degustação e eventos no salão do The Wine">
+                </div>
+                <div class="eventos-slide">
+                    <img src="assets/S6 Local/Sessão The Wine 15032023 - 166-oficial.webp" alt="Aconchego e sofisticação no The Wine">
+                </div>
+                <div class="eventos-slide">
+                    <img src="assets/S6 Local/Sessão The Wine 15032023 - 172-oficial.webp" alt="Experiência enogastronômica exclusiva no The Wine">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SEÇÃO 7: RESERVE SUA EXPERIÊNCIA (MESA ESPERANDO)
+         ======================================== -->
+    <section class="reserva-banner-section">
+        <!-- Sobremesa na lateral esquerda (Oficial) -->
+        <div class="reserva-edge-left reveal-up">
+            <img src="assets/S4 Gastronomia/foto_sobremesa_harmonizacao-oficial.webp" alt="Sobremesa fina The Wine Experience">
+        </div>
+
+        <div class="reserva-center-box reveal-up" style="transition-delay: 0.05s;">
+            <span class="split-tag">Reserve sua experiência</span>
+            <h2>Sua mesa está <span class="italic-script">esperando</span></h2>
+            <p>
+                Garanta seu lugar e viva uma experiência única em um ambiente exclusivo.
+            </p>
+            <button class="btn-reserva-final trigger-modal">Reservar Agora</button>
+        </div>
+
+        <!-- Vinho na lateral direita (Oficial) -->
+        <div class="reserva-edge-right reveal-up">
+            <img src="assets/S5 Vinhos/IMG_7386-oficial.webp" alt="Vinho premium The Wine Experience">
+        </div>
+    </section>
+
+
+
+    <!-- ========================================
+         SEÇÃO 9: LOCALIZAÇÃO & FOOTER
+         ======================================== -->
+    <section id="localizacao" class="localizacao-section">
+        <div class="localizacao-grid-cols reveal-up">
+            
+            <!-- Coluna 1: Endereço -->
+            <div class="loc-col">
+                <h3>Contato e Localização</h3>
+                <p>
+                    Av. Alcindo Cacela, 1848 - Nazaré
+                    <span class="sub-info">Belém - PA (Mezanino do +B Supermercados)</span>
+                </p>
+                <a href="https://maps.google.com/?q=Av.+Alcindo+Cacela,+1848+-+Nazar%C3%A9,+Bel%C3%A9m+-+PA" target="_blank" class="btn-chegar-maps">Como Chegar</a>
+            </div>
+
+            <!-- Coluna 2: Miniatura Mapa -->
+            <div class="loc-col">
+                <div class="loc-map-thumbnail">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.513511111666!2d-48.4773089!3d-1.4557003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92a48ea08c02c3bb%3A0xe54b9fdfd0cf4ba8!2sAv.+Alcindo+Cacela%2C+1848+-+Nazar%C3%A9%2C+Bel%C3%A9m+-+PA!5e0!3m2!1spt-BR!2sbr!4v1720000000000!5m2!1spt-BR!2sbr" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Coluna 3: Horários -->
+            <div class="loc-col">
+                <h3>Horário de Funcionamento</h3>
+                <p>
+                    Quarta a Sábado: 18:30h às 23:30h
+                    <span class="sub-info">Segunda e Terça: Disponível para eventos fechados</span>
+                </p>
+            </div>
+
+            <!-- Coluna 4: Contato & Logo -->
+            <div class="loc-col">
+                <div class="loc-brand-area">
+                    <ul class="loc-contact-list">
+                        <li>
+                            <span class="contact-label">Telefone</span>
+                            <span>(91) 98404-0710</span>
+                        </li>
+                        <li>
+                            <span class="contact-label">E-mail</span>
+                            <span>reserva@thewine.com.br</span>
+                        </li>
+                        <li>
+                            <span class="contact-label">Instagram</span>
+                            <span>@thewinebelem</span>
+                        </li>
+                    </ul>
+                    <img class="loc-brand-logo" src="assets/Logos/logo_the_wine_branco_dourado_transparente.webp" alt="The Wine Experience">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-copy">
+                &copy; 2026 The Wine Experience. Todos os direitos reservados.
+            </div>
+            
+            <div class="footer-legal-links">
+                <a href="#home">Política de Privacidade</a>
+                <span>•</span>
+                <a href="#home">Termos de Uso</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================
+           RESERVAS POPUP MODAL (GLASSMORPHISM)
+           ======================================== -->
+    <div class="modal-overlay" id="bookingModal">
+        <div class="modal-card">
+            <span class="modal-close-btn" id="modalCloseBtn">&times;</span>
+            
+            <h3>Solicitar Reserva</h3>
+            <p>Garanta sua mesa preenchendo os dados abaixo. Confirmação instantânea via WhatsApp.</p>
+            
+            <form class="modal-booking-form" id="modalBookingForm">
+                <div class="form-group">
+                    <label for="bookingName">Nome Completo</label>
+                    <input type="text" id="bookingName" required placeholder="Ex: Victor Williames">
+                </div>
+                <div class="form-group">
+                    <label for="bookingPhone">Telefone / WhatsApp</label>
+                    <input type="tel" id="bookingPhone" required placeholder="(91) 98404-0710">
+                </div>
+                <div class="form-group">
+                    <label for="bookingGuests">Número de Pessoas</label>
+                    <select id="bookingGuests" required>
+                        <option value="2">2 Pessoas</option>
+                        <option value="3">3 Pessoas</option>
+                        <option value="4">4 Pessoas</option>
+                        <option value="5">5 Pessoas</option>
+                        <option value="6">6 Pessoas</option>
+                        <option value="7+">Mais de 6 pessoas</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="bookingDate">Data Desejada</label>
+                    <input type="date" id="bookingDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookingTime">Horário</label>
+                    <select id="bookingTime" required>
+                        <option value="19:00">19:00h</option>
+                        <option value="19:30">19:30h</option>
+                        <option value="20:00">20:00h</option>
+                        <option value="20:30">20:30h</option>
+                        <option value="21:00">21:00h</option>
+                        <option value="21:30">21:30h</option>
+                        <option value="22:00">22:00h</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="bookingArea">Ambiente Preferido</label>
+                    <select id="bookingArea">
+                        <option value="indiferente">Sem preferência</option>
+                        <option value="adega">Climatizado (Adega)</option>
+                        <option value="salao">Salão Principal</option>
+                    </select>
+                </div>
+                <div class="form-group full-width">
+                    <label for="bookingNotes">Notas Especiais</label>
+                    <textarea id="bookingNotes" placeholder="Escreva observações como aniversário, restrições alimentares ou solicitações de mesas específicas..."></textarea>
+                </div>
+                
+                <div class="booking-actions">
+                    <button type="submit" class="btn-submit-booking">Confirmar Reserva</button>
+                    <a href="https://api.whatsapp.com/send?phone=5591984040710" target="_blank" class="btn-whatsapp-booking">
+                        <img src="assets/Logos/whatsapp-logo-1.webp" alt="WhatsApp">
+                        Falar com a Equipe
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Toast Notification -->
+    <div class="toast-notification" id="toastNotification">
+        <div class="toast-icon">✓</div>
+        <div class="toast-text">
+            <h4>Reserva Solicitada!</h4>
+            <p>Em instantes enviaremos a confirmação no seu WhatsApp.</p>
+        </div>
+    </div>
+
+    <!-- ========================================
+         JAVASCRIPT
+         ======================================== -->
+    <script>
+        // Navbar Scrolled State
+        // Navbar Scrolled & Autohide State
+        const navbar = document.getElementById('navbar');
+        const mobileNav = document.getElementById('mobileNav');
+        let lastScrollY = window.scrollY;
+        let isTicking = false;
+
+        window.addEventListener('scroll', () => {
+            if (!isTicking) {
+                window.requestAnimationFrame(() => {
+                    const currentScrollY = window.scrollY;
+
+                    // 1. Estilização de fundo (scrolled)
+                    if (currentScrollY > 60) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+
+                    // 2. Ocultar/Exibir baseado na direção do scroll
+                    // Só oculta se rolar abaixo do limite inicial para evitar oscilações no topo
+                    if (currentScrollY > lastScrollY && currentScrollY > 120 && !mobileNav.classList.contains('open')) {
+                        navbar.classList.add('header-hidden');
+                    } else {
+                        navbar.classList.remove('header-hidden');
+                    }
+
+                    lastScrollY = currentScrollY;
+                    isTicking = false;
+                });
+                isTicking = true;
+            }
+        });
+
+        // Mobile Nav Hamburger Toggle
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+
+        function toggleMenu() {
+            mobileNav.classList.toggle('open');
+            mobileOverlay.classList.toggle('visible');
+            const isOpen = mobileNav.classList.contains('open');
+            
+            // Hamburger icon bars transition
+            const spans = hamburgerBtn.querySelectorAll('span');
+            if (isOpen) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        }
+
+        hamburgerBtn.addEventListener('click', toggleMenu);
+        mobileOverlay.addEventListener('click', toggleMenu);
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+
+        // Modal reservation triggers
+        const bookingModal = document.getElementById('bookingModal');
+        const modalCloseBtn = document.getElementById('modalCloseBtn');
+        const triggers = document.querySelectorAll('.trigger-modal');
+
+        triggers.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                bookingModal.classList.add('active');
+            });
+        });
+
+        modalCloseBtn.addEventListener('click', () => {
+            bookingModal.classList.remove('active');
+        });
+
+        bookingModal.addEventListener('click', (e) => {
+            if (e.target === bookingModal) {
+                bookingModal.classList.remove('active');
+            }
+        });
+
+        // Booking Form Submission & Toast success notification
+        const modalBookingForm = document.getElementById('modalBookingForm');
+        const toastNotification = document.getElementById('toastNotification');
+
+        modalBookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Close modal
+            bookingModal.classList.remove('active');
+            
+            // Show toast success
+            toastNotification.classList.add('visible');
+            
+            // Hide toast after 4.5 seconds
+            setTimeout(() => {
+                toastNotification.classList.remove('visible');
+            }, 4500);
+            
+            // Reset form
+            modalBookingForm.reset();
+        });
+
+        // Intersection Observer for scroll animations (fade-in-up effect)
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.05,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        document.querySelectorAll('.reveal-up').forEach(element => {
+            revealObserver.observe(element);
+        });
+
+        // Script para Blur e Opacidade Proporcionais à Distância do Cursor ao Centro (Seção Experiência)
+        if (window.innerWidth > 992) {
+            const columns = document.querySelectorAll('.mvv-column');
+
+            columns.forEach(column => {
+                const card = column.querySelector('.mvv-card');
+
+                column.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const mouseX = e.clientX - rect.left;
+                    const mouseY = e.clientY - rect.top;
+
+                    // Centro do card
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+
+                    // Distância euclidiana até o centro
+                    const dx = mouseX - centerX;
+                    const dy = mouseY - centerY;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    // Distância máxima (até os cantos)
+                    const maxDistance = Math.sqrt(centerX * centerX + centerY * centerY);
+
+                    // Proximidade: 1 no centro, 0 nas extremidades
+                    let proximity = 1 - (distance / (maxDistance * 0.85));
+                    proximity = Math.max(0, Math.min(1, proximity));
+
+                    // Definição dos limites de Blur
+                    const minBlur = 1.5;
+                    const maxBlur = 5; 
+                    const blurVal = minBlur + (maxBlur - minBlur) * proximity;
+
+                    // Definição dos limites de Opacidade do Fundo
+                    const minOpacity = 0.06;
+                    const maxOpacity = 0.68;
+                    const opacityVal = minOpacity + (maxOpacity - minOpacity) * proximity;
+
+                    // Definição dos limites de Opacidade da Borda Dourada
+                    const borderOpacity = 0.08 + 0.67 * proximity;
+                    
+                    // Brilho dourado (glow) proporcional
+                    const glowVal = 0.18 * proximity;
+
+                    // Aplicar estilos dinamicamente
+                    card.style.background = `rgba(11, 10, 8, ${opacityVal})`;
+                    card.style.backdropFilter = `blur(${blurVal}px)`;
+                    card.style.webkitBackdropFilter = `blur(${blurVal}px)`;
+                    card.style.borderColor = `rgba(221, 185, 118, ${borderOpacity})`;
+                    card.style.boxShadow = `0 0 30px rgba(221, 185, 118, ${glowVal})`;
+                });
+
+                column.addEventListener('mouseleave', () => {
+                    // Resetar estilos para o estado inicial suave
+                    card.style.background = 'rgba(11, 10, 8, 0.06)';
+                    card.style.backdropFilter = 'blur(1.5px)';
+                    card.style.webkitBackdropFilter = 'blur(1.5px)';
+                    card.style.borderColor = 'rgba(221, 185, 118, 0.08)';
+                    card.style.boxShadow = 'none';
+                });
+            });
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== "#" && href.startsWith("#")) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+        // Navigation Scroll Spy
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function scrollSpy() {
+            const scrollPos = window.scrollY + 160;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    // Update Desktop Links
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                    // Update Mobile Links
+                    mobileNavLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+
+        window.addEventListener('scroll', () => {
+            window.requestAnimationFrame(scrollSpy);
+        });
+        window.addEventListener('load', scrollSpy);
+
+        // =============================================================
+        // Fluid Parallax Engine (High Performance 60fps Scroll)
+        // =============================================================
+        class FluidParallax {
+            constructor() {
+                this.elements = [];
+                this.init();
+            }
+
+            init() {
+                if (window.innerWidth <= 992) return; // Desativa em telas pequenas/mobile
+
+                const parallaxContainers = document.querySelectorAll('.parallax-container');
+                parallaxContainers.forEach(container => {
+                    const img = container.querySelector('.parallax-img');
+                    if (!img) return;
+
+                    // Cria um registro para o elemento
+                    const item = {
+                        container: container,
+                        img: img,
+                        speed: parseFloat(container.dataset.parallaxSpeed) || 0.18,
+                        visible: false
+                    };
+
+                    this.elements.push(item);
+                });
+
+                // Utiliza IntersectionObserver para rodar efeito apenas quando a seção estiver visível
+                const observerOptions = {
+                    root: null,
+                    threshold: 0,
+                    rootMargin: "0px"
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        const index = this.elements.findIndex(el => el.container === entry.target);
+                        if (index !== -1) {
+                            this.elements[index].visible = entry.isIntersecting;
+                        }
+                    });
+                }, observerOptions);
+
+                this.elements.forEach(item => {
+                    observer.observe(item.container);
+                });
+
+                // Inicia o loop de renderização no scroll
+                window.addEventListener('scroll', () => this.onScroll(), { passive: true });
+                window.addEventListener('resize', () => this.onResize());
+                
+                // Primeiro posicionamento
+                this.tick();
+            }
+
+            onScroll() {
+                if (this.scrollRequested) return;
+                this.scrollRequested = true;
+                window.requestAnimationFrame(() => this.tick());
+            }
+
+            onResize() {
+                // Atualiza em caso de mudança de tamanho
+                this.scrollRequested = true;
+                window.requestAnimationFrame(() => this.tick());
+            }
+
+            tick() {
+                this.scrollRequested = false;
+                const viewHeight = window.innerHeight;
+                const viewTop = window.scrollY;
+
+                this.elements.forEach(item => {
+                    if (!item.visible) return;
+
+                    const rect = item.container.getBoundingClientRect();
+                    const containerHeight = rect.height;
+                    const containerTop = viewTop + rect.top;
+                    const containerCenter = containerTop + containerHeight / 2;
+
+                    // Ponto médio da janela
+                    const viewCenter = viewTop + viewHeight / 2;
+
+                    // Distância do centro do container ao centro da tela
+                    const distance = viewCenter - containerCenter;
+
+                    // Calcula o offset de tradução suave baseado na distância e velocidade
+                    const translateVal = distance * item.speed;
+
+                    // Aplica translate3d para garantir aceleração por GPU
+                    item.img.style.transform = `translate3d(0, ${translateVal}px, 0)`;
+                });
+            }
+        }
+
+        // Inicializa o Parallax após o carregamento completo do documento
+        window.addEventListener('DOMContentLoaded', () => {
+            new FluidParallax();
+        });
+    </script>
+</body>
+</html>

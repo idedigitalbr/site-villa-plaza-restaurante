@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Praça São Lourenço - Vila Olímpia - São Paulo</title>
+    <meta name="description" content="Restaurante Praça São Lourenço. Sua Praça em São Paulo. Cozinha variada com ingredientes brasileiros preparados no forno à lenha.">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    
+    <!-- Google Fonts: Cormorant Garamond & Jost & Mrs Saint Delafield -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Jost:wght@200;300;400;500;600;700&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Split Header Navigation (Transparent, centered logo, social links on the right) -->
+    <header class="main-header" id="home">
+        <div class="header-container">
+            <!-- Left Navigation Menu -->
+            <nav class="nav-desktop nav-left">
+                <ul class="nav-links">
+                    <li><a href="#restaurante">RESTAURANTE</a></li>
+                    <li><a href="#experiencias">FONDUE</a></li>
+                    <li><a href="https://pracasaolourenco.com.br/delivery-do-praca/" target="_blank" rel="noopener">DELIVERY</a></li>
+                    <li><a href="#acontece">EVENTOS</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Center Tree Logo -->
+            <a href="#home" class="logo-link">
+                <div class="center-logo-wrapper">
+                    <img src="assets/images/logo.png" alt="Praça São Lourenço" class="header-logo">
+                </div>
+            </a>
+            
+            <!-- Right Actions Menu -->
+            <div class="header-actions">
+                <a href="https://praca-sao-lourenco.meitre.com/" target="_blank" rel="noopener" class="navbar-reserve-btn">RESERVAS</a>
+                <div class="header-socials">
+                    <a href="https://www.instagram.com/pracasaolourenco" target="_blank" rel="noopener">IG.</a>
+                    <a href="https://www.facebook.com/pracasaolourenco" target="_blank" rel="noopener">FB.</a>
+                    <a href="https://www.linkedin.com/company/pracasaolourenco" target="_blank" rel="noopener">LK.</a>
+                </div>
+                <button class="burger-menu-btn" aria-label="Abrir menu" id="burger-btn">
+                    <span class="burger-bar"></span>
+                    <span class="burger-bar"></span>
+                    <span class="burger-bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <button class="close-drawer-btn" aria-label="Fechar menu" id="close-drawer-btn">&times;</button>
+        <ul class="mobile-nav-links">
+            <li><a href="#home">Início</a></li>
+            <li><a href="#restaurante">O Praça</a></li>
+            <li><a href="#experiencias">Experiências</a></li>
+            <li><a href="#acontece">Acontece</a></li>
+            <li><a href="#reservas">Reservas</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+        </ul>
+        <a href="https://praca-sao-lourenco.meitre.com/" target="_blank" rel="noopener" class="btn btn-drawer-reservas">RESERVAS</a>
+    </div>
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+
+    <!-- Hero Section (Video Background) -->
+    <section class="hero-section">
+        <div class="video-background-container">
+            <video autoplay muted loop playsinline class="bg-video">
+                <source src="assets/images/video_PRACA_m.mov" type="video/mp4">
+                <source src="assets/images/video_PRACA_m.mov" type="video/quicktime">
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">SUA PRAÇA EM SÃO PAULO</h1>
+        </div>
+
+        <!-- Float Contact info in Hero -->
+        <div class="hero-contact-float">
+            <p>Rua Casa do Ator, 608 <br> Vila Olímpia, São Paulo <br> Tel.: +55 11 3053-9300</p>
+        </div>
+    </section>
+
+    <!-- Oasis / Restaurante Section -->
+    <section class="about-section" id="restaurante">
+        <!-- Top Section Header matching page layout -->
+        <div class="section-top-header text-center">
+            <span class="cursive-subtitle">Oásis</span>
+            <h2 class="top-header-title">Restaurante</h2>
+        </div>
+        
+        <div class="section-container about-grid">
+            <div class="about-content">
+                <h2 class="section-title-large">PRAÇA</h2>
+                <h3 class="section-subtitle-serif gold-serif-title">O Praça é um verdadeiro oásis no meio da Vila Olímpia</h3>
+                <div class="section-divider"></div>
+                <p class="about-text">
+                    Com mais de 20 anos de história, o Praça São Lourenço une uma arquitetura imponente integrada à natureza e um cardápio variado e contemporâneo. Um espaço acolhedor perfeito para almoços de negócios, jantares românticos e comemorações especiais em família.
+                </p>
+                <p class="about-text">
+                    Em nosso jardim, em meio a árvores frutíferas, lagos com carpas e pontes de madeira, você se desconecta do ritmo frenético de São Paulo para viver uma experiência gastronômica inigualável.
+                </p>
+            </div>
+            <div class="about-image-wrapper">
+                <img src="assets/images/foto_galeria_praca77.jpg" alt="Jardim do Praça São Lourenço" class="section-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Cozinha Section -->
+    <section class="cozinha-section" id="cozinha">
+        <div class="section-container cozinha-grid">
+            <div class="cozinha-image-wrapper">
+                <img src="assets/images/cozinha_destaque.jpg" alt="Forno a lenha pegando fogo" class="section-img">
+            </div>
+            
+            <div class="cozinha-content">
+                <h2 class="section-title-large">COZINHA</h2>
+                <h3 class="section-subtitle-serif gold-serif-title">cozinha variada com ingredientes brasileiros preparados no forno à lenha</h3>
+                <div class="section-divider"></div>
+                <p class="cozinha-text">
+                    Nossa cozinha celebra a riqueza dos ingredientes brasileiros sob a influência do calor e do perfume único do nosso forno a lenha. Grelhados perfeitos, defumação sutil e assados lentos trazem robustez e complexidade aos pratos.
+                </p>
+                <p class="cozinha-text">
+                    Dos cortes de carne nobres aos vegetais orgânicos tostados e massas frescas finalizadas na lenha, cada receita carrega a alma rústica e sofisticada do nosso forno, ponto central de nossa gastronomia.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wine Cellar Banner Section (Carta de Vinhos) -->
+    <section class="vinhos-banner-section" id="vinhos" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/images/carta-home.jpg');">
+        <div class="banner-content text-center">
+            <h2 class="banner-title gold-serif-title">CARTA DE VINHOS</h2>
+            <span class="banner-subtitle">Seleção do Praça</span>
+        </div>
+    </section>
+
+    <!-- Experiences Showcase (Interactive Links Showcase / Carretel) -->
+    <section class="showcase-section" id="experiencias">
+        <div class="showcase-backgrounds">
+            <div class="showcase-bg active" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('assets/images/drinks.jpg');"></div>
+            <div class="showcase-bg" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('assets/images/almoco.jpg');"></div>
+            <div class="showcase-bg" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('assets/images/jantar-home.jpg');"></div>
+            <div class="showcase-bg" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('assets/images/foto_galeria_praca77.jpg');"></div>
+        </div>
+        
+        <div class="showcase-carousel-wrapper">
+            <div class="showcase-track">
+                <!-- Slide 1: Coquetéis (Active by default) -->
+                <div class="showcase-slide active" data-index="0">
+                    <h3 class="showcase-title">COQUETÉIS</h3>
+                    <span class="showcase-subtitle">Bar do Praça</span>
+                </div>
+                <!-- Slide 2: Almoço -->
+                <div class="showcase-slide" data-index="1">
+                    <h3 class="showcase-title">ALMOÇO</h3>
+                    <span class="showcase-subtitle">Menu</span>
+                </div>
+                <!-- Slide 3: Jantar -->
+                <div class="showcase-slide" data-index="2">
+                    <h3 class="showcase-title">JANTAR</h3>
+                    <span class="showcase-subtitle">Menu</span>
+                </div>
+                <!-- Slide 4: Eventos -->
+                <div class="showcase-slide" data-index="3">
+                    <h3 class="showcase-title">EVENTOS</h3>
+                    <span class="showcase-subtitle">Sociais e Corporativos</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel navigation helpers -->
+        <button class="showcase-nav-arrow arrow-left" aria-label="Anterior">&lsaquo;</button>
+        <button class="showcase-nav-arrow arrow-right" aria-label="Próximo">&rsaquo;</button>
+    </section>
+
+    <!-- Reserva Section -->
+    <section class="reserva-section" id="reservas">
+        <div class="section-container reserva-grid">
+            <div class="reserva-content">
+                <h2 class="section-title-large white-text">RESERVA</h2>
+                <h3 class="section-subtitle-serif gold-serif-title">reserve sua mesa</h3>
+                <div class="section-divider"></div>
+                
+                <ul class="reserva-list">
+                    <li>almoço de segunda a sexta</li>
+                    <li>almoço de sábado e domingo</li>
+                    <li>jantar</li>
+                    <li>bar do praça</li>
+                    <li>eventos corporativos e encontros sociais</li>
+                </ul>
+                
+                <a href="https://praca-sao-lourenco.meitre.com/" target="_blank" rel="noopener" class="btn-reserva-action">RESERVAR ONLINE</a>
+            </div>
+            
+            <div class="reserva-image-wrapper">
+                <div class="image-overlay-tint"></div>
+                <img src="assets/images/foto_galeria_praca77.jpg" alt="Mesas no jardim" class="section-img">
+                <span class="cursive-overlay-text">Seja bem vindo</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Screen Video Section (Dining Room with play overlay) -->
+    <section class="video-section" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('assets/images/jantar-home.jpg');">
+        <div class="video-play-container">
+            <button class="video-play-btn" id="play-youtube-btn" aria-label="Assistir Vídeo">
+                <span class="play-icon">&#9658;</span>
+            </button>
+        </div>
+        
+        <!-- Back to Top Button in Gold box outline -->
+        <div class="section-top-indicator">
+            <a href="#home" class="top-btn">TOP</a>
+        </div>
+    </section>
+
+    <!-- YouTube Video Modal Popup -->
+    <div class="video-modal" id="video-modal">
+        <button class="close-modal-btn" id="close-modal-btn">&times;</button>
+        <div class="video-modal-content">
+            <iframe id="video-iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="modal-overlay" id="modal-overlay"></div>
+
+    <!-- Sobre Section (Garden + Google Reviews Card) -->
+    <section class="sobre-section" id="sobre">
+        <div class="section-container sobre-grid">
+            <div class="sobre-image-wrapper">
+                <img src="assets/images/foto_galeria_praca106.jpg" alt="Lago do jardim" class="section-img">
+                <span class="cursive-overlay-text-left">Praça São Lourenço</span>
+            </div>
+            
+            <div class="sobre-content">
+                <h2 class="section-title-large white-text">SOBRE</h2>
+                
+                <!-- Google Reviews Card -->
+                <div class="google-reviews-card">
+                    <div class="reviews-card-header">
+                        <div class="google-logo-wrapper">
+                            <span class="google-letter g-blue">G</span>
+                            <span class="google-letter g-red">o</span>
+                            <span class="google-letter g-yellow">o</span>
+                            <span class="google-letter g-blue">g</span>
+                            <span class="google-letter g-green">l</span>
+                            <span class="google-letter g-red">e</span>
+                        </div>
+                        <div class="rating-summary">
+                            <span class="rating-num">4.6</span>
+                            <div class="rating-stars">★★★★★</div>
+                            <span class="rating-reviews-count">7,241 reviews</span>
+                        </div>
+                    </div>
+                    
+                    <div class="reviews-list">
+                        <div class="review-item">
+                            <div class="review-meta">
+                                <strong>Mariana S.</strong>
+                                <span class="review-stars">★★★★★</span>
+                            </div>
+                            <p class="review-text">"Ambiente simplesmente espetacular! O jardim é lindo e a comida no forno a lenha é deliciosa. Ótimo atendimento."</p>
+                        </div>
+                        <div class="review-item">
+                            <div class="review-meta">
+                                <strong>Ricardo G.</strong>
+                                <span class="review-stars">★★★★★</span>
+                            </div>
+                            <p class="review-text">"Lugar perfeito para almoçar em família no final de semana. O buffet é incrível e a monitoria para as crianças ajuda muito!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Events (Acontece no Praça) Section -->
+    <section class="news-section" id="acontece">
+        <div class="section-container">
+            <div class="section-header text-center">
+                <h2 class="section-title gold-serif-title">acontece no praça</h2>
+                <span class="cursive-subtitle subtitle-news">Novidades, eventos e mais</span>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="news-grid">
+                <!-- Card 1 -->
+                <article class="news-card">
+                    <div class="news-img-holder">
+                        <img src="assets/images/dia-dos-namorados-praca.jpg" alt="Dia dos Namorados" class="news-img">
+                    </div>
+                    <div class="news-body">
+                        <h3 class="news-title">Dia dos Namorados</h3>
+                        <p class="news-excerpt">Celebre o amor em nosso jardim com um menu exclusivo em três tempos e música ao vivo.</p>
+                        <a href="https://pracasaolourenco.com.br/celebre-o-amor-no-dia-dos-namorados-no-praca-sao-lourenco/" target="_blank" rel="noopener" class="btn-news-more">Ver mais</a>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="news-card">
+                    <div class="news-img-holder">
+                        <img src="assets/images/copa-domundo.jpg" alt="Jogos da Copa no Praça" class="news-img">
+                    </div>
+                    <div class="news-body">
+                        <h3 class="news-title">Jogos da Copa</h3>
+                        <p class="news-excerpt">Transmissões ao vivo no jardim, petiscos especiais do forno a lenha e rodadas duplas de chopp.</p>
+                        <a href="https://pracasaolourenco.com.br/jogos-da-copa-no-praca/" target="_blank" rel="noopener" class="btn-news-more">Ver mais</a>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="news-card">
+                    <div class="news-img-holder">
+                        <img src="assets/images/1B0A3766-2.jpg" alt="Festival do Mar" class="news-img">
+                    </div>
+                    <div class="news-body">
+                        <h3 class="news-title">Festival do Mar</h3>
+                        <p class="news-excerpt">Criações especiais com polvos, lagostas e peixes amazônicos preparados em nossa brasa.</p>
+                        <a href="https://pracasaolourenco.com.br/festival-do-mar/" target="_blank" rel="noopener" class="btn-news-more">Ver mais</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <section class="instagram-section">
+        <div class="section-container text-center">
+            <h2 class="section-title gold-serif-title">siga o praça no instagram</h2>
+            <p class="instagram-handle"><a href="https://www.instagram.com/pracasaolourenco" target="_blank" rel="noopener">@pracasaolourenco</a></p>
+            
+            <!-- Instagram Profile Header Widget matching original website feed layout -->
+            <div class="instagram-profile-header">
+                <div class="profile-avatar">
+                    <img src="assets/images/logo.png" alt="Praça Avatar">
+                </div>
+                <div class="profile-info">
+                    <div class="profile-username-row">
+                        <span class="profile-username">pracasaolourenco</span>
+                        <span class="verified-badge" title="Conta verificada">✓</span>
+                        <a href="https://www.instagram.com/pracasaolourenco" target="_blank" rel="noopener" class="btn-insta-follow">Seguir</a>
+                        <a href="https://www.instagram.com/pracasaolourenco" target="_blank" rel="noopener" class="btn-insta-msg">Enviar mensagem</a>
+                    </div>
+                    <div class="profile-stats-row">
+                        <span class="stat-item"><strong>2,142</strong> publicações</span>
+                        <span class="stat-item"><strong>74.3K</strong> seguidores</span>
+                        <span class="stat-item"><strong>1,209</strong> seguindo</span>
+                    </div>
+                    <div class="profile-bio">
+                        <strong class="bio-title">Praça São Lourenço</strong>
+                        <p class="bio-text">Um refúgio verdejante em meio à Vila Olímpia. Cozinha a lenha e momentos inesquecíveis.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Grid showing 10 beautiful posts -->
+            <div class="instagram-grid">
+                <div class="instagram-item"><img src="assets/images/foto_galeria_praca77.jpg" alt="Post 1" class="insta-img"><div class="insta-overlay"><span class="insta-stat">❤ 245</span><span class="insta-stat">💬 12</span></div></div>
+                <div class="instagram-item"><img src="assets/images/cozinha_destaque.jpg" alt="Post 2" class="insta-img"><div class="insta-overlay"><span class="insta-stat">❤ 312</span><span class="insta-stat">💬 18</span></div></div>
+                <div class="instagram-item"><img src="assets/images/dia-dos-namorados-praca.jpg" alt="Post 3" class="insta-img"><div class="insta-overlay"><span class="insta-stat">❤ 520</span><span class="insta-stat">💬 45</span></div></div>
+                <div class="instagram-item"><img src="assets/images/copa-domundo.jpg" alt="Post 4" class="insta-img"><div class="insta-overlay"><span class="insta-stat">❤ 189</span><span class="insta-stat">💬 9</span></div></div>
+                <div class="instagram-item"><img src="assets/images/1B0A3766-2.jpg" alt="Post 5" class="insta-img"><div class="insta-overlay"><span class="insta-stat">❤ 430</span><span class="insta-stat">💬 27</span></div></div>
+                <div class="instagram-item"><img src="assets/images/foto_reservas.jpg" alt="Post 6" class="insta-img"><div class="insta-overlay"><span class="insta-stat">❤ 290</span><span class="insta-stat">💬 15</span></div></div>
+                <div class="instagram-item"><img src="assets/images/foto_galeria_praca106.jpg" alt="Post 7" class="insta-img"><div class="insta-overlay"><span class="insta-stat">❤ 380</span><span class="insta-stat">💬 21</span></div></div>
+                <div class="instagram-item"><img src="assets/images/carta-home.jpg" alt="Post 8" class="insta-img"><div class="insta-overlay"><span class="insta-stat">❤ 156</span><span class="insta-stat">💬 6</span></div></div>
+                <div class="instagram-item"><img src="assets/images/jantar-home.jpg" alt="Post 9" class="insta-img"><div class="insta-overlay"><span class="insta-stat">❤ 470</span><span class="insta-stat">💬 33</span></div></div>
+                <div class="instagram-item"><img src="assets/images/foto_galeria_praca77.jpg" alt="Post 10" class="insta-img"><div class="insta-overlay"><span class="insta-stat">❤ 340</span><span class="insta-stat">💬 14</span></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="section-container footer-grid">
+            <!-- Col 1: Hours -->
+            <div class="footer-col">
+                <h3>ABERTO</h3>
+                <p>
+                    <strong>Segunda a Quinta:</strong><br>
+                    12:00 às 15:00 e 19:00 às 23:00<br><br>
+                    <strong>Sexta e Sábado:</strong><br>
+                    12:00 às 17:00 e 19:00 às 23:30<br><br>
+                    <strong>Domingo:</strong><br>
+                    12:00 às 17:00
+                </p>
+            </div>
+            
+            <!-- Col 2: Contact -->
+            <div class="footer-col text-center">
+                <h3>CONTATO</h3>
+                <p>
+                    Telefone: +55 11 3053-9300<br>
+                    WhatsApp: +55 11 99204-0838<br><br>
+                    reservas@pracasaolourenco.com.br<br>
+                    eventos@pracasaolourenco.com.br
+                </p>
+            </div>
+
+            <!-- Col 3: Address -->
+            <div class="footer-col">
+                <h3>ENDEREÇO</h3>
+                <p>
+                    Rua Casa do Ator, 608<br>
+                    Vila Olímpia, São Paulo - SP<br>
+                    CEP 04546-002
+                </p>
+                <a href="https://www.google.com/maps/place/Pra%C3%A7a+S%C3%A3o+Louren%C3%A7o/@-23.5984485,-46.6790978,15z" target="_blank" rel="noopener" class="footer-map-link">Ver no Google Maps &rarr;</a>
+            </div>
+        </div>
+
+        <div class="footer-logo-divider">
+            <img src="assets/images/logo.png" alt="Praça São Lourenço" class="footer-logo">
+            <p class="copyright">&copy; 2026 Praça São Lourenço. Todos os direitos reservados. Reconstruído de forma otimizada.</p>
+            
+            <!-- Language Flags at bottom of footer matching print reference -->
+            <div class="language-flags">
+                <img src="https://flagcdn.com/w20/gb.png" alt="English" class="flag-icon">
+                <img src="https://flagcdn.com/w20/fr.png" alt="Français" class="flag-icon">
+                <img src="https://flagcdn.com/w20/de.png" alt="Deutsch" class="flag-icon">
+                <img src="https://flagcdn.com/w20/br.png" alt="Português" class="flag-icon">
+                <img src="https://flagcdn.com/w20/es.png" alt="Español" class="flag-icon">
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/message/EBZDWHNPZXMFJ1" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Fale conosco pelo WhatsApp">
+        <img src="assets/images/whatsapp.svg" alt="WhatsApp Icon">
+    </a>
+
+    <!-- Slider, Modal & Drawer Logics -->
+    <script>
+        // Hamburger Drawer Toggle
+        const burgerBtn = document.getElementById('burger-btn');
+        const closeDrawerBtn = document.getElementById('close-drawer-btn');
+        const drawer = document.getElementById('mobile-drawer');
+        const overlay = document.getElementById('drawer-overlay');
+        const drawerLinks = document.querySelectorAll('.mobile-nav-links a');
+
+        function openDrawer() {
+            drawer.classList.add('open');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDrawer() {
+            drawer.classList.remove('open');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        burgerBtn.addEventListener('click', openDrawer);
+        closeDrawerBtn.addEventListener('click', closeDrawer);
+        overlay.addEventListener('click', closeDrawer);
+        drawerLinks.forEach(link => link.addEventListener('click', closeDrawer));
+
+        // Sticky Header scroll effect
+        const header = document.querySelector('.main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Offset-based Carousel centering logic (Carretel)
+        const showcaseSlides = Array.from(document.querySelectorAll('.showcase-slide'));
+        const showcaseBgs = Array.from(document.querySelectorAll('.showcase-bg'));
+        const track = document.querySelector('.showcase-track');
+        const arrowLeft = document.querySelector('.showcase-nav-arrow.arrow-left');
+        const arrowRight = document.querySelector('.showcase-nav-arrow.arrow-right');
+        let currentIdx = 0;
+
+        function updateShowcase(idx) {
+            // Update active slide class
+            showcaseSlides.forEach(slide => slide.classList.remove('active'));
+            const activeSlide = showcaseSlides[idx];
+            activeSlide.classList.add('active');
+
+            // Update active background class with crossfade
+            showcaseBgs.forEach(bg => bg.classList.remove('active'));
+            showcaseBgs[idx].classList.add('active');
+
+            // Translate track to keep active slide perfectly centered relative to viewport
+            const containerWidth = document.querySelector('.showcase-carousel-wrapper').getBoundingClientRect().width;
+            const activeSlideWidth = activeSlide.getBoundingClientRect().width;
+            const activeSlideOffsetLeft = activeSlide.offsetLeft;
+            
+            // Center calculation offset
+            const offset = (containerWidth / 2) - activeSlideOffsetLeft - (activeSlideWidth / 2);
+            track.style.transform = `translateX(${offset}px)`;
+            currentIdx = idx;
+        }
+
+        // Initialize position on load
+        window.addEventListener('resize', () => updateShowcase(currentIdx));
+        
+        // Wait until fonts and layout rendering are complete before doing initial offset calculations
+        window.addEventListener('load', () => {
+            updateShowcase(0);
+        });
+        // Fallback timeout
+        setTimeout(() => updateShowcase(0), 200);
+
+        // Click slide to activate
+        showcaseSlides.forEach((slide, idx) => {
+            slide.addEventListener('click', () => updateShowcase(idx));
+        });
+
+        // Arrow navigation
+        arrowLeft.addEventListener('click', () => {
+            let next = (currentIdx - 1 + showcaseSlides.length) % showcaseSlides.length;
+            updateShowcase(next);
+        });
+
+        arrowRight.addEventListener('click', () => {
+            let next = (currentIdx + 1) % showcaseSlides.length;
+            updateShowcase(next);
+        });
+
+        // YouTube Modal Logic
+        const playBtn = document.getElementById('play-youtube-btn');
+        const closeBtn = document.getElementById('close-modal-btn');
+        const modal = document.getElementById('video-modal');
+        const modalOverlay = document.getElementById('modal-overlay');
+        const iframe = document.getElementById('video-iframe');
+
+        playBtn.addEventListener('click', () => {
+            iframe.src = "https://www.youtube.com/embed/SBiGEM-Bewk?autoplay=1";
+            modal.classList.add('active');
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        function closeModal() {
+            iframe.src = "";
+            modal.classList.remove('active');
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        closeBtn.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', closeModal);
+    </script>
+</body>
+</html>
