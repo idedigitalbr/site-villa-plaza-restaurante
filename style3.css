@@ -1,0 +1,452 @@
+/* ==========================================================================
+   VILLA PLAZA RESTAURANTE - INDEX 3 (OFF-WHITE & DARK ELEGANCE)
+   ========================================================================== */
+
+:root {
+    --vp-wine: #57101D;
+    --vp-wine-dark: #3A0710;
+    --vp-wine-deep: #220308;
+    --vp-black: #0E0B0C;
+    --vp-dark-card: #161314;
+    --vp-offwhite: #F7F4EF;
+    --vp-offwhite-card: #EFEBE4;
+    --vp-text-dark: #2A2526;
+    --vp-text-muted: #666162;
+    --vp-white: #FFFFFF;
+    --vp-gold: #C5A059;
+    --vp-gold-light: #E5CD9D;
+    
+    --font-display: 'Cormorant Garamond', 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+    --font-script: 'Pinyon Script', cursive;
+
+    --transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--vp-offwhite);
+    color: var(--vp-text-dark);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* HEADER NAV */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: linear-gradient(180deg, rgba(14, 11, 12, 0.95) 0%, rgba(14, 11, 12, 0) 100%);
+    padding: 1.2rem 2.5rem;
+    transition: var(--transition);
+}
+
+.header-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-logo img {
+    height: 60px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.2rem;
+    align-items: center;
+}
+
+.nav-link {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-weight: 400;
+    color: var(--vp-white);
+}
+
+.nav-link:hover {
+    color: var(--vp-gold-light);
+}
+
+.btn-header-reserva {
+    border: 1px solid var(--vp-gold);
+    color: var(--vp-gold-light) !important;
+    padding: 0.5rem 1.4rem;
+    border-radius: 2px;
+    font-size: 0.75rem;
+}
+
+.btn-header-reserva:hover {
+    background-color: var(--vp-gold);
+    color: var(--vp-black) !important;
+}
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('assets/S1 TOPO HERO/hero_salao_principal.webp') center/cover no-repeat;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle, rgba(14, 11, 12, 0.6) 0%, rgba(14, 11, 12, 0.92) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+    max-width: 900px;
+    padding: 0 1.5rem;
+}
+
+.hero-logo-center img {
+    width: 180px;
+    margin: 0 auto 1.5rem auto;
+}
+
+.hero-title {
+    font-family: var(--font-display);
+    font-size: 3.2rem;
+    letter-spacing: 0.18em;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: var(--vp-white);
+    margin-bottom: 0.6rem;
+}
+
+.hero-subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--vp-gold-light);
+    margin-bottom: 2rem;
+}
+
+.btn-hero-reserva {
+    display: inline-block;
+    border: 1px solid var(--vp-gold);
+    color: var(--vp-white);
+    padding: 0.9rem 2.5rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    transition: var(--transition);
+}
+
+.btn-hero-reserva:hover {
+    background-color: var(--vp-gold);
+    color: var(--vp-black);
+}
+
+/* SECTION OFF-WHITE (NOSSA HISTÓRIA / SOBRE) */
+.section-offwhite {
+    background-color: var(--vp-offwhite);
+    color: var(--vp-text-dark);
+    padding: 7.5rem 2rem;
+}
+
+.container-wide {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.grid-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4.5rem;
+    align-items: center;
+}
+
+.grid-2col.reverse {
+    direction: rtl;
+}
+
+.grid-2col.reverse > * {
+    direction: ltr;
+}
+
+.kicker {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--vp-wine);
+    display: block;
+    margin-bottom: 0.8rem;
+}
+
+.title-display {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    line-height: 1.2;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--vp-text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.desc-text {
+    font-size: 0.92rem;
+    line-height: 1.9;
+    color: var(--vp-text-muted);
+    margin-bottom: 2rem;
+}
+
+.btn-outline-dark {
+    display: inline-block;
+    border: 1px solid var(--vp-text-dark);
+    color: var(--vp-text-dark);
+    padding: 0.85rem 2rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    transition: var(--transition);
+}
+
+.btn-outline-dark:hover {
+    background-color: var(--vp-wine);
+    border-color: var(--vp-wine);
+    color: var(--vp-white);
+}
+
+.card-img-wrapper {
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+}
+
+/* SECTION DARK (EVENTOS E EXPERIÊNCIAS) */
+.section-dark {
+    background-color: var(--vp-black);
+    color: var(--vp-white);
+    padding: 7.5rem 2rem;
+    text-align: center;
+}
+
+.section-dark .title-display {
+    color: var(--vp-white);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin: 4rem 0 3.5rem 0;
+}
+
+.feature-card {
+    background-color: var(--vp-dark-card);
+    padding: 2.5rem 1.5rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--vp-gold);
+}
+
+.feature-icon {
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+    color: var(--vp-gold);
+}
+
+.feature-title {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+}
+
+.feature-desc {
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: var(--vp-gray-muted);
+}
+
+/* RED BANNER (RESERVA) */
+.banner-red {
+    background-color: var(--vp-wine);
+    color: var(--vp-white);
+    padding: 4.5rem 2rem;
+}
+
+.banner-red-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.banner-red-title {
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.banner-red-subtitle {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.btn-banner-reserva {
+    display: inline-block;
+    background-color: var(--vp-white);
+    color: var(--vp-wine);
+    padding: 1rem 2.4rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    border-radius: 3px;
+    transition: var(--transition);
+}
+
+.btn-banner-reserva:hover {
+    background-color: var(--vp-gold-light);
+    color: var(--vp-black);
+}
+
+/* FOOTER */
+.footer {
+    background-color: var(--vp-black);
+    color: var(--vp-white);
+    padding: 5rem 2rem 2.5rem 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-logo img {
+    width: 120px;
+    margin: 0 auto 1.5rem auto;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    list-style: none;
+    margin-bottom: 2.5rem;
+}
+
+.footer-copy {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.45);
+    letter-spacing: 0.05em;
+}
+
+/* FLOATING WHATSAPP BUTTON */
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 58px;
+    height: 58px;
+    background-color: #25D366;
+    color: #FFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-float svg {
+    width: 32px;
+    height: 32px;
+    fill: currentColor;
+}
+
+@media (max-width: 992px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-2col, .grid-2col.reverse {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        direction: ltr !important;
+    }
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    .banner-red-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .header-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    .title-display {
+        font-size: 2rem;
+    }
+}
