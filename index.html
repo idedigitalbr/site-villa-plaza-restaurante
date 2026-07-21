@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Villa Plaza Restaurante - Belém - PA | Um lugar pra voltar sempre</title>
+    <meta name="description" content="O Villa Plaza é um restaurante completo em Belém, ideal para todos os momentos. Buffet no almoço, jantar à la carte e happy hour de segunda a quinta. Localizado no mezanino do +B Supermercado.">
+    <link rel="icon" type="image/png" href="assets/logos/logo-villa-plaza-color.webp">
+    
+    <!-- Google Fonts: Cormorant Garamond (luxury serif) & Montserrat (clean sans-serif) & Pinyon Script (elegant cursive calligraphy) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@200;300;400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Transparent Fixed Header Navigation (Split Menu Style) -->
+    <header class="header" id="navbar">
+        <div class="header-container">
+            <!-- Left Navigation Menu (Desktop Only) -->
+            <nav class="nav-desktop nav-left">
+                <ul class="nav-links">
+                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="#experiencia" class="nav-link">Serviços</a></li>
+                    <li><a href="#gastronomia" class="nav-link">Gastronomia</a></li>
+                    <li><a href="#vinhos" class="nav-link">Vinhos</a></li>
+                </ul>
+            </nav>
+
+            <!-- Center Logo Link -->
+            <a href="#home" class="logo-link" aria-label="Voltar ao topo">
+                <div class="center-logo-wrapper">
+                    <img src="assets/logos/logo-villa-plaza-white.webp" alt="Villa Plaza Logo" class="header-logo">
+                </div>
+            </a>
+
+            <!-- Right Navigation & Socials (Desktop Only + Mobile Hamburguer Alignment) -->
+            <div class="header-right-side">
+                <nav class="nav-desktop nav-right">
+                    <ul class="nav-links">
+                        <li><a href="#ambiente" class="nav-link">Ambiente</a></li>
+                        <li><a href="#contato" class="nav-link">Contato</a></li>
+                    </ul>
+                </nav>
+                <span class="header-separator">|</span>
+                <div class="header-socials">
+                    <a href="https://www.instagram.com/villaplazabelem" target="_blank" class="header-social-link" aria-label="Siga-nos no Instagram">
+                        <svg class="header-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="https://wa.me/5591992159505?text=Olá,%20gostaria%20de%20fazer%20uma%20reserva%20no%20Villa%20Plaza!" target="_blank" class="header-social-link" aria-label="Fale conosco no WhatsApp">
+                        <svg class="header-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+                            <path d="M9 10a.5.5 0 0 0 1 0v-1a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hamburger Button -->
+            <button class="hamburger" id="hamburgerBtn" aria-label="Abrir Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Overlay & Drawer -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="drawer-logo-wrapper" style="text-align: center; margin-bottom: 2.5rem;">
+            <img src="assets/logos/logo-villa-plaza-white.webp" alt="Villa Plaza" class="drawer-logo" style="height: 50px; width: auto; margin: 0 auto;">
+        </div>
+        <a href="#sobre" class="mobile-nav-link">Sobre</a>
+        <a href="#experiencia" class="mobile-nav-link">Serviços</a>
+        <a href="#gastronomia" class="mobile-nav-link">Gastronomia</a>
+        <a href="#vinhos" class="mobile-nav-link">Vinhos</a>
+        <a href="#ambiente" class="mobile-nav-link">Ambiente</a>
+        <a href="#contato" class="mobile-nav-link">Contato e Localização</a>
+        
+        <div class="mobile-socials" style="margin-top: auto; display: flex; gap: 1.5rem; padding-top: 2rem;">
+            <a href="https://www.instagram.com/villaplazabelem" target="_blank" style="color: var(--wine-cream);" aria-label="Siga-nos no Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 22px; height: 22px;">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            </a>
+            <a href="https://wa.me/5591992159505?text=Olá,%20gostaria%20de%20fazer%20uma%20reserva%20no%20Villa%20Plaza!" target="_blank" style="color: var(--wine-cream);" aria-label="Fale conosco no WhatsApp">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 22px; height: 22px;">
+                    <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+                    <path d="M9 10a.5.5 0 0 0 1 0v-1a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+    <!-- S1 TOPO HERO (Image Background with Parallax) -->
+    <section id="home" class="hero parallax-container">
+        <div class="hero-bg">
+            <img src="assets/hero/hero-salao-principal.webp" class="parallax-img" alt="Salão Villa Plaza">
+        </div>
+        
+        <div class="hero-overlay-dark"></div>
+
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="assets/logos/logo-villa-plaza-white.webp" alt="Villa Plaza Logo">
+            </div>
+            
+            <div class="hero-divider">
+                <span class="line"></span>
+                <span class="diamonds">◆ ◆ ◆</span>
+                <span class="line"></span>
+            </div>
+            <p class="hero-tagline">Um lugar pra voltar sempre</p>
+        </div>
+
+        <div class="hero-explore-indicator">
+            <div class="mouse-icon">
+                <div class="mouse-wheel"></div>
+            </div>
+            <span>Role para saber mais...</span>
+            <div class="hero-explore-line"></div>
+        </div>
+    </section>
+
+    <!-- S2 NOSSA HISTÓRIA (Parallax background with gold leaf ornaments) -->
+    <section id="sobre" class="historia-section parallax-container">
+        <img src="assets/hero/hero-salao-principal.webp" class="parallax-img" alt="Nossa História">
+        <div class="historia-overlay"></div>
+        <div class="historia-content">
+            <!-- Leaf Ornament (SVG) -->
+            <div class="historia-ornament reveal-up">
+                <svg width="120" height="24" viewBox="0 0 120 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 60 12 C 57.5 9, 57.5 4, 60 2 C 62.5 4, 62.5 9, 60 12" fill="var(--wine-gold)" opacity="0.9"/>
+                    <path d="M 60 12 C 56 11, 51 8, 48 10.5 C 50.5 13, 55.5 13, 60 12" fill="var(--wine-gold)" opacity="0.9"/>
+                    <path d="M 60 12 C 64 11, 69 8, 72 10.5 C 69.5 13, 64.5 13, 60 12" fill="var(--wine-gold)" opacity="0.9"/>
+                    <path d="M 15 12 L 42 12" stroke="url(#leaf-grad-left)" stroke-width="1.2"/>
+                    <path d="M 78 12 L 105 12" stroke="url(#leaf-grad-right)" stroke-width="1.2"/>
+                    
+                    <defs>
+                        <linearGradient id="leaf-grad-left" x1="15" y1="12" x2="42" y2="12" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="var(--wine-gold)" stop-opacity="0"/>
+                            <stop offset="100%" stop-color="var(--wine-gold)" stop-opacity="0.85"/>
+                        </linearGradient>
+                        <linearGradient id="leaf-grad-right" x1="78" y1="12" x2="105" y2="12" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="var(--wine-gold)" stop-opacity="0.85"/>
+                            <stop offset="100%" stop-color="var(--wine-gold)" stop-opacity="0"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+
+            <!-- Mini-Title -->
+            <h3 class="historia-mini-title reveal-up" style="transition-delay: 0.05s;">NOSSA HISTÓRIA</h3>
+
+            <!-- Divider -->
+            <div class="divider-glow reveal-up" style="transition-delay: 0.1s;"></div>
+
+            <!-- Headline -->
+            <h2 class="historia-headline reveal-up" style="transition-delay: 0.15s;">SOBRE O VILLA PLAZA</h2>
+
+            <!-- Paragraph -->
+            <p class="historia-paragraph reveal-up" style="transition-delay: 0.2s;">
+                No coração de Belém-PA, o Villa Plaza nasceu para transformar encontros em experiências memoráveis. Em um ambiente sofisticado e acolhedor, reunimos grande variedade gastronômica no buffet e no menu à la carte, happy hour descontraído de segunda a quinta-feira e momentos únicos cuidadosamente pensados para você e sua família.
+            </p>
+
+            <!-- Diamond Divider -->
+            <div class="divider-diamond reveal-up" style="transition-delay: 0.25s;">
+                <span class="line left"></span>
+                <span class="diamond"></span>
+                <span class="line right"></span>
+            </div>
+
+            <!-- Highlighted block inside bracket svgs -->
+            <div class="highlighted-container reveal-up" style="transition-delay: 0.3s;">
+                <!-- Left Bracket -->
+                <svg class="bracket-svg bracket-left" width="30" height="90" viewBox="0 0 30 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 28 8 L 8 8 L 8 82 L 28 82" stroke="var(--wine-gold)" stroke-width="1.2" stroke-linecap="square"/>
+                    <circle cx="8" cy="8" r="2.5" fill="var(--wine-gold)"/>
+                    <circle cx="8" cy="82" r="2.5" fill="var(--wine-gold)"/>
+                    <circle cx="28" cy="8" r="1.5" fill="var(--wine-gold)"/>
+                    <circle cx="28" cy="82" r="1.5" fill="var(--wine-gold)"/>
+                </svg>
+                
+                <p class="highlighted-text">
+                    Mais do que uma refeição, um convite para desacelerar,<br>brindar e celebrar a arte de viver bem.
+                </p>
+
+                <!-- Right Bracket -->
+                <svg class="bracket-svg bracket-right" width="30" height="90" viewBox="0 0 30 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 2 8 L 22 8 L 22 82 L 2 82" stroke="var(--wine-gold)" stroke-width="1.2" stroke-linecap="square"/>
+                    <circle cx="22" cy="8" r="2.5" fill="var(--wine-gold)"/>
+                    <circle cx="22" cy="82" r="2.5" fill="var(--wine-gold)"/>
+                    <circle cx="2" cy="8" r="1.5" fill="var(--wine-gold)"/>
+                    <circle cx="2" cy="82" r="1.5" fill="var(--wine-gold)"/>
+                </svg>
+            </div>
+
+            <!-- Bottom Glow Divider -->
+            <div class="divider-glow reveal-up" style="transition-delay: 0.35s; margin-top: 2rem;"></div>
+        </div>
+    </section>
+
+    <!-- S3 EXPERIÊNCIAS / CARRETEL (Showcase Style - Print 2) -->
+    <section class="showcase-section" id="experiencia">
+        <div class="showcase-backgrounds">
+            <div class="showcase-bg active" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/gastronomia/gastronomia-buffet-pratos-quentes.webp');"></div>
+            <div class="showcase-bg" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/gastronomia/gastronomia-pizza-calabresa.webp');"></div>
+            <div class="showcase-bg" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/experiencias/experiencia-chopp-heineken.webp');"></div>
+            <div class="showcase-bg" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/experiencias/experiencia-atendimento-garcom.webp');"></div>
+        </div>
+        
+        <div class="showcase-carousel-wrapper">
+            <div class="showcase-track">
+                <!-- Slide 1: Almoço -->
+                <div class="showcase-slide active" data-index="0">
+                    <h3 class="showcase-title">ALMOÇO</h3>
+                    <span class="showcase-subtitle">Buffet Variado e Contemporâneo</span>
+                </div>
+                <!-- Slide 2: Jantar -->
+                <div class="showcase-slide" data-index="1">
+                    <h3 class="showcase-title">JANTAR</h3>
+                    <span class="showcase-subtitle">Menu à la Carte Especial</span>
+                </div>
+                <!-- Slide 3: Happy Hour -->
+                <div class="showcase-slide" data-index="2">
+                    <h3 class="showcase-title">HAPPY HOUR</h3>
+                    <span class="showcase-subtitle">Chopp Gelado & Drinks</span>
+                </div>
+                <!-- Slide 4: Eventos -->
+                <div class="showcase-slide" data-index="3">
+                    <h3 class="showcase-title">EVENTOS</h3>
+                    <span class="showcase-subtitle">Espaços Variados e Climatizados</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel navigation helpers -->
+        <button class="showcase-nav-arrow arrow-left" aria-label="Anterior">&lsaquo;</button>
+        <button class="showcase-nav-arrow arrow-right" aria-label="Próximo">&rsaquo;</button>
+    </section>
+
+    <!-- S4 GASTRONOMIA (Ref 0 Double Column Style, split image left, content right) -->
+    <section id="gastronomia" class="split-section">
+        <!-- Left Image -->
+        <div class="split-img-side reveal-up">
+            <img src="assets/gastronomia/gastronomia-risoto-camarao.webp" alt="Risoto com Camarão Villa Plaza">
+        </div>
+        
+        <!-- Right Content -->
+        <div class="split-content-side reveal-up" style="transition-delay: 0.1s;">
+            <span class="split-tag">Alta Gastronomia</span>
+            <h2 class="split-title">Cada detalhe pensado para <span class="italic-script">encantar</span> seu paladar</h2>
+            <p class="split-text">
+                Nossos chefs combinam técnicas clássicas com os melhores ingredientes locais para criar pratos e buffets que despertam sentidos e elevam sua experiência à mesa.
+            </p>
+
+            <div style="align-self: flex-start;">
+                <a href="https://wa.me/5591992159505?text=Olá,%20gostaria%20de%20reservar%20uma%20mesa%20no%20Villa%20Plaza!" target="_blank" rel="noopener" class="btn-gold-outline">Fazer uma Reserva</a>
+            </div>
+
+            <!-- Wine Glass Watermark -->
+            <div class="glass-watermark">
+                <svg viewBox="0 0 100 200" fill="none" stroke="rgba(211, 185, 123, 0.04)" stroke-width="1.2">
+                    <path d="M25 20h50v50c0 20-15 38-35 41v64H25m15 0h20" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- S6 CARTA DE VINHOS (Ref 1 Banner Style, adapted for dark theme) -->
+    <section class="vinhos-banner-section" id="vinhos">
+        <div class="vinhos-banner-bg" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/hero/hero-salao-principal.webp');"></div>
+        <div class="banner-content text-center">
+            <span class="cursive-subtitle" style="font-family: var(--font-script); font-size: 5rem; letter-spacing: normal;">Nossa Adega</span>
+            <h2 class="banner-title gold-serif-title" style="font-family: var(--font-display);">CARTA DE VINHOS</h2>
+            <p class="banner-desc">Rótulos selecionados para harmonizar perfeitamente com sua refeição</p>
+        </div>
+    </section>
+
+    <!-- S7 AMBIENTE (Ref 2 Ambient Carousel Style, adapted for dark theme) -->
+    <section class="ambient-section" id="ambiente">
+        <div class="section-container">
+            <div class="section-header text-center">
+                <span class="cursive-subtitle" style="font-family: var(--font-script); font-size: 5rem; letter-spacing: normal;">Conheça Nosso Espaço</span>
+                <h2 class="top-header-title white-text" style="font-family: var(--font-display);">O Mezanino Climatizado e Seguro</h2>
+                <div class="section-divider center-divider"></div>
+            </div>
+            
+            <!-- Carousel Slider Container -->
+            <div class="ambient-carousel-wrapper">
+                <button class="carousel-arrow arrow-prev" aria-label="Slide anterior">&lsaquo;</button>
+                
+                <div class="carousel-track-container">
+                    <div class="carousel-track">
+                        <div class="carousel-slide active">
+                            <img src="assets/ambiente/ambiente-interior-mezanino.webp" alt="Design de Interiores Villa Plaza">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/hero/hero-salao-principal.webp" alt="Salão Principal Climatizado">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/ambiente/ambiente-salao-principal.webp" alt="Espaço Confortável para Família">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/experiencias/experiencia-chopp-heineken.webp" alt="Happy Hour Confortável">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/gastronomia/gastronomia-pizza-calabresa.webp" alt="Pizza Quentinha">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/experiencias/experiencia-atendimento-garcom.webp" alt="Atendimento de Excelência">
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-arrow arrow-next" aria-label="Próximo slide">&rsaquo;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- S10 CONTATO & ONDE ESTAMOS (Ref 2 Location Layout Style, adapted for dark theme) -->
+    <section class="location-section" id="contato">
+        <div class="location-layout">
+            <!-- Left Side Image -->
+            <div class="location-image-side">
+                <img src="assets/gastronomia/gastronomia-risoto-camarao.webp" alt="Prato Assinatura Villa Plaza" class="plate-img">
+            </div>
+            
+            <!-- Right Details Block -->
+            <div class="location-details-side">
+                <h2 class="location-side-title" style="font-family: var(--font-display);">Onde Estamos</h2>
+                <div class="section-divider"></div>
+                
+                <div class="location-block">
+                    <h3>ENDEREÇO</h3>
+                    <p>Av. Gov. José Malcher, 2388 - São Brás, Belém - PA (CEP: 66060-232)<br>Mezanino do +B Supermercado</p>
+                </div>
+
+                <div class="location-block">
+                    <h3>FUNCIONAMENTO</h3>
+                    <p>
+                        Segunda a Sábado: 11h30 às 22h00<br>
+                        Domingos e Feriados: 11h30 às 21h00
+                    </p>
+                </div>
+
+                <div class="location-block">
+                    <h3>CONTATO & RESERVAS</h3>
+                    <p>
+                        WhatsApp: (91) 99215-9505<br>
+                        E-mail: villaplazabelem@gmail.com
+                    </p>
+                </div>
+                
+                <a href="https://g.page/r/CWxGzzMgnjfoEBM" target="_blank" rel="noopener" class="footer-map-link">Ver no Google Maps &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Ref 1 Layout Style, adapted for dark theme) -->
+    <footer class="main-footer">
+        <div class="section-container footer-grid">
+            <!-- Col 1: Hours -->
+            <div class="footer-col">
+                <h3>HORÁRIOS</h3>
+                <p>
+                    <strong>Segunda a Sábado:</strong><br>
+                    11h30 às 22h00<br><br>
+                    <strong>Domingos e Feriados:</strong><br>
+                    11h30 às 21h00
+                </p>
+            </div>
+            
+            <!-- Col 2: Contact -->
+            <div class="footer-col text-center">
+                <h3>RESERVAS & CONTATO</h3>
+                <p>
+                    WhatsApp: (91) 99215-9505<br><br>
+                    Link Direto:<br>
+                    <a href="https://wa.me/5591992159505" class="footer-wa-link">Falar no WhatsApp</a>
+                </p>
+            </div>
+
+            <!-- Col 3: Address -->
+            <div class="footer-col">
+                <h3>LOCALIZAÇÃO</h3>
+                <p>
+                    Av. Gov. José Malcher, 2388<br>
+                    São Brás, Belém - PA<br>
+                    Mezanino do +B Supermercado
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-logo-divider">
+            <img src="assets/logos/logo-villa-plaza-white.webp" alt="Villa Plaza" class="footer-logo">
+            <p class="copyright">&copy; 2026 Villa Plaza Restaurante. Todos os direitos reservados. Reconstruído de forma otimizada.</p>
+            
+            <!-- Flags -->
+            <div class="language-flags">
+                <img src="https://flagcdn.com/w20/gb.png" alt="English" class="flag-icon">
+                <img src="https://flagcdn.com/w20/fr.png" alt="Français" class="flag-icon">
+                <img src="https://flagcdn.com/w20/de.png" alt="Deutsch" class="flag-icon">
+                <img src="https://flagcdn.com/w20/br.png" alt="Português" class="flag-icon">
+                <img src="https://flagcdn.com/w20/es.png" alt="Español" class="flag-icon">
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5591992159505?text=Olá!%20Gostaria%20de%20falar%20com%20o%20Villa%20Plaza!" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Fale conosco pelo WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="white" width="30" height="30">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+    </a>
+
+    <!-- Sliders, Scroll Reveal, Scroll Spy & Parallax Logics -->
+    <script>
+        // Header Hide on Scroll Down, Show on Scroll Up & Scrolled State
+        const navbar = document.getElementById('navbar');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        let lastScrollY = window.scrollY;
+        let isTicking = false;
+
+        window.addEventListener('scroll', () => {
+            if (!isTicking) {
+                window.requestAnimationFrame(() => {
+                    const currentScrollY = window.scrollY;
+
+                    // scrolled class
+                    if (currentScrollY > 60) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+
+                    // Hide/Show based on scroll direction
+                    if (currentScrollY > lastScrollY && currentScrollY > 120 && !mobileNav.classList.contains('open')) {
+                        navbar.classList.add('header-hidden');
+                    } else {
+                        navbar.classList.remove('header-hidden');
+                    }
+
+                    lastScrollY = currentScrollY;
+                    isTicking = false;
+                });
+                isTicking = true;
+            }
+        });
+
+        // Mobile Nav Hamburger Toggle
+        function toggleMenu() {
+            mobileNav.classList.toggle('open');
+            mobileOverlay.classList.toggle('visible');
+            const isOpen = mobileNav.classList.contains('open');
+            
+            const spans = hamburgerBtn.querySelectorAll('span');
+            if (isOpen) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        }
+
+        hamburgerBtn.addEventListener('click', toggleMenu);
+        mobileOverlay.addEventListener('click', toggleMenu);
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+
+        // Intersection Observer for scroll animations (reveal-up)
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.05,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        document.querySelectorAll('.reveal-up').forEach(element => {
+            revealObserver.observe(element);
+        });
+
+        // Fluid Parallax Engine (High Performance 60fps Scroll)
+        class FluidParallax {
+            constructor() {
+                this.elements = [];
+                this.init();
+            }
+
+            init() {
+                if (window.innerWidth <= 992) return; // Disable on small screens/mobile
+
+                const parallaxContainers = document.querySelectorAll('.parallax-container');
+                parallaxContainers.forEach(container => {
+                    const img = container.querySelector('.parallax-img');
+                    if (!img) return;
+
+                    const item = {
+                        container: container,
+                        img: img,
+                        speed: parseFloat(container.dataset.parallaxSpeed) || 0.18,
+                        visible: false
+                    };
+
+                    this.elements.push(item);
+                });
+
+                const observerOptions = {
+                    root: null,
+                    threshold: 0,
+                    rootMargin: "0px"
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        const index = this.elements.findIndex(el => el.container === entry.target);
+                        if (index !== -1) {
+                            this.elements[index].visible = entry.isIntersecting;
+                        }
+                    });
+                }, observerOptions);
+
+                this.elements.forEach(item => {
+                    observer.observe(item.container);
+                });
+
+                window.addEventListener('scroll', () => this.onScroll(), { passive: true });
+                window.addEventListener('resize', () => this.onResize());
+                
+                this.tick();
+            }
+
+            onScroll() {
+                if (this.scrollRequested) return;
+                this.scrollRequested = true;
+                window.requestAnimationFrame(() => this.tick());
+            }
+
+            onResize() {
+                this.scrollRequested = true;
+                window.requestAnimationFrame(() => this.tick());
+            }
+
+            tick() {
+                this.scrollRequested = false;
+                const viewHeight = window.innerHeight;
+                const viewTop = window.scrollY;
+
+                this.elements.forEach(item => {
+                    if (!item.visible) return;
+
+                    const rect = item.container.getBoundingClientRect();
+                    const containerHeight = rect.height;
+                    const containerTop = viewTop + rect.top;
+                    const containerCenter = containerTop + containerHeight / 2;
+                    const viewCenter = viewTop + viewHeight / 2;
+                    const distance = viewCenter - containerCenter;
+                    const translateVal = distance * item.speed;
+
+                    item.img.style.transform = `translate3d(0, ${translateVal}px, 0)`;
+                });
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            new FluidParallax();
+        });
+
+        // Proportional Blur and Opacity on Card Hover (S3 Cards)
+        if (window.innerWidth > 992) {
+            const columns = document.querySelectorAll('.mvv-column');
+
+            columns.forEach(column => {
+                const card = column.querySelector('.mvv-card');
+
+                column.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const mouseX = e.clientX - rect.left;
+                    const mouseY = e.clientY - rect.top;
+
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+
+                    const dx = mouseX - centerX;
+                    const dy = mouseY - centerY;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    const maxDistance = Math.sqrt(centerX * centerX + centerY * centerY);
+
+                    let proximity = 1 - (distance / (maxDistance * 0.85));
+                    proximity = Math.max(0, Math.min(1, proximity));
+
+                    const minBlur = 1.5;
+                    const maxBlur = 5; 
+                    const blurVal = minBlur + (maxBlur - minBlur) * proximity;
+
+                    const minOpacity = 0.06;
+                    const maxOpacity = 0.68;
+                    const opacityVal = minOpacity + (maxOpacity - minOpacity) * proximity;
+
+                    const borderOpacity = 0.08 + 0.67 * proximity;
+                    const glowVal = 0.18 * proximity;
+
+                    card.style.background = `rgba(11, 10, 8, ${opacityVal})`;
+                    card.style.backdropFilter = `blur(${blurVal}px)`;
+                    card.style.webkitBackdropFilter = `blur(${blurVal}px)`;
+                    card.style.borderColor = `rgba(221, 185, 118, ${borderOpacity})`;
+                    card.style.boxShadow = `0 0 30px rgba(221, 185, 118, ${glowVal})`;
+                });
+
+                column.addEventListener('mouseleave', () => {
+                    card.style.background = 'rgba(11, 10, 8, 0.06)';
+                    card.style.backdropFilter = 'blur(1.5px)';
+                    card.style.webkitBackdropFilter = 'blur(1.5px)';
+                    card.style.borderColor = 'rgba(221, 185, 118, 0.08)';
+                    card.style.boxShadow = 'none';
+                });
+            });
+        }
+
+        // Navigation Scroll Spy
+        const sections = document.querySelectorAll('section[id], header[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function scrollSpy() {
+            const scrollPos = window.scrollY + 160;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                    mobileNavLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+
+        window.addEventListener('scroll', () => {
+            window.requestAnimationFrame(scrollSpy);
+        });
+        window.addEventListener('load', scrollSpy);
+
+        // Smooth Scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== "#" && href.startsWith("#")) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // S5 Showcase Carousel centering logic (Ref 1 Style)
+        const showcaseSlides = Array.from(document.querySelectorAll('.showcase-slide'));
+        const showcaseBgs = Array.from(document.querySelectorAll('.showcase-bg'));
+        const trackShowcase = document.querySelector('.showcase-track');
+        const arrowLeftShowcase = document.querySelector('.showcase-nav-arrow.arrow-left');
+        const arrowRightShowcase = document.querySelector('.showcase-nav-arrow.arrow-right');
+        let currentShowcaseIdx = 0;
+
+        function updateShowcase(idx) {
+            showcaseSlides.forEach(slide => slide.classList.remove('active'));
+            const activeSlide = showcaseSlides[idx];
+            activeSlide.classList.add('active');
+
+            showcaseBgs.forEach(bg => bg.classList.remove('active'));
+            showcaseBgs[idx].classList.add('active');
+
+            const containerWidth = document.querySelector('.showcase-carousel-wrapper').getBoundingClientRect().width;
+            const activeSlideWidth = activeSlide.getBoundingClientRect().width;
+            const activeSlideOffsetLeft = activeSlide.offsetLeft;
+            
+            const offset = (containerWidth / 2) - activeSlideOffsetLeft - (activeSlideWidth / 2);
+            trackShowcase.style.transform = `translateX(${offset}px)`;
+            currentShowcaseIdx = idx;
+        }
+
+        window.addEventListener('resize', () => updateShowcase(currentShowcaseIdx));
+        window.addEventListener('load', () => setTimeout(() => updateShowcase(0), 150));
+        
+        showcaseSlides.forEach((slide, idx) => {
+            slide.addEventListener('click', () => updateShowcase(idx));
+        });
+
+        arrowLeftShowcase.addEventListener('click', () => {
+            let next = (currentShowcaseIdx - 1 + showcaseSlides.length) % showcaseSlides.length;
+            updateShowcase(next);
+        });
+
+        arrowRightShowcase.addEventListener('click', () => {
+            let next = (currentShowcaseIdx + 1) % showcaseSlides.length;
+            updateShowcase(next);
+        });
+
+        // S7 Ambient Carousel Logic (Ref 2 Style)
+        const trackAmbient = document.querySelector('.carousel-track');
+        const slidesAmbient = Array.from(trackAmbient.children);
+        const nextButtonAmbient = document.querySelector('.ambient-carousel-wrapper .arrow-next');
+        const prevButtonAmbient = document.querySelector('.ambient-carousel-wrapper .arrow-prev');
+        let currentAmbientIdx = 0;
+
+        function updateAmbientCarousel(idx) {
+            slidesAmbient.forEach(slide => slide.classList.remove('active'));
+            slidesAmbient[idx].classList.add('active');
+            
+            const slideWidth = slidesAmbient[0].getBoundingClientRect().width;
+            const gap = 24; // margin/gap between slides
+            const amountToMove = -idx * (slideWidth + gap);
+            trackAmbient.style.transform = `translateX(${amountToMove}px)`;
+            currentAmbientIdx = idx;
+        }
+
+        nextButtonAmbient.addEventListener('click', () => {
+            currentAmbientIdx = (currentAmbientIdx + 1) % slidesAmbient.length;
+            updateAmbientCarousel(currentAmbientIdx);
+        });
+
+        prevButtonAmbient.addEventListener('click', () => {
+            currentAmbientIdx = (currentAmbientIdx - 1 + slidesAmbient.length) % slidesAmbient.length;
+            updateAmbientCarousel(currentAmbientIdx);
+        });
+
+        window.addEventListener('resize', () => updateAmbientCarousel(currentAmbientIdx));
+    </script>
+</body>
+</html>
