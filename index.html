@@ -25,7 +25,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Pinyon+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Pinyon+Script&display=swap" rel="stylesheet">
 
     <!-- PDF.js for Custom PDF Rendering & Custom Scrollbars -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
@@ -91,12 +91,34 @@
          ======================================== -->
     <header class="header" id="navbar">
         <div class="header-container">
-            <!-- Menu Esquerdo -->
-            <ul class="nav-menu nav-menu-left">
-                <li><a href="#sobre" class="nav-link">Sobre</a></li>
-                <li><a href="#cardapio" class="nav-link">Cardápio</a></li>
-                <li><a href="#eventos" class="nav-link">Eventos & Experiências</a></li>
-            </ul>
+            <!-- Menu Esquerdo + Redes Sociais -->
+            <div class="header-left-side">
+                <div class="header-socials">
+                    <a href="https://facebook.com" target="_blank" class="header-social-link" aria-label="Siga-nos no Facebook">
+                        <svg class="header-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="header-social-link" aria-label="Siga-nos no Instagram">
+                        <svg class="header-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="https://api.whatsapp.com" target="_blank" class="header-social-link" aria-label="Fale conosco no WhatsApp">
+                        <svg class="header-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+                            <path d="M9 10a.5.5 0 0 0 1 0v-1a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
+                        </svg>
+                    </a>
+                </div>
+                <span class="header-separator">|</span>
+                <ul class="nav-menu nav-menu-left">
+                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="#cardapio" class="nav-link">Cardápio</a></li>
+                </ul>
+            </div>
 
             <!-- Logo Centralizada -->
             <a href="#home" class="header-logo" aria-label="Voltar ao topo">
@@ -106,30 +128,10 @@
             <!-- Menu Direito + Ações -->
             <div class="header-right-side">
                 <ul class="nav-menu nav-menu-right">
-                    <li><a href="#reserva" class="nav-link">Contato</a></li>
-                    <li><a href="#localizacao" class="nav-link">Localização</a></li>
+                    <li><a href="#localizacao" class="nav-link">Contato & Localização</a></li>
                 </ul>
 
                 <button class="btn-header-reserve trigger-modal">FAÇA SUA RESERVA</button>
-                <span class="header-separator">|</span>
-                <a href="https://facebook.com" target="_blank" class="header-social-link" aria-label="Siga-nos no Facebook">
-                    <svg class="header-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                    </svg>
-                </a>
-                <a href="https://instagram.com" target="_blank" class="header-social-link" aria-label="Siga-nos no Instagram">
-                    <svg class="header-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                    </svg>
-                </a>
-                <a href="https://api.whatsapp.com" target="_blank" class="header-social-link" aria-label="Fale conosco no WhatsApp">
-                    <svg class="header-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
-                        <path d="M9 10a.5.5 0 0 0 1 0v-1a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
-                    </svg>
-                </a>
             </div>
 
             <!-- Hamburger Button -->
@@ -147,9 +149,7 @@
         <button class="mobile-nav-close" id="mobileNavClose" aria-label="Fechar menu">&times;</button>
         <a href="#sobre" class="mobile-nav-link">Sobre</a>
         <a href="#cardapio" class="mobile-nav-link">Cardápio</a>
-        <a href="#eventos" class="mobile-nav-link">Eventos & Experiências</a>
-        <a href="#reserva" class="mobile-nav-link">Contato</a>
-        <a href="#localizacao" class="mobile-nav-link">Localização</a>
+        <a href="#localizacao" class="mobile-nav-link">Contato & Localização</a>
         <button class="mobile-nav-link trigger-modal" style="color: var(--wine-gold); margin-top: 1rem; text-align: left;">Faça Sua Reserva</button>
         <div class="mobile-socials" style="margin-top: auto; display: flex; gap: 1.5rem; padding-top: 2rem;">
             <a href="https://facebook.com" target="_blank" style="color: var(--wine-cream);" aria-label="Siga-nos no Facebook">
@@ -475,9 +475,9 @@
                 </div>
 
                 <h2 class="sobre-headline">
-                    <span class="sobre-line-1">O PRAZER,</span>
+                    <span class="sobre-line-1">O <strong>PRAZER</strong>,</span>
                     <span class="sobre-script-gold">elevado</span>
-                    <span class="sobre-line-2">AO SEU MELHOR</span>
+                    <span class="sobre-line-2">AO SEU <span class="sobre-highlight-gold">MELHOR</span></span>
                     <span class="sobre-line-3">ENCONTRO.</span>
                 </h2>
 
@@ -505,46 +505,181 @@
         </div>
     </section>
 
-
-
-
     <!-- ========================================
-         SEÇÃO 4: HARMONIZAÇÕES EXCLUSIVAS (SPLIT LAYOUT)
+         SEÇÃO 3: CARROSSEL SHOWCASE DE EXPERIÊNCIAS (ALMOÇO, JANTAR, HAPPY HOUR, EVENTOS)
          ======================================== -->
-    <section id="gastronomia" class="split-section-v2 parallax-container">
-        <!-- Imagem lado Esquerdo - Foto Harmonizações com Parallax Horizontal (Esquerda -> Direita) -->
-        <div class="split-v2-img-left reveal-up">
-            <img src="assets/S3 Harmonizacoes/S3 Harmonizacoes-FotoHorizontal.webp" class="parallax-img-h" data-parallax-direction="horizontal" data-parallax-speed="0.35" alt="Harmonizações Exclusivas The Wine Experience">
+    <section class="showcase-section" id="experiencia">
+        <div class="showcase-backgrounds">
+            <div class="showcase-bg active" style="background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('assets/gastronomia/gastronomia-buffet-pratos-quentes.webp');"></div>
+            <div class="showcase-bg" style="background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('assets/gastronomia/gastronomia-pizza-calabresa.webp');"></div>
+            <div class="showcase-bg" style="background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('assets/experiencias/experiencia-chopp-heineken.webp');"></div>
+            <div class="showcase-bg" style="background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('assets/experiencias/experiencia-atendimento-garcom.webp');"></div>
         </div>
         
-        <!-- Conteúdo Central -->
-        <div class="split-v2-content reveal-up parallax-element" data-parallax-speed="0.10" style="transition-delay: 0.1s;">
-            <span class="split-tag">Harmonizações exclusivas</span>
-            <h2 class="split-title">Cada detalhe pensado para <br><span class="italic-script">encantar</span> seu paladar</h2>
-            <p class="split-text">
-                Nossos sommeliers e chefs unem técnica, sensibilidade e curadoria para criar combinações que valorizam cada prato, cada rótulo e cada momento.
-            </p>
-
-            <div style="align-self: flex-start;">
-                <button class="btn-gold-outline trigger-modal">FAÇA SUA RESERVA</button>
+        <div class="showcase-carousel-wrapper">
+            <div class="showcase-track">
+                <!-- Slide 1: Almoço -->
+                <div class="showcase-slide active" data-index="0">
+                    <div class="showcase-top-accent">
+                        <span class="showcase-line left"></span>
+                        <span class="showcase-script">nosso</span>
+                        <span class="showcase-line right"></span>
+                    </div>
+                    <h3 class="showcase-title">ALMOÇO</h3>
+                    <span class="showcase-subtitle">BUFFET VARIADO E CONTEMPORÂNEO</span>
+                    <div class="showcase-bottom-ornament">
+                        <span class="showcase-line left"></span>
+                        <span class="showcase-diamond">◇</span>
+                        <span class="showcase-line right"></span>
+                    </div>
+                </div>
+                <!-- Slide 2: Jantar -->
+                <div class="showcase-slide" data-index="1">
+                    <div class="showcase-top-accent">
+                        <span class="showcase-line left"></span>
+                        <span class="showcase-script">um novo</span>
+                        <span class="showcase-line right"></span>
+                    </div>
+                    <h3 class="showcase-title">JANTAR</h3>
+                    <span class="showcase-subtitle">MENU À LA CARTE ESPECIAL</span>
+                    <div class="showcase-bottom-ornament">
+                        <span class="showcase-line left"></span>
+                        <span class="showcase-diamond">◇</span>
+                        <span class="showcase-line right"></span>
+                    </div>
+                </div>
+                <!-- Slide 3: Happy Hour -->
+                <div class="showcase-slide" data-index="2">
+                    <div class="showcase-top-accent">
+                        <span class="showcase-line left"></span>
+                        <span class="showcase-script">happy</span>
+                        <span class="showcase-line right"></span>
+                    </div>
+                    <h3 class="showcase-title">HOUR</h3>
+                    <span class="showcase-subtitle">CHOPP GELADO & DRINKS</span>
+                    <div class="showcase-bottom-ornament">
+                        <span class="showcase-line left"></span>
+                        <span class="showcase-diamond">◇</span>
+                        <span class="showcase-line right"></span>
+                    </div>
+                </div>
+                <!-- Slide 4: Eventos -->
+                <div class="showcase-slide" data-index="3">
+                    <div class="showcase-top-accent">
+                        <span class="showcase-line left"></span>
+                        <span class="showcase-script">seus</span>
+                        <span class="showcase-line right"></span>
+                    </div>
+                    <h3 class="showcase-title">EVENTOS</h3>
+                    <span class="showcase-subtitle">ESPAÇOS VARIADOS E CLIMATIZADOS</span>
+                    <div class="showcase-bottom-ornament">
+                        <span class="showcase-line left"></span>
+                        <span class="showcase-diamond">◇</span>
+                        <span class="showcase-line right"></span>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Imagem lado Direito - Taça de Vinho -->
-        <div class="split-v2-img-right reveal-up">
-            <img src="assets/S3 Harmonizacoes/S3-TACA-VINHO.webp" class="parallax-img" data-parallax-speed="0.38" alt="Taça de vinho tinto sendo servida">
+        <!-- Botões de navegação do carrossel -->
+        <button class="showcase-nav-arrow arrow-left" aria-label="Anterior">&lsaquo;</button>
+        <button class="showcase-nav-arrow arrow-right" aria-label="Próximo">&rsaquo;</button>
+    </section>
+
+
+    <!-- ========================================
+         SEÇÃO: MOMENTOS PARA COMPARTILHAR (FUNDO BRANCO - FOTOS À ESQUERDA, TEXTOS À DIREITA)
+         ======================================== -->
+    <!-- ========================================
+         SEÇÃO: MOMENTOS PARA COMPARTILHAR (FUNDO PRETO & SPLIT 50/50 - FOTOS 25%+25% À ESQUERDA, TEXTOS À DIREITA)
+         ======================================== -->
+    <section class="villa-moments-section" id="conceito">
+        <div class="villa-moments-split">
+            <!-- Lado Esquerdo: 2 Fotos Full Bleed (25% + 25% = 50% da largura total) -->
+            <div class="villa-moments-photos-col">
+                <div class="villa-moments-photo-item">
+                    <img src="assets/gastronomia/gastronomia-buffet-pratos-quentes.webp" alt="Buffet contemporâneo no Villa Plaza Restaurante" loading="lazy" decoding="async">
+                </div>
+                <div class="villa-moments-photo-item">
+                    <img src="assets/experiencias/experiencia-chopp-heineken.webp" alt="Chopp gelado servido na torneira no Villa Plaza" loading="lazy" decoding="async">
+                </div>
+            </div>
+
+            <!-- Lado Direito: Textos e Ícones (50% da largura total em Fundo Preto) -->
+            <div class="villa-moments-content-col">
+                <div class="villa-moments-content-inner reveal-up">
+                    <div class="sobre-header-tag">
+                        <span class="sobre-sub">BUFFET, HAPPY HOUR</span>
+                        <span class="sobre-brand">E ACOLHIMENTO</span>
+                    </div>
+
+                    <h2 class="villa-moments-title sobre-headline">
+                        <span class="sobre-line-1">MUITO MAIS QUE <strong>REFEIÇÕES</strong>,</span>
+                        <span class="sobre-script-gold">momentos</span>
+                        <span class="sobre-line-2">PARA COMPARTILHAR.</span>
+                    </h2>
+
+                    <div class="sobre-divider-diamond">
+                        <span class="line left"></span>
+                        <span class="diamond">◆</span>
+                        <span class="line right"></span>
+                    </div>
+                    
+                    <p class="villa-moments-description">
+                        Buffet contemporâneo, happy hour descontraído e um atendimento próximo que faz você se sentir sempre em casa.
+                    </p>
+
+                    <div class="villa-moments-features">
+                        <div class="villa-moments-feature-item">
+                            <div class="villa-moments-feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7z"/>
+                                    <path d="M5 20h14"/>
+                                </svg>
+                            </div>
+                            <span class="villa-moments-feature-text">BUFFET COMPLETO<br>E VARIADO</span>
+                        </div>
+
+                        <div class="villa-moments-feature-item">
+                            <div class="villa-moments-feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M8 22h8"/>
+                                    <path d="M12 15v7"/>
+                                    <path d="M12 15A5 5 0 0 0 7 10V3h10v7a5 5 0 0 0-5 5Z"/>
+                                    <path d="M7 6h10"/>
+                                </svg>
+                            </div>
+                            <span class="villa-moments-feature-text">HAPPY HOUR<br>TODOS OS DIAS</span>
+                        </div>
+
+                        <div class="villa-moments-feature-item">
+                            <div class="villa-moments-feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                </svg>
+                            </div>
+                            <span class="villa-moments-feature-text">ATENDIMENTO PRÓXIMO<br>E ATENCIOSO</span>
+                        </div>
+                    </div>
+
+                    <div class="villa-moments-action">
+                        <button class="btn-villa-moments-reserve trigger-modal">FAÇA SUA RESERVA</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
+
     <!-- ========================================
-         SEÇÃO 5: CARDÁPIO À LA CARTE (SPLIT CREAM + VIDEO)
+         SEÇÃO 5: CARDÁPIO À LA CARTE (SPLIT CREAM + VINHO)
          ======================================== -->
     <section id="cardapio" class="cardapio-split-section parallax-container">
         <!-- Lado Esquerdo: Fundo Creme com Texto -->
         <div class="cardapio-left-cream">
             <div class="cardapio-left-content reveal-up parallax-element" data-parallax-speed="0.10">
                 <span class="split-tag">— MENU —</span>
-                <h2 class="split-title">Confira o <br>Nosso <span class="italic-script">Cardápio</span></h2>
+                <h2 class="split-title"><span class="typo-light" style="font-size: 0.8em; letter-spacing: 0.08em; text-transform: uppercase;">Confira o</span> <br><strong class="typo-extrabold" style="color: #57101D;">NOSSO</strong> <span class="italic-script">Cardápio</span></h2>
                 <p>
                     Pratos autorais elaborados com ingredientes selecionados e apresentação impecável.
                 </p>
@@ -552,251 +687,147 @@
             </div>
         </div>
 
-        <!-- Lado Direito: Vídeo de Fundo -->
+        <!-- Lado Direito: Fundo Vinho Elegante -->
         <div class="cardapio-right-video">
-            <video autoplay muted loop playsinline class="parallax-img" data-parallax-speed="0.25">
-                <source src="assets/CardapioMenu/video-cardapio.mp4" type="video/mp4">
-            </video>
+            <div class="cardapio-right-overlay"></div>
         </div>
 
         <!-- Imagem do Menu Flutuante -->
-        <img class="cardapio-menu-float trigger-menu-modal" src="assets/CardapioMenu/MENU-THE-WINE-MOCKUP.webp" alt="Cardápio The Wine Experience" onclick="openMenuModal()" style="cursor: pointer;">
+        <img class="cardapio-menu-float trigger-menu-modal" src="assets/CardapioMenu/cardapio-villa-plaza-open.png" alt="Cardápio Villa Plaza Restaurante" onclick="openMenuModal()" style="cursor: pointer;">
     </section>
 
-    <!-- ========================================
-         SEÇÃO 6: EVENTOS & EXPERIÊNCIAS (ACCORDION)
-         ======================================== -->
-    <!-- Header (seção separada, acima das fotos) -->
-    <div class="tw-acc-header" id="eventos">
-        <span class="tw-acc-header__tag">O que você encontra no The Wine</span>
-        <h2 class="tw-acc-header__title">Nossos Eventos <em>&</em> Experiências</h2>
-    </div>
-
-    <!-- Accordion Photos — 100vh full bleed -->
-    <section class="tw-acc" aria-label="Eventos e Experiências do The Wine">
-      <ul class="tw-acc__row">
-
-        <!-- 1. Jantar Harmonizado (inicia aberto) -->
-        <li class="tw-acc__panel tw-acc__panel--active">
-          <a class="tw-acc__link" href="#eventos">
-            <img src="assets/Gastronomia/prato-carne-grelhada-gnocchi.webp" width="700" height="900" alt="Prato gourmet do jantar harmonizado no The Wine">
-            <span class="tw-acc__cap">
-              <svg class="tw-acc__cap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 2v20M4 2v6a4 4 0 0 0 4 4h0a4 4 0 0 0 4-4V2M8 2v10"/>
-              </svg>
-              <span class="tw-acc__cap-title">Jantar Harmonizado</span>
-              <span class="tw-acc__cap-sub">Uma vez ao mês</span>
-              <span class="tw-acc__extra">
-                <span class="tw-acc__desc">Menus exclusivos criados pelo chef, onde cada prato encontra seu vinho perfeito em uma experiência enogastronômica completa.</span>
-                <span class="tw-acc__btn">
-                  Saiba mais
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </span>
-              </span>
-            </span>
-          </a>
-        </li>
-
-        <!-- 2. Noite de Degustação -->
-        <li class="tw-acc__panel">
-          <a class="tw-acc__link" href="#eventos">
-            <img src="assets/Experiencias/evento-degustacao-noite.webp" width="700" height="900" alt="Noite de degustação com taças de vinho no The Wine" loading="lazy" decoding="async">
-            <span class="tw-acc__cap">
-              <svg class="tw-acc__cap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M8 2h8M12 15v7M8 22h8M12 15a5 5 0 0 0 5-5V2H7v8a5 5 0 0 0 5 5z"/>
-              </svg>
-              <span class="tw-acc__cap-title">Noite de Degustação</span>
-              <span class="tw-acc__cap-sub">Toda 1ª sexta-feira do mês</span>
-              <span class="tw-acc__extra">
-                <span class="tw-acc__desc">Uma noite dedicada a descobrir novos rótulos, com curadoria especial e harmonizações que surpreendem o paladar.</span>
-                <span class="tw-acc__btn">
-                  Saiba mais
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </span>
-              </span>
-            </span>
-          </a>
-        </li>
-
-        <!-- 3. Wine Tasting -->
-        <li class="tw-acc__panel">
-          <a class="tw-acc__link" href="#eventos">
-            <img src="assets/Experiencias/IAG_6526-oficial.webp" width="700" height="900" alt="Experiência de wine tasting no The Wine">
-            <span class="tw-acc__cap">
-              <svg class="tw-acc__cap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="16" rx="2"/>
-                <path d="M7 8h4M7 12h10M7 16h6"/>
-              </svg>
-              <span class="tw-acc__cap-title">Wine Tasting</span>
-              <span class="tw-acc__cap-sub">Sob agendamento</span>
-              <span class="tw-acc__extra">
-                <span class="tw-acc__desc">Degustações guiadas para pequenos grupos, com seleção de rótulos e aprendizado sensorial em ambiente exclusivo.</span>
-                <span class="tw-acc__btn">
-                  Saiba mais
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </span>
-              </span>
-            </span>
-          </a>
-        </li>
-
-        <!-- 4. Evento Corporativo -->
-        <li class="tw-acc__panel">
-          <a class="tw-acc__link" href="#eventos">
-            <img src="assets/Ambiente/mesa-reservada-adega.webp" width="700" height="900" alt="Mesa reservada para evento corporativo na adega do The Wine">
-            <span class="tw-acc__cap">
-              <svg class="tw-acc__cap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="9" cy="7" r="3"/>
-                <circle cx="15" cy="7" r="3"/>
-                <path d="M3 21v-2a4 4 0 0 1 4-4h2"/>
-                <path d="M15 15h2a4 4 0 0 1 4 4v2"/>
-                <circle cx="12" cy="11" r="3"/>
-                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
-              </svg>
-              <span class="tw-acc__cap-title">Evento Corporativo</span>
-              <span class="tw-acc__cap-sub">Sob consulta</span>
-              <span class="tw-acc__extra">
-                <span class="tw-acc__desc">Celebrações íntimas, encontros corporativos e ocasiões especiais com ambientação personalizada e serviço impecável.</span>
-                <span class="tw-acc__btn">
-                  Saiba mais
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </span>
-              </span>
-            </span>
-          </a>
-        </li>
-
-        <!-- 5. Máquinas de Vinho -->
-        <li class="tw-acc__panel">
-          <a class="tw-acc__link" href="#eventos">
-            <img src="assets/Experiencias/maquina-de-vinho.webp" width="700" height="900" alt="Degustação em máquina de vinhos no The Wine Experience" loading="lazy" decoding="async">
-            <span class="tw-acc__cap">
-              <svg class="tw-acc__cap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M8 22h8M12 15v7M8 22h8M12 15a5 5 0 0 0 5-5V2H7v8a5 5 0 0 0 5 5z"/>
-                <path d="M7 9h10"/>
-              </svg>
-              <span class="tw-acc__cap-title">Máquinas de Vinho</span>
-              <span class="tw-acc__cap-sub">Escolha sua taça</span>
-              <span class="tw-acc__extra">
-                <span class="tw-acc__desc">No The Wine Experience, você escolhe o rótulo, a origem e o estilo direto na nossa máquina de vinhos — uma forma prática e elegante de descobrir novos sabores, na medida da sua taça.<br><br><em>Qual seria a sua escolha hoje?</em></span>
-                <span class="tw-acc__btn">
-                  Saiba mais
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </span>
-              </span>
-            </span>
-          </a>
-        </li>
-
-      </ul>
-    </section>
 
     <!-- ========================================
-         1. CTA RESERVATION SECTION
+         2. DESTAQUES & EXPERIÊNCIAS (6-CARDS GRID)
          ======================================== -->
-    <section class="cta-reservation" id="reserva">
-        <div class="cta-reservation__bg"></div>
-        <div class="cta-reservation__content">
-            <p class="cta-reservation__label">Reserve Sua Experiência</p>
-            <div class="cta-reservation__ornament">
-                <span class="cta-reservation__ornament-line"></span>
-                <span class="cta-reservation__ornament-diamond"></span>
-                <span class="cta-reservation__ornament-line"></span>
+    <section class="vp-feature-grid-section" id="galeria">
+        <div class="vp-feature-grid">
+            <!-- Card 1: Ambiente Acolhedor -->
+            <div class="vp-card vp-card-tall">
+                <img src="assets/ambiente/ambiente-salao-principal.webp" alt="Ambiente Acolhedor Villa Plaza" loading="lazy">
+                <div class="vp-card-overlay"></div>
+                <div class="vp-card-label">
+                    <span>AMBIENTE</span>
+                    <span>ACOLHEDOR</span>
+                </div>
             </div>
-            <h2 class="cta-reservation__headline">
-                Sua mesa está
-                <span class="cta-reservation__headline-script">esperando</span>
+
+            <!-- Card 2: Feijoada Tradicional -->
+            <div class="vp-card vp-card-tall">
+                <img src="assets/experiencias/experiencia-brinde-vinho.webp" alt="Feijoada Tradicional Villa Plaza" loading="lazy">
+                <div class="vp-card-overlay"></div>
+                <div class="vp-card-label">
+                    <span>FEIJOADA</span>
+                    <span>TRADICIONAL</span>
+                </div>
+            </div>
+
+            <!-- Card Column 3 (Stacked: Pratos Autorais + Iscas & Petiscos) -->
+            <div class="vp-card-col-stacked">
+                <div class="vp-card vp-card-half">
+                    <img src="assets/gastronomia/gastronomia-prato-gourmet.webp" alt="Pratos Autorais" loading="lazy">
+                    <div class="vp-card-overlay"></div>
+                    <div class="vp-card-label">
+                        <span>PRATOS</span>
+                        <span>AUTORAIS</span>
+                    </div>
+                </div>
+                <div class="vp-card vp-card-half">
+                    <img src="assets/experiencias/experiencia-encontro-amigos.webp" alt="Iscas e Petiscos Crocantes" loading="lazy">
+                    <div class="vp-card-overlay"></div>
+                    <div class="vp-card-label">
+                        <span>ISCAS &</span>
+                        <span>PETISCOS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Pizzas Artesanais -->
+            <div class="vp-card vp-card-tall">
+                <img src="assets/ambiente/ambiente-espaco-eventos.webp" alt="Pizzas Artesanais Villa Plaza" loading="lazy">
+                <div class="vp-card-overlay"></div>
+                <div class="vp-card-label">
+                    <span>PIZZAS</span>
+                    <span>ARTESANAIS</span>
+                </div>
+            </div>
+
+            <!-- Card Column 5 (Stacked: Buffet Completo + Porções & Petiscos) -->
+            <div class="vp-card-col-stacked">
+                <div class="vp-card vp-card-half">
+                    <img src="assets/gastronomia/gastronomia-menu-sobremesa.webp" alt="Buffet Completo" loading="lazy">
+                    <div class="vp-card-overlay"></div>
+                    <div class="vp-card-label">
+                        <span>BUFFET</span>
+                        <span>COMPLETO</span>
+                    </div>
+                </div>
+                <div class="vp-card vp-card-half">
+                    <img src="assets/experiencias/experiencia-drinks-cocktails.webp" alt="Porções e Petiscos Variados" loading="lazy">
+                    <div class="vp-card-overlay"></div>
+                    <div class="vp-card-label">
+                        <span>PORÇÕES &</span>
+                        <span>PETISCOS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SEÇÃO FAÇA SUA RESERVA (BANNER RODAPÉ)
+         ======================================== -->
+    <section class="reserva-banner-rodape trigger-modal" id="reserva-banner-rodape" role="button" aria-label="Faça sua Reserva no Villa Plaza">
+        <div class="reserva-banner-rodape__bg" style="background-image: url('assets/ambiente/ambiente-interior-mezanino.webp');"></div>
+        <div class="reserva-banner-rodape__overlay"></div>
+        <div class="reserva-banner-rodape__content">
+            
+            <!-- Linha Superior com Nome da Marca -->
+            <div class="reserva-banner-rodape__top">
+                <span class="reserva-banner-rodape__line"></span>
+                <span class="reserva-banner-rodape__brand">VILLA PLAZA</span>
+                <span class="reserva-banner-rodape__line"></span>
+            </div>
+
+            <!-- Título Principal -->
+            <h2 class="reserva-banner-rodape__headline">
+                <span class="reserva-banner-rodape__script">Faça sua</span>
+                <span class="reserva-banner-rodape__main">RESERVA</span>
             </h2>
-            <p class="cta-reservation__subtitle">
-                Garanta seu lugar e viva uma experiência única<br>
-                em um ambiente exclusivo.
-            </p>
-            <button class="cta-reservation__btn trigger-modal" 
-                    id="btn-reservar-agora">
-                FAÇA SUA RESERVA
-            </button>
-        </div>
-    </section>
 
-    <!-- ========================================
-         2. GALLERY / PHOTO ALBUM WITH INFINITE CAROUSEL
-         ======================================== -->
-    <section class="gallery" id="galeria" aria-label="Álbum de fotografias do The Wine Experience">
-        <button class="gallery-arrow gallery-arrow-left" aria-label="Fotografia anterior">
-            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
-        </button>
-
-        <div class="gallery-viewport">
-            <div class="gallery-track" id="galleryTrack">
-                <!-- Original set -->
-                <button class="gallery-item" data-index="0" type="button" aria-label="Ver fotografia em tela cheia">
-                    <img src="assets/Vinhos/garrafas-vinho-cartuxa-tapada.webp" alt="Garrafas de vinho selecionadas The Wine Experience" loading="eager" decoding="async">
-                </button>
-                <button class="gallery-item" data-index="1" type="button" aria-label="Ver fotografia em tela cheia">
-                    <img src="assets/Gastronomia/prato-carne-grelhada-gnocchi.webp" alt="Prato de carne grelhada com gnocchi" loading="lazy" decoding="async">
-                </button>
-                <button class="gallery-item" data-index="2" type="button" aria-label="Ver fotografia em tela cheia">
-                    <img src="assets/Vinhos/servindo-vinho-tinto.webp" alt="Sommelier servindo vinho tinto" loading="lazy" decoding="async">
-                </button>
-                <button class="gallery-item" data-index="3" type="button" aria-label="Ver fotografia em tela cheia">
-                    <img src="assets/Gastronomia/prato-salmao-legumes-grelhados.webp" alt="Prato de salmão com legumes grelhados" loading="lazy" decoding="async">
-                </button>
-                <button class="gallery-item" data-index="4" type="button" aria-label="Ver fotografia em tela cheia">
-                    <img src="assets/Experiencias/evento-degustacao-brindezada.jpg" alt="Degustação de vinhos com brinde" loading="lazy" decoding="async">
-                </button>
-                <button class="gallery-item" data-index="5" type="button" aria-label="Ver fotografia em tela cheia">
-                    <img src="assets/Gastronomia/drinks-coqueteis-bar.webp" alt="Drinks e coquetéis no bar" loading="lazy" decoding="async">
-                </button>
-                <button class="gallery-item" data-index="6" type="button" aria-label="Ver fotografia em tela cheia">
-                    <img src="assets/Ambiente/parede-vinhos-decoracao.webp" alt="Parede de vinhos e decoração" loading="lazy" decoding="async">
-                </button>
-                <button class="gallery-item" data-index="7" type="button" aria-label="Ver fotografia em tela cheia">
-                    <img src="assets/Gastronomia/prato-camarao-cremoso.webp" alt="Prato de camarão cremoso" loading="lazy" decoding="async">
-                </button>
-                <button class="gallery-item" data-index="8" type="button" aria-label="Ver fotografia em tela cheia">
-                    <img src="assets/Experiencias/jantar-harmonizado-brinde.webp" alt="Jantar harmonizado com brinde" loading="lazy" decoding="async">
-                </button>
-                <button class="gallery-item" data-index="9" type="button" aria-label="Ver fotografia em tela cheia">
-                    <img src="assets/Gastronomia/chef-finalizando-prato.webp" alt="Chef finalizando prato" loading="lazy" decoding="async">
-                </button>
-                <button class="gallery-item" data-index="10" type="button" aria-label="Ver fotografia em tela cheia">
-                    <img src="assets/Vinhos/garrafas-vinho-branco-gelo.webp" alt="Garrafas de vinho branco no gelo" loading="lazy" decoding="async">
-                </button>
-                <button class="gallery-item" data-index="11" type="button" aria-label="Ver fotografia em tela cheia">
-                    <img src="assets/Gastronomia/preparo-drink-coquetel.webp" alt="Preparo de drink e coquetel" loading="lazy" decoding="async">
-                </button>
+            <!-- Subtítulo / Tags -->
+            <div class="reserva-banner-rodape__sub">
+                <span>MESA</span>
+                <span class="bullet">•</span>
+                <span>EXPERIÊNCIA</span>
+                <span class="bullet">•</span>
+                <span>MOMENTOS ESPECIAIS</span>
             </div>
-        </div>
 
-        <button class="gallery-arrow gallery-arrow-right" aria-label="Próxima fotografia">
-            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
-        </button>
+            <!-- Divisor Inferior com Losango -->
+            <div class="reserva-banner-rodape__bottom">
+                <span class="reserva-banner-rodape__line"></span>
+                <span class="reserva-banner-rodape__diamond">◇</span>
+                <span class="reserva-banner-rodape__line"></span>
+            </div>
+
+            <!-- Botão Minimalista Faça Sua Reserva -->
+            <button class="reserva-banner-rodape__btn trigger-modal" type="button">
+                <span>FAÇA SUA RESERVA</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="3" ry="3"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                    <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path>
+                </svg>
+            </button>
+
+        </div>
     </section>
 
     <!-- ========================================
-         3. LIGHTBOX
-         ======================================== -->
-    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizador de fotografias">
-        <button class="lightbox-close" id="lightboxClose" aria-label="Fechar galeria">
-            <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-        </button>
-
-        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Fotografia anterior">
-            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
-        </button>
-
-        <figure class="lightbox-content">
-            <img class="lightbox-image" id="lightboxImage" src="" alt="">
-            <figcaption class="lightbox-counter" id="lightboxCounter"></figcaption>
-        </figure>
-
-        <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Próxima fotografia">
-            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
-        </button>
-    </div>
-
-    <!-- ========================================
-         4. PREMIUM FOOTER
+         3. PREMIUM FOOTER VILLA PLAZA
          ======================================== -->
     <footer class="footer-premium" id="localizacao">
         <div class="footer-premium__inner">
@@ -807,133 +838,101 @@
                      alt="Villa Plaza Restaurante Logo" 
                      class="footer-logo-img">
 
-                <div class="footer-logo-divider">
-                    <span class="footer-logo-divider__line"></span>
-                    <svg class="footer-logo-divider__icon" viewBox="0 0 24 24">
-                        <polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"></polygon>
-                    </svg>
-                    <span class="footer-logo-divider__line"></span>
-                </div>
-
                 <div class="footer-socials">
-                    <a href="https://www.instagram.com/thewinebelem/" target="_blank" class="footer-social-link" aria-label="Siga-nos no Instagram">
-                        <svg viewBox="0 0 24 24">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                        </svg>
+                    <a href="https://www.instagram.com/villaplazabelem/" target="_blank" class="footer-social-link" aria-label="Instagram Villa Plaza">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                     </a>
-                    <a href="https://www.facebook.com/thewinebelem/?locale=pt_BR" target="_blank" class="footer-social-link" aria-label="Siga-nos no Facebook">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                        </svg>
+                    <a href="https://www.facebook.com/villaplazabelem/" target="_blank" class="footer-social-link" aria-label="Facebook Villa Plaza">
+                        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                     </a>
-                    <a href="https://www.tiktok.com/@the.wine.xperience" target="_blank" class="footer-social-link" aria-label="Siga-nos no TikTok">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 1 1-5.2-1.74 2.89 2.89 0 0 1 2.31-2.22V8.2a6.34 6.34 0 1 0 6.34 6.34V9.28a8.16 8.16 0 0 0 4.77 1.52V7.35a4.85 4.85 0 0 1-1.00-.66z"/>
-                        </svg>
+                    <a href="https://www.tiktok.com/@villaplazabelem" target="_blank" class="footer-social-link" aria-label="TikTok Villa Plaza">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 1 1-5.2-1.74 2.89 2.89 0 0 1 2.31-2.22V8.2a6.34 6.34 0 1 0 6.34 6.34V9.28a8.16 8.16 0 0 0 4.77 1.52V7.35a4.85 4.85 0 0 1-1.00-.66z"/></svg>
                     </a>
-                    <a href="https://youtube.com/@thewinebelem" target="_blank" class="footer-social-link" aria-label="Assista no YouTube">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.13C5.12 19.56 12 19.56 12 19.56s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"></path>
-                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="var(--footer-gold)" stroke="none"></polygon>
-                        </svg>
+                    <a href="https://youtube.com/@villaplazabelem" target="_blank" class="footer-social-link" aria-label="YouTube Villa Plaza">
+                        <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.13C5.12 19.56 12 19.56 12 19.56s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor" stroke="none"></polygon></svg>
                     </a>
                 </div>
+                <span class="footer-handle">@villaplazabelem</span>
             </div>
 
-            <!-- Column 2: Contact & Location -->
+            <!-- Column 2: Localização -->
             <div class="footer-col footer-col-contact">
                 <h3 class="footer-col__title">
-                    Localização
+                    LOCALIZAÇÃO
                 </h3>
+                <div class="footer-title-star">✦</div>
 
                 <div class="footer-contact-item">
-                    <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <svg viewBox="0 0 24 24" class="footer-icon-gold"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                     <span>
-                        Av. Alcindo Cacela, 1848<br>
-                        Nazaré, Belém – PA<br>
-                        <span style="opacity: 0.65; font-size: 0.78rem;">(Mezanino do +B Supermercados)</span>
+                        Av. Gov. José Malcher, 2388<br>
+                        Belém - PA<br>
+                        <span class="footer-subtext">Mezanino do +B Supermercados</span>
                     </span>
                 </div>
             </div>
 
-            <!-- Column 4: Map (Center) -->
+            <!-- Column 3: Mapa -->
             <div class="footer-col footer-col-map">
-                <a href="https://maps.google.com/?q=The+Wine+Experience+Belem+Alcindo+Cacela+1848" 
+                <a href="https://maps.google.com/?q=Villa+Plaza+Bel%C3%A9m+Gov+Jos%C3%A9+Malcher+2388" 
                    target="_blank" 
                    class="footer-map-link"
                    aria-label="Ver localização no Google Maps">
-                    <img src="assets/Rodape/MAPA-THE-WINE.webp" 
-                         alt="Mapa de localização do The Wine Experience em Nazaré, Belém" 
-                         class="footer-map-img">
+                    <div class="footer-map-frame">
+                        <img src="assets/mapa-vila-plaza.png" 
+                             alt="Mapa de localização do Villa Plaza Belém na Av. Gov. José Malcher" 
+                             class="footer-map-img">
+                    </div>
                 </a>
             </div>
 
-            <!-- Column 5: Hours -->
+            <!-- Column 4: Horário de Funcionamento -->
             <div class="footer-col footer-col-hours">
                 <h3 class="footer-col__title">
-                    Horário de<br>Funcionamento
+                    HORÁRIO DE<br>FUNCIONAMENTO
                 </h3>
-
-                <div class="footer-hours-ornament">
-                    <span class="footer-hours-ornament__line"></span>
-                    <span class="footer-hours-ornament__diamond"></span>
-                    <span class="footer-hours-ornament__line"></span>
-                </div>
+                <div class="footer-title-star">✦</div>
 
                 <div class="footer-hours-block">
                     <div class="footer-hours-day">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                        Segunda a Sábado:
+                        <svg viewBox="0 0 24 24" class="footer-icon-gold"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        <span>Segunda a Sábado</span>
                     </div>
                     <div class="footer-hours-time">12h às 15h / 19h às 23h</div>
                 </div>
 
-                <div class="footer-hours-divider">
-                    <span class="footer-hours-divider__line"></span>
-                    <span class="footer-hours-divider__dot"></span>
-                    <span class="footer-hours-divider__line"></span>
-                </div>
-
-                <div class="footer-hours-block">
+                <div class="footer-hours-block" style="margin-top: 1.2rem;">
                     <div class="footer-hours-day">
-                        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                        Domingo:
+                        <svg viewBox="0 0 24 24" class="footer-icon-gold"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                        <span>Domingo</span>
                     </div>
                     <div class="footer-hours-time">12h às 15h</div>
                 </div>
             </div>
 
-            <!-- Column 6: WhatsApp (Fale Conosco) -->
+            <!-- Column 5: Fale Conosco -->
             <div class="footer-col footer-col-whatsapp">
                 <h3 class="footer-col__title">
-                    Fale Conosco
+                    FALE CONOSCO
                 </h3>
+                <div class="footer-title-star">✦</div>
 
-                <div class="footer-hours-ornament">
-                    <span class="footer-hours-ornament__line"></span>
-                    <span class="footer-hours-ornament__diamond"></span>
-                    <span class="footer-hours-ornament__line"></span>
-                </div>
-
-                <div class="footer-whatsapp-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-                        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 0 0 .611.611l4.458-1.495A11.952 11.952 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.319 0-4.476-.696-6.28-1.886l-.438-.296-3.197 1.072 1.072-3.197-.296-.438A9.958 9.958 0 0 1 2 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/>
+                <div class="footer-whatsapp-icon-gold">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                     </svg>
                 </div>
 
-                <a href="https://api.whatsapp.com/send?phone=5591984040710&text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20uma%20reserva%20no%20The%20Wine%20Experience." 
+                <a href="https://api.whatsapp.com/send?phone=5591984040710&text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20uma%20reserva%20no%20Villa%20Plaza." 
                    target="_blank" 
                    class="footer-whatsapp-number">
                     (91) 98404-0710
                 </a>
 
-                <a href="https://api.whatsapp.com/send?phone=5591984040710&text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20uma%20reserva%20no%20The%20Wine%20Experience." 
+                <a href="https://api.whatsapp.com/send?phone=5591984040710&text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20uma%20reserva%20no%20Villa%20Plaza." 
                    target="_blank" 
-                   class="footer-whatsapp-btn">
-                    Chamar no WhatsApp
+                   class="footer-whatsapp-btn-gold footer-whatsapp-btn">
+                    CHAMAR NO WHATSAPP
                 </a>
             </div>
 
@@ -942,19 +941,15 @@
         <!-- Footer Bottom -->
         <div class="footer-bottom">
             <div class="footer-bottom__inner">
-                <span class="footer-bottom__left">© 2024 The Wine Experience. Todos os direitos reservados.</span>
+                <span class="footer-bottom__left">© 2024 Villa Plaza. Todos os direitos reservados.</span>
 
                 <div class="footer-bottom__center">
-                    <span class="footer-bottom__center-line"></span>
-                    <svg class="footer-bottom__center-icon" viewBox="0 0 24 24">
-                        <polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"></polygon>
-                    </svg>
-                    <span class="footer-bottom__center-line"></span>
+                    <span class="star-accent">✦</span>
                 </div>
 
                 <div class="footer-bottom__right">
                     <a href="#">Política de Privacidade</a>
-                    <span style="color: rgba(234, 187, 117, 0.5); font-size: 0.7rem;">·</span>
+                    <span class="dot-separator">•</span>
                     <a href="#">Termos de Uso</a>
                 </div>
             </div>
@@ -1235,8 +1230,8 @@
                 </svg>
             </div>
             
-            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 500; color: var(--wine-gold); margin-bottom: 0.6rem; letter-spacing: 0.03em;">Fazer reserva</h3>
-            <p style="font-family: 'Albert Sans', sans-serif; font-size: 1.05rem; color: rgba(255, 255, 255, 0.9); font-weight: 300; margin-bottom: 2rem; line-height: 1.6; letter-spacing: 0.02em;">Sistema de reservas em construção...</p>
+            <h3 style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 500; color: var(--wine-gold); margin-bottom: 0.6rem; letter-spacing: 0.03em;">Fazer reserva</h3>
+            <p style="font-family: 'Montserrat', sans-serif; font-size: 1.05rem; color: rgba(255, 255, 255, 0.9); font-weight: 300; margin-bottom: 2rem; line-height: 1.6; letter-spacing: 0.02em;">Sistema de reservas em construção...</p>
             
         </div>
     </div>
@@ -1697,6 +1692,150 @@
 
         window.addEventListener('DOMContentLoaded', () => {
             new FluidParallax();
+
+            // Carrossel Showcase (Almoço, Jantar, Happy Hour, Eventos) com Suporte a Mouse Drag & Touch Swipe
+            const showcaseWrapper = document.querySelector('.showcase-carousel-wrapper');
+            const showcaseSlides = Array.from(document.querySelectorAll('.showcase-slide'));
+            const showcaseBgs = Array.from(document.querySelectorAll('.showcase-bg'));
+            const trackShowcase = document.querySelector('.showcase-track');
+            const arrowLeftShowcase = document.querySelector('.showcase-nav-arrow.arrow-left');
+            const arrowRightShowcase = document.querySelector('.showcase-nav-arrow.arrow-right');
+            let currentShowcaseIdx = 0;
+
+            let isDragging = false;
+            let startX = 0;
+            let currentTranslate = 0;
+            let prevTranslate = 0;
+            let hasMoved = false;
+
+            function getBaseOffset(idx) {
+                if (!showcaseWrapper || !showcaseSlides[idx]) return 0;
+                const containerWidth = showcaseWrapper.getBoundingClientRect().width;
+                const activeSlide = showcaseSlides[idx];
+                const activeSlideWidth = activeSlide.getBoundingClientRect().width;
+                const activeSlideOffsetLeft = activeSlide.offsetLeft;
+                return (containerWidth / 2) - activeSlideOffsetLeft - (activeSlideWidth / 2);
+            }
+
+            function updateShowcase(idx) {
+                if (!showcaseSlides.length || !trackShowcase) return;
+
+                currentShowcaseIdx = (idx + showcaseSlides.length) % showcaseSlides.length;
+
+                showcaseSlides.forEach(slide => slide.classList.remove('active'));
+                const activeSlide = showcaseSlides[currentShowcaseIdx];
+                if (activeSlide) activeSlide.classList.add('active');
+
+                showcaseBgs.forEach(bg => bg.classList.remove('active'));
+                if (showcaseBgs[currentShowcaseIdx]) {
+                    showcaseBgs[currentShowcaseIdx].classList.add('active');
+                }
+
+                prevTranslate = getBaseOffset(currentShowcaseIdx);
+                currentTranslate = prevTranslate;
+                trackShowcase.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+                trackShowcase.style.transform = `translateX(${currentTranslate}px)`;
+            }
+
+            if (showcaseSlides.length && trackShowcase && showcaseWrapper) {
+                window.addEventListener('resize', () => updateShowcase(currentShowcaseIdx));
+                setTimeout(() => updateShowcase(0), 150);
+
+                // --- EVENTOS DE MOUSE DRAG & TOUCH SWIPE ---
+                const startDrag = (clientX) => {
+                    isDragging = true;
+                    hasMoved = false;
+                    startX = clientX;
+                    prevTranslate = getBaseOffset(currentShowcaseIdx);
+                    trackShowcase.style.transition = 'none';
+                    showcaseWrapper.classList.add('is-dragging');
+                };
+
+                const moveDrag = (clientX) => {
+                    if (!isDragging) return;
+                    const deltaX = clientX - startX;
+                    if (Math.abs(deltaX) > 5) hasMoved = true;
+                    currentTranslate = prevTranslate + deltaX;
+                    trackShowcase.style.transform = `translateX(${currentTranslate}px)`;
+                };
+
+                const endDrag = (clientX) => {
+                    if (!isDragging) return;
+                    isDragging = false;
+                    showcaseWrapper.classList.remove('is-dragging');
+                    const deltaX = clientX - startX;
+                    const threshold = 45; // Pixels mínimos de arraste para trocar de slide
+
+                    if (deltaX < -threshold) {
+                        updateShowcase(currentShowcaseIdx + 1);
+                    } else if (deltaX > threshold) {
+                        updateShowcase(currentShowcaseIdx - 1);
+                    } else {
+                        updateShowcase(currentShowcaseIdx);
+                    }
+                };
+
+                // Eventos de Mouse (Desktop)
+                showcaseWrapper.addEventListener('mousedown', (e) => {
+                    startDrag(e.clientX);
+                });
+
+                window.addEventListener('mousemove', (e) => {
+                    if (isDragging) {
+                        moveDrag(e.clientX);
+                    }
+                });
+
+                window.addEventListener('mouseup', (e) => {
+                    if (isDragging) {
+                        endDrag(e.clientX);
+                    }
+                });
+
+                // Eventos de Touch (Mobile)
+                showcaseWrapper.addEventListener('touchstart', (e) => {
+                    if (e.touches.length === 1) {
+                        startDrag(e.touches[0].clientX);
+                    }
+                }, { passive: true });
+
+                showcaseWrapper.addEventListener('touchmove', (e) => {
+                    if (isDragging && e.touches.length === 1) {
+                        moveDrag(e.touches[0].clientX);
+                    }
+                }, { passive: true });
+
+                showcaseWrapper.addEventListener('touchend', (e) => {
+                    if (isDragging) {
+                        const touch = e.changedTouches[0];
+                        endDrag(touch ? touch.clientX : startX);
+                    }
+                });
+
+                // Clique individual no slide
+                showcaseSlides.forEach((slide, idx) => {
+                    slide.addEventListener('click', (e) => {
+                        if (!hasMoved) {
+                            updateShowcase(idx);
+                        }
+                    });
+                });
+
+                // Botões de Seta
+                if (arrowLeftShowcase) {
+                    arrowLeftShowcase.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        updateShowcase(currentShowcaseIdx - 1);
+                    });
+                }
+
+                if (arrowRightShowcase) {
+                    arrowRightShowcase.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        updateShowcase(currentShowcaseIdx + 1);
+                    });
+                }
+            }
         });
     </script>
 

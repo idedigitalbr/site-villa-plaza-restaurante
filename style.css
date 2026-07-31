@@ -4,7 +4,7 @@
         :root {
             /* Cores Oficiais do Manual de Marca (Pág 06) */
             --vp-wine: #57101D;
-            --vp-wine-dark: #3D0B14;
+            --vp-wine-dark: #57101D;
             --vp-gray-light: #F2F2F2;
             --vp-white: #FFFFFF;
             
@@ -16,7 +16,7 @@
             --wine-burgundy: #57101D;
             --wine-gold: #57101D; /* Tom Vinho Principal Oficial */
             --wine-gold-accent: #D3B97B; /* Destaque Opcional */
-            --wine-gold-dark: #3D0B14;
+            --wine-gold-dark: #57101D;
             --wine-gold-soft: #F1D093;
             --wine-white: #FFFFFF;
             --wine-cream: #F1E6D5;
@@ -24,10 +24,10 @@
             --wine-border: rgba(87, 16, 29, 0.4);
             --wine-glow: 0 0 30px rgba(87, 16, 29, 0.3);
             
-            /* Tipografia Oficial (Pág 08: Montserrat para corpo/UI, Alvinus/Cormorant para títulos) */
-            --font-display: 'Cormorant Garamond', 'Alvinus', serif;
+            /* Tipografia Oficial (Montserrat para corpo, UI e Headlines) */
+            --font-display: 'Montserrat', 'Alvinus', sans-serif;
             --font-body: 'Montserrat', sans-serif;
-            --font-script: 'Pinyon Script', cursive;
+            --font-script: 'Cormorant Garamond', 'Alvinus', serif;
             
             --container: 1100px;
             --transition-premium: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
@@ -83,18 +83,19 @@
             transition: var(--transition-premium);
         }
 
-        /* Utility script/calligraphy style */
+        /* Utility script/serif-italic accent style (Inspirado no Instagram Villa Plaza) */
         .italic-script {
-            font-family: var(--font-script);
-            font-size: 3.8rem;
-            color: var(--wine-gold);
-            font-style: normal;
+            font-family: var(--font-script) !important;
+            font-size: 2.6rem;
+            color: var(--wine-gold-accent, #D3B97B);
+            font-style: italic !important;
             font-weight: 400 !important;
-            vertical-align: middle;
+            vertical-align: baseline;
             margin: 0 0.15em;
-            line-height: 0.5;
+            line-height: 1;
             display: inline-block;
             text-shadow: none !important;
+            text-transform: lowercase;
         }
 
         /* ========================================
@@ -102,8 +103,40 @@
            ======================================== */
         h1, h2, h3, h4 {
             font-family: var(--font-display);
-            font-weight: 300;
+            font-weight: 400;
             letter-spacing: 0.05em;
+        }
+
+        /* Classes de Variação e Dinamismo Tipográfico (Inspirado no Instagram Villa Plaza) */
+        .typo-bold {
+            font-weight: 700 !important;
+        }
+
+        .typo-extrabold {
+            font-weight: 800 !important;
+            letter-spacing: 0.06em !important;
+        }
+
+        .typo-light {
+            font-weight: 300 !important;
+            opacity: 0.9;
+        }
+
+        .typo-gold {
+            color: #D3B97B !important;
+        }
+
+        .typo-serif-accent {
+            font-family: 'Cormorant Garamond', serif !important;
+            font-style: italic;
+            font-weight: 400 !important;
+            text-transform: lowercase;
+        }
+
+        .typo-sans-impact {
+            font-family: 'Montserrat', sans-serif !important;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
         }
 
         .section {
@@ -144,8 +177,8 @@
             align-items: center;
             justify-content: center;
             background: rgba(11, 10, 8, 0.65);
-            color: var(--wine-gold);
-            border: 1px solid var(--wine-gold);
+            color: #F1D093;
+            border: 1px solid #F1D093;
             padding: 1.1rem 2.8rem;
             font-family: var(--font-body);
             font-size: 0.72rem;
@@ -155,15 +188,16 @@
             border-radius: 0;
             cursor: pointer;
             transition: all 300ms cubic-bezier(0.25, 1, 0.5, 1);
-            box-shadow: 0 0 22px rgba(210, 154, 60, 0.35);
+            box-shadow: 0 0 22px rgba(241, 208, 147, 0.25);
         }
 
         .btn-gold-outline:hover {
-            border-color: #e5b35a;
-            color: #FFFFFF;
-            background: rgba(210, 154, 60, 0.25);
+            border-color: #F1D093;
+            color: #57101D;
+            background: #F1D093;
+            font-weight: 600;
             transform: translateY(-2px);
-            box-shadow: 0 0 35px rgba(210, 154, 60, 0.65);
+            box-shadow: 0 0 35px rgba(241, 208, 147, 0.5);
         }
 
         /* ========================================
@@ -253,6 +287,19 @@
              align-items: center;
          }
 
+         .header-left-side {
+             display: flex;
+             align-items: center;
+             gap: 1.2rem;
+             justify-self: start;
+         }
+
+         .header-socials {
+             display: flex;
+             align-items: center;
+             gap: 0.8rem;
+         }
+
          .nav-menu-left {
              justify-self: start;
          }
@@ -273,7 +320,7 @@
 
          .nav-link:hover,
          .nav-link.active {
-             color: var(--wine-gold);
+             color: #F1D093;
          }
 
          .header-right-side {
@@ -284,27 +331,27 @@
         }
 
         .btn-header-reserve {
-            background: rgba(11, 10, 8, 0.65);
-            border: 1px solid var(--wine-gold);
-            color: var(--wine-gold);
-            padding: 0.55rem 1.25rem;
+            background: #57101D;
+            border: 1px solid rgba(241, 208, 147, 0.4);
+            color: #FFFFFF;
+            padding: 0.6rem 1.3rem;
             font-family: var(--font-body);
             font-size: 10.5px;
-            font-weight: 500;
+            font-weight: 600;
             letter-spacing: 0.25em;
             text-transform: uppercase;
-            border-radius: 0;
+            border-radius: 2px;
             cursor: pointer;
             transition: all 300ms cubic-bezier(0.25, 1, 0.5, 1);
             white-space: nowrap;
-            box-shadow: 0 0 20px rgba(210, 154, 60, 0.35);
+            box-shadow: 0 4px 18px rgba(87, 16, 29, 0.6);
         }
 
         .btn-header-reserve:hover {
-            background: rgba(210, 154, 60, 0.25);
-            border-color: #e5b35a;
+            background: #57101D;
+            border-color: #F1D093;
             color: #FFFFFF;
-            box-shadow: 0 0 35px rgba(210, 154, 60, 0.65);
+            box-shadow: 0 6px 25px rgba(87, 16, 29, 0.7);
             transform: translateY(-2px);
         }
 
@@ -317,7 +364,7 @@
          }
 
          .header-social-link {
-             color: var(--wine-gold);
+             color: #F1E6D5;
              opacity: 0.9;
              display: flex;
              align-items: center;
@@ -326,14 +373,15 @@
          }
 
          .header-social-link:hover {
-             color: var(--wine-white);
+             color: #FFFFFF;
              opacity: 1;
-             transform: scale(1.15);
+             transform: scale(1.18);
+             filter: drop-shadow(0 0 8px rgba(241, 230, 213, 0.5));
          }
 
          .header-social-icon {
-             width: 14px;
-             height: 14px;
+             width: 15px;
+             height: 15px;
          }
 
         /* Hamburger button */
@@ -533,35 +581,35 @@
 
         .hero-divider .line {
             height: 1px;
-            background: linear-gradient(90deg, transparent, var(--wine-gold), transparent);
+            background: linear-gradient(90deg, transparent, #F1D093, transparent);
             flex: 1;
             opacity: 0.6;
         }
 
         .hero-divider .diamonds {
-            color: var(--wine-gold);
+            color: #F1D093;
             font-size: 0.65rem;
             letter-spacing: 0.35em;
         }
 
         .hero-title {
             font-family: var(--font-body);
-            font-size: 13.5px;
-            font-weight: 600;
-            letter-spacing: 0.38em;
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 0.35em;
             text-transform: uppercase;
-            color: var(--wine-gold);
-            margin-top: 0.9rem;
+            color: #F1D093;
+            margin-top: 1rem;
             text-align: center;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
         }
 
         .hero-tagline {
             font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 0.45em;
-            color: var(--wine-gold);
-            font-weight: 600;
+            color: #F1D093;
+            font-weight: 400;
             margin-bottom: 1.5rem;
         }
 
@@ -599,7 +647,7 @@
             font-size: 8px;
             text-transform: uppercase;
             letter-spacing: 0.3em;
-            color: var(--wine-gold);
+            color: #F1D093;
             opacity: 0.8;
         }
 
@@ -616,7 +664,7 @@
         .mouse-wheel {
             width: 1.5px;
             height: 6px;
-            background-color: var(--wine-gold);
+            background-color: #F1D093;
             border-radius: 1px;
             position: absolute;
             top: 6px;
@@ -626,7 +674,7 @@
         .hero-explore-line {
             width: 1px;
             height: 32px;
-            background: linear-gradient(180deg, var(--wine-gold) 0%, transparent 100%);
+            background: linear-gradient(180deg, #F1D093 0%, transparent 100%);
             margin-top: 0.3rem;
         }
 
@@ -891,38 +939,48 @@
         }
 
         .sobre-line-1 {
-            font-family: var(--font-display) !important;
+            font-family: 'Montserrat', sans-serif !important;
             font-size: 2.6rem !important;
-            font-weight: 500 !important;
-            letter-spacing: 0.04em !important;
+            font-weight: 300 !important;
+            letter-spacing: 0.06em !important;
             color: #1C1917 !important;
             text-transform: uppercase;
             line-height: 1 !important;
         }
 
+        .sobre-line-1 strong {
+            font-weight: 800 !important;
+            color: #57101D !important;
+        }
+
         .sobre-script-gold {
             font-family: var(--font-script) !important;
-            font-size: 4.3rem !important;
+            font-size: 3.2rem !important;
             font-weight: 400 !important;
             color: #C5A059 !important;
             text-transform: lowercase !important;
             display: block;
-            line-height: 0.72 !important;
-            margin-top: -0.15em !important;
-            margin-bottom: 0.08em !important;
-            margin-left: 0.04em !important;
-            font-style: italic;
+            line-height: 0.95 !important;
+            margin-top: 0em !important;
+            margin-bottom: 0.05em !important;
+            margin-left: 0em !important;
+            font-style: italic !important;
         }
 
         .sobre-line-2,
         .sobre-line-3 {
-            font-family: var(--font-display) !important;
+            font-family: 'Montserrat', sans-serif !important;
             font-size: 2.4rem !important;
-            font-weight: 500 !important;
-            letter-spacing: 0.04em !important;
+            font-weight: 400 !important;
+            letter-spacing: 0.05em !important;
             color: #1C1917 !important;
             text-transform: uppercase;
             line-height: 1.08 !important;
+        }
+
+        .sobre-highlight-gold {
+            font-weight: 800 !important;
+            color: #A98445 !important;
         }
 
         .sobre-divider-diamond {
@@ -980,6 +1038,66 @@
             object-fit: cover;
             object-position: left center;
             display: block;
+        }
+
+        /* Seção Invertida com Fundo Vermelho Vinho (Antes do Cardápio) */
+        .sobre-red-section {
+            background-color: #57101D;
+        }
+
+        .sobre-grid-inverted {
+            grid-template-columns: 58% 42%;
+        }
+
+        .sobre-red-section .sobre-content-side {
+            background-color: #57101D;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.04"/></svg>');
+            color: #FFFFFF;
+        }
+
+        .sobre-red-section .sobre-sub {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .sobre-red-section .sobre-brand {
+            color: #D3B97B;
+        }
+
+        .sobre-red-section .sobre-line-1 {
+            color: #FFFFFF !important;
+        }
+
+        .sobre-red-section .sobre-line-1 strong {
+            color: #D3B97B !important;
+        }
+
+        .sobre-red-section .sobre-script-gold {
+            color: #F1D093 !important;
+        }
+
+        .sobre-red-section .sobre-line-2,
+        .sobre-red-section .sobre-line-3 {
+            color: #FFFFFF !important;
+        }
+
+        .sobre-red-section .sobre-highlight-gold {
+            color: #D3B97B !important;
+        }
+
+        .sobre-red-section .sobre-divider-diamond .line {
+            background: linear-gradient(90deg, #D3B97B 0%, rgba(211, 185, 123, 0.2) 100%);
+        }
+
+        .sobre-red-section .sobre-divider-diamond .line.right {
+            background: linear-gradient(90deg, rgba(211, 185, 123, 0.2) 0%, #D3B97B 100%);
+        }
+
+        .sobre-red-section .sobre-divider-diamond .diamond {
+            color: #D3B97B;
+        }
+
+        .sobre-red-section .sobre-paragraphs p {
+            color: rgba(255, 255, 255, 0.9) !important;
         }
 
         /* Responsividade Mobile & Tablet */
@@ -1054,7 +1172,317 @@
         }
 
         /* ========================================
-           SEÇÃO 3: GASTRONOMIA, VINHOS E AMBIENTE
+           SEÇÃO 3: CARROSSEL SHOWCASE DE EXPERIÊNCIAS
+           ======================================== */
+        .showcase-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 100vh;
+            overflow: hidden;
+            background-color: var(--wine-black, #000);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .showcase-backgrounds {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .showcase-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: opacity;
+        }
+
+        .showcase-bg.active {
+            opacity: 1;
+        }
+
+        .showcase-carousel-wrapper {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            cursor: grab;
+            touch-action: pan-y;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .showcase-carousel-wrapper.is-dragging {
+            cursor: grabbing;
+        }
+
+        .showcase-track {
+            display: flex;
+            align-items: center;
+            gap: 8rem;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: transform;
+            width: max-content;
+        }
+
+        .showcase-slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            cursor: pointer;
+            opacity: 0.35;
+            transform: scale(0.82);
+            transition: opacity 0.6s ease, transform 0.6s ease, filter 0.6s ease;
+            user-select: none;
+            padding: 1rem;
+            white-space: nowrap;
+            filter: blur(0.5px);
+        }
+
+        .showcase-slide.active {
+            opacity: 1;
+            transform: scale(1);
+            filter: blur(0);
+        }
+
+                /* Diagramação Tipográfica Elegante (Estilo Print Referência) */
+        .showcase-top-accent {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .showcase-top-accent .showcase-script {
+            font-family: var(--font-script);
+            font-style: italic;
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: var(--wine-gold-accent, #D3B97B);
+            line-height: 1;
+            text-transform: lowercase;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .showcase-top-accent .showcase-line {
+            display: inline-block;
+            width: 70px;
+            height: 1px;
+        }
+
+        .showcase-top-accent .showcase-line.left {
+            background: linear-gradient(90deg, rgba(211, 185, 123, 0.1), rgba(211, 185, 123, 0.85));
+        }
+
+        .showcase-top-accent .showcase-line.right {
+            background: linear-gradient(90deg, rgba(211, 185, 123, 0.85), rgba(211, 185, 123, 0.1));
+        }
+
+        .showcase-title {
+            font-family: var(--font-display);
+            font-size: 4.6rem;
+            font-weight: 800;
+            letter-spacing: 0.18em;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            margin: 0;
+            line-height: 1.05;
+            text-shadow: 0 4px 18px rgba(0, 0, 0, 0.85);
+            transition: all 0.5s ease;
+        }
+
+        .showcase-subtitle {
+            font-family: var(--font-body, 'Montserrat', sans-serif);
+            font-size: 0.88rem;
+            font-weight: 400;
+            letter-spacing: 0.35em;
+            color: var(--wine-gold-accent, #D3B97B);
+            text-transform: uppercase;
+            margin-top: 0.85rem;
+            opacity: 0.95;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+            transition: opacity 0.5s ease;
+        }
+
+        .showcase-slide:not(.active) .showcase-subtitle {
+            opacity: 0.7;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .showcase-bottom-ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-top: 0.9rem;
+        }
+
+        .showcase-bottom-ornament .showcase-line {
+            display: inline-block;
+            width: 50px;
+            height: 1px;
+        }
+
+        .showcase-bottom-ornament .showcase-line.left {
+            background: linear-gradient(90deg, rgba(211, 185, 123, 0.1), rgba(211, 185, 123, 0.75));
+        }
+
+        .showcase-bottom-ornament .showcase-line.right {
+            background: linear-gradient(90deg, rgba(211, 185, 123, 0.75), rgba(211, 185, 123, 0.1));
+        }
+
+        .showcase-bottom-ornament .showcase-diamond {
+            color: var(--wine-gold-accent, #D3B97B);
+            font-size: 0.7rem;
+            line-height: 1;
+            display: inline-block;
+            transform: scaleY(0.9);
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
+        }
+
+        .showcase-nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            width: 44px;
+            height: 44px;
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #FFFFFF;
+            font-size: 1.8rem;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+            backdrop-filter: blur(4px);
+        }
+
+        .showcase-nav-arrow:hover {
+            background: var(--vp-wine, #57101D);
+            border-color: var(--wine-gold-accent, #D3B97B);
+            color: #FFFFFF;
+            box-shadow: 0 0 15px rgba(87, 16, 29, 0.6);
+        }
+
+        .showcase-nav-arrow.arrow-left {
+            left: 25px;
+        }
+
+        .showcase-nav-arrow.arrow-right {
+            right: 25px;
+        }
+
+        /* Responsividade do Carrossel Showcase */
+        @media (max-width: 992px) {
+            .showcase-section {
+                height: 100vh;
+                min-height: 100vh;
+            }
+            .showcase-track {
+                gap: 5rem;
+            }
+            .showcase-top-accent {
+                gap: 0.8rem;
+                margin-bottom: 0.2rem;
+            }
+            .showcase-top-accent .showcase-script {
+                font-size: 1.7rem;
+            }
+            .showcase-top-accent .showcase-line {
+                width: 45px;
+            }
+            .showcase-title {
+                font-size: 3.2rem;
+                letter-spacing: 0.12em;
+            }
+            .showcase-subtitle {
+                font-size: 0.78rem;
+                letter-spacing: 0.25em;
+                margin-top: 0.6rem;
+            }
+            .showcase-bottom-ornament {
+                margin-top: 0.6rem;
+                gap: 0.6rem;
+            }
+            .showcase-bottom-ornament .showcase-line {
+                width: 35px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .showcase-section {
+                height: 100vh;
+                min-height: 100vh;
+            }
+            .showcase-track {
+                gap: 2.2rem;
+            }
+            .showcase-top-accent {
+                gap: 0.5rem;
+                margin-bottom: 0.15rem;
+            }
+            .showcase-top-accent .showcase-script {
+                font-size: 1.35rem;
+            }
+            .showcase-top-accent .showcase-line {
+                width: 25px;
+            }
+            .showcase-title {
+                font-size: 2.1rem;
+                letter-spacing: 0.08em;
+            }
+            .showcase-subtitle {
+                font-size: 0.65rem;
+                letter-spacing: 0.16em;
+                margin-top: 0.45rem;
+            }
+            .showcase-bottom-ornament {
+                margin-top: 0.45rem;
+                gap: 0.4rem;
+            }
+            .showcase-bottom-ornament .showcase-line {
+                width: 20px;
+            }
+            .showcase-bottom-ornament .showcase-diamond {
+                font-size: 0.55rem;
+            }
+            .showcase-nav-arrow {
+                width: 36px;
+                height: 36px;
+                font-size: 1.4rem;
+            }
+            .showcase-nav-arrow.arrow-left {
+                left: 8px;
+            }
+            .showcase-nav-arrow.arrow-right {
+                right: 8px;
+            }
+        }
+
+        /* ========================================
+           SEÇÃO ALTERNATIVA MVV: GASTRONOMIA, VINHOS E AMBIENTE
            ======================================== */
         .mvv-section {
             width: 100%;
@@ -1216,7 +1644,7 @@
 
         /* Título do Card (Maior, mais forte e com sombra pronunciada) */
         .mvv-card h3 {
-            font-family: 'Cormorant Garamond', serif !important;
+            font-family: var(--font-display) !important;
             font-size: 41px !important;
             font-weight: 600 !important;
             color: #FFFFFF;
@@ -1492,13 +1920,319 @@
         }
 
         /* ========================================
+           SEÇÃO MOMENTOS PARA COMPARTILHAR (FUNDO PRETO & SPLIT 50/50 FULL BLEED EXATO AO PRINT)
+           ======================================== */
+        .villa-moments-section {
+            background-color: #000000;
+            color: #FFFFFF;
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .villa-moments-split {
+            display: flex;
+            width: 100%;
+            min-height: 640px;
+            align-items: stretch;
+        }
+
+        /* Lado Esquerdo: 50% da largura total, 2 fotos coladas de 25% cada sem margem ou borda */
+        .villa-moments-photos-col {
+            width: 50%;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .villa-moments-photo-item {
+            width: 50%; /* 25% do total do site */
+            height: 100%;
+            min-height: 640px;
+            position: relative;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .villa-moments-photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 0;
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .villa-moments-photo-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Lado Direito: 50% da largura total, fundo preto, alinhamento de textos idêntico ao print */
+        .villa-moments-content-col {
+            width: 50%;
+            background-color: #000000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 80px;
+        }
+
+        .villa-moments-content-inner {
+            max-width: 520px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .villa-moments-content-inner .sobre-header-tag {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .villa-moments-content-inner .sobre-sub {
+            color: rgba(255, 255, 255, 0.75) !important;
+        }
+
+        .villa-moments-content-inner .sobre-brand {
+            color: #D3B97B !important;
+        }
+
+        .villa-moments-title {
+            font-family: var(--font-body);
+            font-size: 2.6rem;
+            font-weight: 300;
+            color: #FFFFFF;
+            line-height: 1.25;
+            margin-bottom: 1.8rem;
+            letter-spacing: -0.01em;
+        }
+
+        .villa-moments-title .sobre-line-1 {
+            font-family: 'Montserrat', sans-serif !important;
+            font-size: 2.1rem !important;
+            font-weight: 300 !important;
+            letter-spacing: 0.05em !important;
+            color: #FFFFFF !important;
+            text-transform: uppercase;
+            line-height: 1.15 !important;
+            white-space: nowrap;
+        }
+
+        .villa-moments-title .sobre-line-2 {
+            font-family: 'Montserrat', sans-serif !important;
+            font-size: 2.3rem !important;
+            font-weight: 300 !important;
+            letter-spacing: 0.05em !important;
+            color: #FFFFFF !important;
+            text-transform: uppercase;
+            line-height: 1.1 !important;
+        }
+
+        .villa-moments-title .sobre-line-1 strong,
+        .villa-moments-title .sobre-highlight-gold {
+            font-weight: 800 !important;
+            color: #D3B97B !important;
+        }
+
+        .villa-moments-title .sobre-script-gold {
+            font-family: var(--font-script) !important;
+            font-size: 3.1rem !important;
+            font-weight: 400 !important;
+            color: #D3B97B !important;
+            text-transform: lowercase !important;
+            display: block;
+            line-height: 0.95 !important;
+            margin-top: 0.02em !important;
+            margin-bottom: 0.08em !important;
+            font-style: italic !important;
+        }
+
+        .villa-moments-content-inner .sobre-divider-diamond {
+            margin-top: 0.2rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .villa-moments-content-inner .sobre-divider-diamond .line {
+            background: linear-gradient(90deg, #D3B97B 0%, rgba(211, 185, 123, 0.2) 100%);
+        }
+
+        .villa-moments-content-inner .sobre-divider-diamond .line.right {
+            background: linear-gradient(90deg, rgba(211, 185, 123, 0.2) 0%, #D3B97B 100%);
+        }
+
+        .villa-moments-content-inner .sobre-divider-diamond .diamond {
+            color: #D3B97B;
+        }
+
+        .villa-moments-title .italic-script {
+            font-family: var(--font-script) !important;
+            font-size: 3.4rem !important;
+            color: #D3B97B !important;
+            font-style: italic !important;
+            font-weight: 400 !important;
+            margin: 0 !important;
+            display: inline-block;
+            line-height: 1.1;
+        }
+
+        .villa-moments-description {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            line-height: 1.75;
+            color: rgba(255, 255, 255, 0.75);
+            font-weight: 300;
+            max-width: 480px;
+            margin-bottom: 2.8rem;
+        }
+
+        /* Icons / Features Grid */
+        .villa-moments-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            width: 100%;
+            margin-bottom: 2.8rem;
+        }
+
+        .villa-moments-feature-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 12px;
+            position: relative;
+        }
+
+        .villa-moments-feature-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 10%;
+            height: 80%;
+            width: 1px;
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .villa-moments-feature-icon {
+            width: 32px;
+            height: 32px;
+            color: #D3B97B;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .villa-moments-feature-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: #D3B97B;
+        }
+
+        .villa-moments-feature-text {
+            font-family: var(--font-body);
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.45;
+        }
+
+        /* Botão Faça sua Reserva (Borda Dourada sutil) */
+        .btn-villa-moments-reserve {
+            display: inline-block;
+            border: 1px solid #D3B97B;
+            background-color: transparent;
+            color: #D3B97B;
+            padding: 16px 38px;
+            font-family: var(--font-body);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            border-radius: 0;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .btn-villa-moments-reserve:hover {
+            background-color: #57101D;
+            border-color: #57101D;
+            color: #FFFFFF;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(87, 16, 29, 0.6);
+        }
+
+        /* Responsividade Mobile & Tablet */
+        @media (max-width: 1024px) {
+            .villa-moments-split {
+                flex-direction: column;
+            }
+            .villa-moments-photos-col {
+                width: 100%;
+                height: 400px;
+            }
+            .villa-moments-photo-item {
+                min-height: 400px;
+            }
+            .villa-moments-content-col {
+                width: 100%;
+                padding: 50px 32px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .villa-moments-photos-col {
+                height: 280px;
+            }
+            .villa-moments-photo-item {
+                min-height: 280px;
+            }
+            .villa-moments-content-col {
+                padding: 40px 20px;
+            }
+            .villa-moments-title {
+                font-size: 2rem;
+            }
+            .villa-moments-title .sobre-line-1,
+            .villa-moments-title .sobre-line-2 {
+                font-size: 1.85rem !important;
+            }
+            .villa-moments-title .sobre-script-gold {
+                font-size: 2.5rem !important;
+            }
+            .villa-moments-title .italic-script {
+                font-size: 2.6rem !important;
+            }
+            .villa-moments-features {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .villa-moments-feature-item:not(:last-child)::after {
+                display: none;
+            }
+            .villa-moments-feature-item:not(:last-child) {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                padding-bottom: 16px;
+            }
+        }
+
+        /* ========================================
            SEÇÃO 5: CARDÁPIO SPLIT (CREAM + VIDEO)
            ======================================== */
         .cardapio-split-section {
             display: flex;
             position: relative;
             width: 100%;
-            min-height: calc(100vh - 96px);
+            height: 100vh;
+            min-height: 100vh;
             overflow: hidden;
         }
 
@@ -1551,60 +2285,49 @@
 
         .cardapio-left-content .btn-cardapio {
             font-family: var(--font-body);
-            font-size: 0.72rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 0.28em;
-            color: var(--wine-gold);
-            font-weight: 500;
-            background: #110A08;
-            border: 1px solid var(--wine-gold);
+            letter-spacing: 0.25em;
+            color: #FFFFFF;
+            font-weight: 600;
+            background: #57101D;
+            border: none !important;
             padding: 1.1rem 2.8rem;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             transition: all 300ms cubic-bezier(0.25, 1, 0.5, 1);
-            border-radius: 0;
-            box-shadow: 0 4px 20px rgba(17, 10, 8, 0.35);
+            border-radius: 4px;
+            box-shadow: 0 6px 22px rgba(87, 16, 29, 0.45);
         }
 
         .cardapio-left-content .btn-cardapio:hover {
-            background: var(--wine-gold);
-            border-color: var(--wine-gold);
-            color: #110A08;
+            background: #3D0B14;
+            border: none !important;
+            color: #FFFFFF;
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(210, 154, 60, 0.5);
+            box-shadow: 0 10px 28px rgba(87, 16, 29, 0.65);
         }
 
-        /* --- Lado Direito: Vídeo de Fundo (34%) --- */
+        /* --- Lado Direito: Fundo Vinho Elegante (34%) --- */
         .cardapio-right-video {
             width: 34%;
             position: relative;
             overflow: hidden;
             z-index: 1;
+            background: url('assets/CardapioMenu/cardapio-bg.jpg') center center / cover no-repeat;
+            box-shadow: inset 10px 0 30px rgba(0, 0, 0, 0.35);
         }
 
-        .cardapio-right-video video {
+        .cardapio-right-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            object-position: center;
-            z-index: 1;
-        }
-
-        .cardapio-right-video video.parallax-img {
-            position: absolute !important;
-            top: -35% !important;
-            left: 0 !important;
-            width: 100% !important;
-            height: 170% !important;
-            object-fit: cover !important;
-            transform: translate3d(0, var(--parallax-y, 0px), 0) !important;
-            will-change: transform;
-            transition: none !important;
+            background: radial-gradient(circle at 50% 50%, rgba(87, 16, 29, 0.05) 0%, rgba(15, 5, 8, 0.3) 100%);
+            pointer-events: none;
         }
 
         /* --- Imagem Flutuante do Cardápio --- */
@@ -1613,21 +2336,26 @@
             z-index: 3;
             left: 66%;
             top: 50%;
-            transform: translate(-90%, -50%) !important;
-            height: 72%;
-            width: auto;
+            transform: translate(-78%, -50%) !important;
+            height: auto;
+            width: 52%;
+            max-width: 700px;
             object-fit: contain;
-            border-radius: 6px;
-            box-shadow:
-                0 20px 50px rgba(0, 0, 0, 0.4),
-                0 6px 16px rgba(0, 0, 0, 0.25);
-            pointer-events: none;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.45));
+            pointer-events: auto;
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), filter 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .cardapio-menu-float:hover {
+            transform: translate(-78%, -53%) scale(1.02) !important;
+            filter: drop-shadow(0 28px 50px rgba(0, 0, 0, 0.6));
         }
 
         .cardapio-menu-float.reveal-up.active {
             opacity: 1;
-            transform: translate(-90%, -50%) !important;
-            transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1) !important;
+            transform: translate(-78%, -50%) !important;
+            transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), transform 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
         }
 
 
@@ -2645,7 +3373,7 @@
            RESPONSIVE CONFIGURATIONS
            ======================================== */
         @media (max-width: 992px) {
-            .nav-menu, .header-right-side {
+            .nav-menu, .header-left-side, .header-right-side {
                 display: none;
             }
 
@@ -2814,6 +3542,8 @@
 
         /* ========================================
            NEW PREMIUM FOOTER, CTA BANNER & GALLERY
+          /* ========================================
+           1. CTA RESERVATION SECTION (VILLA PLAZA STYLED)
            ======================================== */
         .cta-reservation {
             position: relative;
@@ -2823,6 +3553,8 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            background-color: #23050B;
+            padding: 5rem 1.5rem;
         }
 
         .cta-reservation__bg {
@@ -2831,400 +3563,703 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url("assets/Rodape/foto-rodape-banner.webp");
+            background-image: url("assets/ambiente/ambiente-salao-principal.webp");
             background-size: cover;
             background-position: center center;
-            background-repeat: no-repeat;
             z-index: 1;
+            filter: brightness(0.28) contrast(1.15) saturate(1.1);
+            transform: scale(1.02);
+            transition: transform 10s ease;
         }
 
-        .cta-reservation__bg::after {
-            content: '';
+        .cta-reservation:hover .cta-reservation__bg {
+            transform: scale(1.05);
+        }
+
+        .cta-reservation__overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(ellipse 540px 400px at 50% 50%, rgba(5, 5, 5, 0.88) 0%, rgba(5, 5, 5, 0.60) 45%, transparent 80%);
+            background: radial-gradient(circle at center, rgba(66, 9, 20, 0.82) 0%, rgba(35, 5, 11, 0.94) 70%, rgba(18, 2, 6, 0.98) 100%);
+            z-index: 2;
+        }
+
+        .cta-reservation__ambient-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 350px;
+            background: radial-gradient(ellipse at center, rgba(211, 185, 123, 0.12) 0%, rgba(87, 16, 29, 0) 70%);
+            z-index: 2;
+            pointer-events: none;
+            filter: blur(40px);
         }
 
         .cta-reservation__content {
             position: relative;
-            z-index: 2;
+            z-index: 3;
             text-align: center;
-            padding: 2.5rem 1.5rem;
-            max-width: 680px;
+            padding: 2rem 1.5rem;
+            max-width: 860px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .cta-reservation__label {
-            font-family: var(--font-body);
-            font-size: 0.72rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.35em;
-            color: var(--wine-gold);
-            margin-bottom: 0.6rem;
+        /* Top Brand Ornament & Line */
+        .cta-reservation__brand-ornament {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1.8rem;
+            width: 100%;
         }
 
-        .cta-reservation__ornament {
+        .cta-fleur {
+            margin-bottom: 0.8rem;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
+        }
+
+        .cta-reservation__title-line-wrap {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.8rem;
-            margin-bottom: 1.8rem;
+            gap: 12px;
+            width: 100%;
+            max-width: 480px;
         }
 
-        .cta-reservation__ornament-line {
-            width: 35px;
+        .cta-line {
+            flex: 1;
             height: 1px;
-            background: var(--wine-gold);
-            opacity: 0.55;
+            background: linear-gradient(90deg, transparent, rgba(211, 185, 123, 0.6), transparent);
         }
 
-        .cta-reservation__ornament-diamond {
-            width: 6px;
-            height: 6px;
-            border: 1px solid var(--wine-gold);
+        .cta-line-diamond {
+            width: 4px;
+            height: 4px;
+            background-color: #D3B97B;
             transform: rotate(45deg);
-            opacity: 0.7;
+            display: inline-block;
+            opacity: 0.85;
         }
 
+        .cta-brand-title {
+            font-family: 'Cormorant Garamond', serif !important;
+            font-size: 0.95rem !important;
+            font-weight: 400 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.38em !important;
+            color: #E2C98A;
+            white-space: nowrap;
+            padding: 0 0.4rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Main Headline */
         .cta-reservation__headline {
-            font-family: var(--font-display) !important;
-            font-weight: 600 !important;
-            font-size: 41px !important;
-            letter-spacing: 0.04em !important;
-            line-height: 1.1;
-            color: #FFFFFF;
-            margin-bottom: 0em;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            margin: 0 0 0.5rem 0 !important;
+            padding: 0 !important;
         }
 
-        .cta-reservation__headline-script {
-            font-family: var(--font-script);
-            font-size: 5.6rem;
-            color: var(--wine-gold);
+        .cta-headline__top {
+            font-family: 'Cormorant Garamond', serif !important;
+            font-size: 2.2rem !important;
+            font-weight: 300 !important;
+            letter-spacing: 0.05em !important;
+            color: #F3E5D0;
+            line-height: 1.2;
+            text-shadow: 0 3px 12px rgba(0, 0, 0, 0.7);
             display: block;
-            line-height: 1.25;
-            font-weight: 400;
-            margin-top: -0.1em;
-            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
         }
 
+        .cta-headline__main {
+            font-family: 'Cormorant Garamond', serif !important;
+            font-size: 4.4rem !important;
+            font-weight: 400 !important;
+            letter-spacing: 0.02em !important;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #FFFFFF 0%, #F5E5C9 35%, #D3B97B 70%, #AA853B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+            margin-top: 0.2rem;
+            display: block;
+        }
+
+        /* Divider Flourish */
+        .cta-reservation__divider-flourish {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 420px;
+            margin: 1.2rem 0 0.4rem 0;
+            gap: 12px;
+        }
+
+        .cta-div-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(211, 185, 123, 0.5), rgba(211, 185, 123, 0.7));
+        }
+
+        .cta-div-line.right {
+            background: linear-gradient(90deg, rgba(211, 185, 123, 0.7), rgba(211, 185, 123, 0.5), transparent);
+        }
+
+        .cta-flourish-knot {
+            filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6));
+        }
+
+        /* Script Typography */
+        .cta-reservation__script-wrap {
+            margin-bottom: 1.2rem;
+        }
+
+        .cta-reservation__script {
+            font-family: 'Great Vibes', 'Alex Brush', 'Pinyon Script', cursive !important;
+            font-size: 4.2rem !important;
+            color: #E2C98A;
+            display: block;
+            line-height: 1.1;
+            font-weight: 400;
+            font-style: normal !important;
+            text-shadow: 0 3px 15px rgba(0, 0, 0, 0.8), 0 0 25px rgba(211, 185, 123, 0.25);
+            transform: rotate(-1.5deg);
+        }
+
+        /* Subtitle */
         .cta-reservation__subtitle {
             font-family: var(--font-body) !important;
-            font-size: 17px !important;
-            font-weight: 400 !important;
-            color: rgba(255, 255, 255, 0.82);
-            line-height: 1.7 !important;
-            margin-top: 1rem;
-            margin-bottom: 2.5rem;
-            letter-spacing: 0.04em;
+            font-size: 0.98rem !important;
+            font-weight: 300 !important;
+            color: rgba(245, 235, 220, 0.85);
+            line-height: 1.75 !important;
+            margin-bottom: 2.2rem;
+            letter-spacing: 0.03em;
+            max-width: 580px;
+        }
+
+        /* Actions & Button */
+        .cta-reservation__actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
         }
 
         .cta-reservation__btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 100%;
-            max-width: 320px;
-            padding: 1.1rem 2.8rem;
+            gap: 10px;
+            padding: 1.05rem 2.6rem;
             font-family: var(--font-body);
-            font-size: 0.72rem;
-            font-weight: 500;
+            font-size: 0.78rem;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.28em;
-            color: var(--wine-gold);
-            background: rgba(11, 10, 8, 0.65);
-            border: 1px solid var(--wine-gold);
-            border-radius: 0;
+            letter-spacing: 0.24em;
+            color: #FFFFFF;
+            background: linear-gradient(135deg, #57101D 0%, #3D0913 100%);
+            border: 1px solid #D3B97B;
+            border-radius: 4px;
             cursor: pointer;
-            transition: all 300ms cubic-bezier(0.25, 1, 0.5, 1);
-            text-decoration: none;
-            box-shadow: 0 0 22px rgba(210, 154, 60, 0.35);
+            position: relative;
+            overflow: hidden;
+            transition: all 350ms cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+        }
+
+        .cta-reservation__btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(211, 185, 123, 0.25), transparent);
+            transition: left 600ms ease;
+        }
+
+        .cta-reservation__btn:hover::before {
+            left: 100%;
         }
 
         .cta-reservation__btn:hover {
-            background: rgba(210, 154, 60, 0.25);
-            border-color: #e5b35a;
+            background: linear-gradient(135deg, #6E1526 0%, #4D0C1A 100%);
+            border-color: #F1D093;
             color: #FFFFFF;
-            transform: translateY(-2px);
-            box-shadow: 0 0 35px rgba(210, 154, 60, 0.65);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(211, 185, 123, 0.35), 0 4px 12px rgba(0, 0, 0, 0.6);
         }
 
-        .gallery {
-            position: relative;
+        /* ========================================
+           2. DESTAQUES 6-CARDS GRID (VILLA PLAZA)
+           ======================================== */
+        .vp-feature-grid-section {
             width: 100%;
-            overflow: hidden;
-            background: #050505;
-            cursor: grab;
-            user-select: none;
-            -webkit-user-select: none;
-            border-bottom: 1px solid rgba(234, 187, 117, 0.20);
-        }
-
-        .gallery:active {
-            cursor: grabbing;
-        }
-
-        .gallery-viewport {
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .gallery-track {
-            display: flex;
-            will-change: transform;
-        }
-
-        .gallery-item {
-            flex-shrink: 0;
-            height: 210px;
-            overflow: hidden;
+            background: #0B0A08;
             padding: 0;
             margin: 0;
-            border: none;
-            border-radius: 0;
-            background: none;
-            outline: none;
-            cursor: pointer;
-            display: block;
+            position: relative;
+            overflow: hidden;
+            border-top: 1px solid #7c5c2d;
+            border-bottom: 1px solid #7c5c2d;
         }
 
-        .gallery-item img {
+        .vp-feature-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            width: 100%;
+            min-height: 380px;
+            background: #7c5c2d;
+            gap: 1px; /* Creates gold grid line borders between tiles */
+        }
+
+        .vp-card {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            background: #110B0E;
+            cursor: pointer;
+        }
+
+        .vp-card-tall {
+            height: 380px;
+        }
+
+        .vp-card-col-stacked {
+            display: flex;
+            flex-direction: column;
+            height: 380px;
+            gap: 1px;
+            background: #7c5c2d;
+        }
+
+        .vp-card-half {
+            height: 50%;
+        }
+
+        .vp-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
-            transition: transform 0.5s ease;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            filter: brightness(0.85);
         }
 
-        .gallery-item:hover img {
-            transform: scale(1.05);
+        .vp-card:hover img {
+            transform: scale(1.08);
+            filter: brightness(0.95);
         }
 
-        .gallery-item:nth-child(8n+1) { width: 230px; }
-        .gallery-item:nth-child(8n+2) { width: 195px; }
-        .gallery-item:nth-child(8n+3) { width: 175px; }
-        .gallery-item:nth-child(8n+4) { width: 220px; }
-        .gallery-item:nth-child(8n+5) { width: 185px; }
-        .gallery-item:nth-child(8n+6) { width: 210px; }
-        .gallery-item:nth-child(8n+7) { width: 190px; }
-        .gallery-item:nth-child(8n+8) { width: 225px; }
-
-        .gallery-arrow {
+        .vp-card-overlay {
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 10;
-            width: 44px;
-            height: 44px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(0deg, rgba(87, 16, 29, 0.92) 0%, rgba(87, 16, 29, 0.3) 55%, transparent 100%);
+            transition: background 0.4s ease;
+        }
+
+        .vp-card:hover .vp-card-overlay {
+            background: linear-gradient(0deg, rgba(87, 16, 29, 0.95) 0%, rgba(87, 16, 29, 0.4) 60%, transparent 100%);
+        }
+
+        .vp-card-label {
+            position: absolute;
+            bottom: 1.2rem;
+            left: 1.2rem;
+            right: 1rem;
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .vp-card-label span {
+            font-family: var(--font-body);
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: #FFFFFF;
+            line-height: 1.25;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .vp-card-label span:first-child {
+            color: #FFFFFF;
+        }
+
+        .vp-card-label span:nth-child(2) {
+            color: #D3B97B;
+            font-weight: 500;
+        }
+
+        /* Responsive Layout for Grid */
+        @media (max-width: 1100px) {
+            .vp-feature-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .vp-card-tall, .vp-card-col-stacked {
+                height: 320px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .vp-feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .vp-card-tall, .vp-card-col-stacked {
+                height: 280px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .vp-feature-grid {
+                grid-template-columns: 1fr;
+            }
+            .vp-card-tall, .vp-card-col-stacked {
+                height: 240px;
+            }
+        }
+
+        /* ========================================
+           3. PREMIUM FOOTER VILLA PLAZA
+           ======================================== */
+        .footer-premium {
+            background: #57101D; /* Official Red/Wine Villa Plaza */
+            padding: 0;
+            position: relative;
+            border-top: 1px solid rgba(211, 185, 123, 0.3);
+            font-family: var(--font-body);
+            color: #FFFFFF;
+        }
+
+        .footer-premium__inner {
+            max-width: 1380px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.1fr 1.2fr 1.5fr 1.2fr 1.1fr;
+            gap: 0;
+            min-height: 260px;
+            align-items: stretch;
+        }
+
+        .footer-col {
+            padding: 2.5rem 1.4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-right: 1px solid rgba(211, 185, 123, 0.22);
+        }
+
+        .footer-col:last-child {
+            border-right: none;
+        }
+
+        .footer-col-logo {
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-logo-img {
+            max-width: 140px;
+            height: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-socials {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-social-link {
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
-            background: rgba(5, 5, 5, 0.6);
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(211, 185, 123, 0.2);
+            border: 1px solid #FFFFFF;
+            background: #FFFFFF;
+            color: #57101D;
             display: flex;
             align-items: center;
             justify-content: center;
-            opacity: 0;
             transition: all 300ms ease;
-            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         }
 
-        .gallery:hover .gallery-arrow {
-            opacity: 1;
+        .footer-social-link svg {
+            width: 18px;
+            height: 18px;
+            stroke: #57101D;
+            fill: none;
+            stroke-width: 1.5;
+            transition: all 300ms ease;
         }
 
-        .gallery-arrow:hover {
-            background: rgba(5, 5, 5, 0.85);
-            border-color: #D3B97B;
-            box-shadow: 0 0 15px rgba(211, 185, 123, 0.15);
+        .footer-social-link svg[fill="currentColor"],
+        .footer-social-link svg *[fill="currentColor"] {
+            fill: #57101D;
+            stroke: none;
+            transition: all 300ms ease;
         }
 
-        .gallery-arrow-left { left: 16px; }
-        .gallery-arrow-right { right: 16px; }
+        .footer-social-link:hover {
+            background: #57101D;
+            border-color: #57101D;
+            color: #FFFFFF;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
 
-        .gallery-arrow svg {
+        .footer-social-link:hover svg {
+            stroke: #FFFFFF;
+        }
+
+        .footer-social-link:hover svg[fill="currentColor"],
+        .footer-social-link:hover svg *[fill="currentColor"] {
+            fill: #FFFFFF;
+            stroke: none;
+        }
+
+        .footer-handle {
+            font-size: 0.72rem;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 0.05em;
+        }
+
+        .footer-col__title {
+            font-family: var(--font-body);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            color: #D3B97B;
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .footer-title-star {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #D3B97B;
+            font-size: 0.65rem;
+            text-align: center;
+            margin-top: 0.2rem;
+            margin-bottom: 1rem;
+            opacity: 0.85;
+        }
+
+        .footer-title-star::before,
+        .footer-title-star::after {
+            content: "";
+            height: 1px;
+            width: 35px;
+        }
+
+        .footer-title-star::before {
+            background: linear-gradient(90deg, transparent, rgba(211, 185, 123, 0.6));
+        }
+
+        .footer-title-star::after {
+            background: linear-gradient(90deg, rgba(211, 185, 123, 0.6), transparent);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            font-size: 0.82rem;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .footer-icon-gold {
             width: 18px;
             height: 18px;
             stroke: #D3B97B;
             fill: none;
             stroke-width: 1.5;
-            stroke-linecap: round;
-            stroke-linejoin: round;
+            flex-shrink: 0;
+            margin-top: 2px;
         }
 
-        .lightbox {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 350ms ease, visibility 350ms ease;
-        }
-
-        .lightbox.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 24px;
-            right: 28px;
-            z-index: 10;
-            width: 44px;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            cursor: pointer;
-            transition: all 300ms ease;
-        }
-
-        .lightbox-close:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: #D3B97B;
-        }
-
-        .lightbox-close svg {
-            width: 20px;
-            height: 20px;
-            stroke: #F1E6D5;
-            fill: none;
-            stroke-width: 1.5;
-            stroke-linecap: round;
-        }
-
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 10;
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 300ms ease;
-        }
-
-        .lightbox-nav:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: #D3B97B;
-        }
-
-        .lightbox-nav svg {
-            width: 22px;
-            height: 22px;
-            stroke: #F1E6D5;
-            fill: none;
-            stroke-width: 1.5;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .lightbox-prev { left: 24px; }
-        .lightbox-next { right: 24px; }
-
-        .lightbox-content {
-            max-width: 90vw;
-            max-height: 85vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .lightbox-image {
-            max-width: 90vw;
-            max-height: 80vh;
-            object-fit: contain;
-            border-radius: 0;
-            opacity: 0;
-            transform: scale(0.96);
-            transition: opacity 350ms ease, transform 350ms ease;
-        }
-
-        .lightbox.active .lightbox-image {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .lightbox-counter {
-            font-family: var(--font-body);
-            font-size: 0.75rem;
-            letter-spacing: 0.25em;
-            color: rgba(255, 255, 255, 0.45);
-            text-align: center;
-        }
-
-        .footer-premium {
-            background: #080c0e;
-            padding: 0;
-            position: relative;
-            border-top: 1px solid rgba(210, 154, 60, 0.22);
-            border-bottom: 1px solid rgba(210, 154, 60, 0.22);
-            font-family: var(--font-body);
-        }
-
-        .footer-premium__inner {
-            max-width: 1440px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.1fr 1.2fr 1.8fr 0.9fr 1.1fr;
-            gap: 0;
-            min-height: 280px;
-            align-items: center;
-            padding: 1rem 1.5rem;
-        }
-
-        .footer-col {
-            padding: 1rem 1.2rem;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .footer-col-logo {
-            padding-left: 0;
-            border-right: 1px solid rgba(210, 154, 60, 0.22);
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .footer-col-contact {
-            padding-right: 1.2rem;
+        .footer-subtext {
+            display: block;
+            font-size: 0.72rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 0.3rem;
         }
 
         .footer-col-map {
-            padding: 0.8rem 1.2rem;
+            padding: 1.5rem;
             align-items: center;
             justify-content: center;
         }
 
-        .footer-col-hours {
-            border-left: 1px solid rgba(210, 154, 60, 0.22);
+        .footer-map-frame {
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            overflow: hidden;
+            box-shadow: none;
+            transition: transform 300ms ease;
+        }
+
+        .footer-map-frame:hover {
+            transform: scale(1.02);
+        }
+
+        .footer-map-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .footer-hours-block {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+            font-size: 0.82rem;
+        }
+
+        .footer-hours-day {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.8rem;
+        }
+
+        .footer-hours-time {
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.65);
+            padding-left: 1.6rem;
         }
 
         .footer-col-whatsapp {
-            border-left: 1px solid rgba(210, 154, 60, 0.22);
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-whatsapp-icon-gold {
+            color: #D3B97B;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-whatsapp-number {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #FFFFFF;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+        }
+
+        .footer-whatsapp-btn-gold {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.6rem 1.1rem;
+            border: 1px solid #D3B97B;
+            color: #D3B97B;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: all 300ms ease;
+            text-decoration: none;
+            white-space: nowrap !important;
+            max-width: 100%;
+        }
+
+        .footer-whatsapp-btn-gold:hover {
+            background: #D3B97B;
+            color: #57101D;
+        }
+
+        /* Footer Bottom Bar */
+        .footer-bottom {
+            border-top: 1px solid rgba(87, 16, 29, 0.15);
+            padding: 1.2rem 2rem;
+            background: #FFFFFF;
+            font-size: 0.75rem;
+            color: #57101D;
+        }
+
+        .footer-bottom__inner {
+            max-width: 1380px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .star-accent {
+            color: #57101D;
+            font-size: 0.8rem;
+        }
+
+        .dot-separator {
+            margin: 0 0.5rem;
+            color: #57101D;
+        }
+
+        .footer-bottom__left {
+            color: #57101D;
+            font-weight: 500;
+        }
+
+        .footer-bottom__right a {
+            color: #57101D;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 200ms ease;
+        }
+
+        .footer-bottom__right a:hover {
+            color: #C8102E;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 1024px) {
+            .footer-premium__inner {
+                grid-template-columns: 1fr 1fr;
+            }
+            .footer-col {
+                border-right: none;
+                border-bottom: 1px solid rgba(211, 185, 123, 0.22);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .footer-premium__inner {
+                grid-template-columns: 1fr;
+            }
+            .footer-bottom__inner {
+                flex-direction: column;
+                gap: 0.8rem;
+                text-align: center;
+            }
+        }er-left: 1px solid rgba(210, 154, 60, 0.22);
             align-items: center;
             text-align: center;
         }
@@ -3323,31 +4358,51 @@
         .footer-social-link {
             width: 38px;
             height: 38px;
-            border: 1px solid rgba(210, 154, 60, 0.35);
+            border: 1px solid #FFFFFF;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 300ms ease;
-            box-shadow: 0 0 12px rgba(210, 154, 60, 0.1);
-            background: rgba(6, 9, 11, 0.7);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            background: #FFFFFF;
+            color: #57101D;
         }
 
         .footer-social-link:hover {
-            border-color: #d29a3c;
-            background: rgba(210, 154, 60, 0.15);
+            border-color: #57101D;
+            background: #57101D;
+            color: #FFFFFF;
             transform: translateY(-2px);
-            box-shadow: 0 0 20px rgba(210, 154, 60, 0.35);
+            box-shadow: 0 4px 12px rgba(87, 16, 29, 0.3);
         }
 
         .footer-social-link svg {
-            width: 16px;
-            height: 16px;
-            stroke: #d29a3c;
+            width: 18px;
+            height: 18px;
+            stroke: #57101D;
             fill: none;
             stroke-width: 1.5;
             stroke-linecap: round;
             stroke-linejoin: round;
+            transition: all 300ms ease;
+        }
+
+        .footer-social-link svg[fill="currentColor"],
+        .footer-social-link svg *[fill="currentColor"] {
+            fill: #57101D;
+            stroke: none;
+            transition: all 300ms ease;
+        }
+
+        .footer-social-link:hover svg {
+            stroke: #FFFFFF;
+        }
+
+        .footer-social-link:hover svg[fill="currentColor"],
+        .footer-social-link:hover svg *[fill="currentColor"] {
+            fill: #FFFFFF;
+            stroke: none;
         }
 
         .footer-contact-item {
@@ -3392,13 +4447,13 @@
             border-radius: 12px;
             border: 1.5px solid rgba(210, 154, 60, 0.35);
             transition: all 300ms ease;
-            box-shadow: 0 4px 22px rgba(0, 0, 0, 0.7);
+            box-shadow: none;
             background: #080c0e url("assets/Rodape/MAPA-THE-WINE.webp") center/cover no-repeat;
         }
 
         .footer-map-link:hover {
             border-color: #d29a3c;
-            box-shadow: 0 0 28px rgba(210, 154, 60, 0.35);
+            box-shadow: none;
         }
 
         .footer-map-img {
@@ -3559,19 +4614,20 @@
             align-items: center;
             justify-content: center;
             gap: 0.4rem;
-            padding: 0.45rem 1rem;
+            padding: 0.6rem 1.1rem;
             font-family: var(--font-body);
-            font-size: 0.65rem;
-            font-weight: 500;
+            font-size: 0.68rem;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.14em;
+            letter-spacing: 0.12em;
             color: #eabb75;
             border: 1px solid rgba(210, 154, 60, 0.35);
             background: rgba(210, 154, 60, 0.06);
             border-radius: 4px;
             text-decoration: none;
             transition: all 300ms ease;
-            white-space: nowrap;
+            white-space: nowrap !important;
+            max-width: 100%;
         }
 
         .footer-whatsapp-btn:hover {
@@ -3583,8 +4639,8 @@
         }
 
         .footer-bottom {
-            background: #06090b;
-            border-top: 1px solid rgba(210, 154, 60, 0.22);
+            background: #FFFFFF;
+            border-top: 1px solid rgba(87, 16, 29, 0.15);
             height: 52px;
             display: flex;
             align-items: center;
@@ -3602,8 +4658,8 @@
 
         .footer-bottom__left {
             font-size: 0.72rem;
-            color: #aaa49c;
-            font-weight: 300;
+            color: #57101D;
+            font-weight: 500;
             letter-spacing: 0.04em;
         }
 
@@ -3616,14 +4672,14 @@
         .footer-bottom__center-line {
             width: 45px;
             height: 1px;
-            background: linear-gradient(to right, transparent, rgba(210, 154, 60, 0.35), transparent);
+            background: linear-gradient(to right, transparent, rgba(87, 16, 29, 0.3), transparent);
         }
 
         .footer-bottom__center-icon {
             width: 16px;
             height: 16px;
-            fill: #d29a3c;
-            opacity: 0.85;
+            fill: #57101D;
+            opacity: 0.9;
         }
 
         .footer-bottom__right {
@@ -3634,14 +4690,14 @@
 
         .footer-bottom__right a {
             font-size: 0.72rem;
-            color: #aaa49c;
-            font-weight: 300;
+            color: #57101D;
+            font-weight: 500;
             transition: color 300ms ease;
             text-decoration: none;
         }
 
         .footer-bottom__right a:hover {
-            color: #d29a3c;
+            color: #C8102E;
         }
 
         @media (max-width: 1024px) {
@@ -3664,34 +4720,36 @@
             /* CTA Reservation Banner Mobile */
             .cta-reservation {
                 min-height: 440px !important;
-                padding: 3.5rem 1.2rem !important;
+                padding: 3.5rem 1rem !important;
             }
 
             .cta-reservation__content {
-                padding: 1.5rem 1rem !important;
+                padding: 1rem 0.5rem !important;
             }
 
-            .cta-reservation__headline {
-                font-size: 2.1rem !important;
+            .cta-headline__top {
+                font-size: 1.5rem !important;
+            }
+
+            .cta-headline__main {
+                font-size: 2.6rem !important;
                 line-height: 1.15 !important;
             }
 
-            .cta-reservation__headline-script {
-                font-size: 3.6rem !important;
-                margin-top: 0 !important;
+            .cta-reservation__script {
+                font-size: 3rem !important;
             }
 
             .cta-reservation__subtitle {
-                font-size: 0.82rem !important;
+                font-size: 0.88rem !important;
                 line-height: 1.6 !important;
-                margin-top: 0.8rem !important;
-                margin-bottom: 2rem !important;
+                margin-bottom: 1.8rem !important;
             }
 
             .cta-reservation__btn {
-                max-width: 260px !important;
-                padding: 0.95rem 1.5rem !important;
-                font-size: 0.68rem !important;
+                max-width: 280px !important;
+                padding: 0.95rem 1.8rem !important;
+                font-size: 0.72rem !important;
             }
 
             /* Gallery Carousel Mobile */
@@ -3826,12 +4884,14 @@
                 margin-bottom: 0.8rem !important;
             }
 
-            .footer-whatsapp-btn {
-                white-space: normal !important;
-                width: 100% !important;
-                max-width: 240px !important;
+            .footer-whatsapp-btn,
+            .footer-whatsapp-btn-gold {
+                white-space: nowrap !important;
+                width: auto !important;
+                max-width: 100% !important;
                 margin: 0 auto !important;
-                padding: 0.75rem 1.2rem !important;
+                padding: 0.6rem 1rem !important;
+                letter-spacing: 0.1em !important;
             }
 
             /* Footer Bottom Bar Mobile */
@@ -3839,7 +4899,8 @@
                 height: auto !important;
                 min-height: auto !important;
                 padding: 2rem 1.2rem 6.5rem !important;
-                background: #06090b !important;
+                background: #FFFFFF !important;
+                border-top: 1px solid rgba(87, 16, 29, 0.15) !important;
             }
 
             .footer-bottom__inner {
@@ -4059,7 +5120,7 @@ body.menu-modal-open {
     min-height: 300px;
     height: 100%;
     color: var(--wine-gold, #d29a3c);
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-display);
     font-size: 1.3rem;
     gap: 1.2rem;
     letter-spacing: 0.05em;
@@ -4102,4 +5163,303 @@ body.menu-modal-open {
         height: 44px !important;
     }
 }
+
+/* ========================================
+   SEÇÃO BANNER RESERVA RODAPÉ (VILLA PLAZA)
+   ======================================== */
+.reserva-banner-rodape {
+    position: relative;
+    width: 100%;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: var(--wine-black, #000000);
+    padding: 5rem 1.5rem;
+    box-sizing: border-box;
+    text-align: center;
+    user-select: none;
+}
+
+.reserva-banner-rodape__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 1;
+}
+
+.reserva-banner-rodape:hover .reserva-banner-rodape__bg {
+    transform: scale(1.04);
+}
+
+.reserva-banner-rodape__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        180deg, 
+        rgba(5, 5, 5, 0.65) 0%, 
+        rgba(15, 8, 8, 0.72) 50%, 
+        rgba(5, 5, 5, 0.75) 100%
+    );
+    z-index: 2;
+    transition: background 0.6s ease;
+}
+
+.reserva-banner-rodape:hover .reserva-banner-rodape__overlay {
+    background: linear-gradient(
+        180deg, 
+        rgba(5, 5, 5, 0.55) 0%, 
+        rgba(15, 8, 8, 0.62) 50%, 
+        rgba(5, 5, 5, 0.65) 100%
+    );
+}
+
+.reserva-banner-rodape__content {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Top Line with Brand */
+.reserva-banner-rodape__top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    width: 100%;
+    max-width: 480px;
+    margin-bottom: 0.6rem;
+}
+
+.reserva-banner-rodape__line {
+    flex: 1;
+    height: 1px;
+    background: var(--wine-gold-accent, #D3B97B);
+    opacity: 0.75;
+}
+
+.reserva-banner-rodape__brand {
+    font-family: var(--font-display, 'Montserrat', sans-serif);
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    color: var(--wine-gold-accent, #D3B97B);
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* Headline */
+.reserva-banner-rodape__headline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 0.95;
+    margin: 0.2rem 0 1.2rem 0;
+}
+
+.reserva-banner-rodape__script {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 3.4rem;
+    color: #FFFFFF;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    margin-bottom: -0.2em;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+.reserva-banner-rodape__main {
+    font-family: var(--font-display, 'Montserrat', sans-serif);
+    font-size: 5.4rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.9);
+    margin-right: -0.16em;
+}
+
+/* Subtitle with bullets */
+.reserva-banner-rodape__sub {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    font-family: var(--font-display, 'Montserrat', sans-serif);
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    color: var(--wine-gold-accent, #D3B97B);
+    text-transform: uppercase;
+    margin-bottom: 1.4rem;
+}
+
+.reserva-banner-rodape__sub .bullet {
+    font-size: 0.85rem;
+    color: var(--wine-gold-accent, #D3B97B);
+    opacity: 0.9;
+}
+
+/* Bottom Ornament with Diamond */
+.reserva-banner-rodape__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    width: 100%;
+    max-width: 320px;
+}
+
+.reserva-banner-rodape__diamond {
+    font-size: 0.8rem;
+    color: var(--wine-gold-accent, #D3B97B);
+    line-height: 1;
+    display: inline-block;
+    opacity: 0.9;
+}
+
+/* Botão Minimalista Dourado */
+.reserva-banner-rodape__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.85rem 2.2rem;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1.5px solid var(--wine-gold-accent, #D3B97B);
+    border-radius: 6px;
+    color: var(--wine-gold-accent, #D3B97B);
+    font-family: var(--font-display, 'Montserrat', sans-serif);
+    font-size: 0.98rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    margin-top: 1.6rem;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+}
+
+.reserva-banner-rodape__btn svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--wine-gold-accent, #D3B97B);
+    transition: stroke 0.4s ease, transform 0.4s ease;
+    flex-shrink: 0;
+}
+
+.reserva-banner-rodape__btn:hover {
+    background: var(--vp-wine, #57101D);
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+    box-shadow: 0 6px 22px rgba(87, 16, 29, 0.6), 0 0 16px rgba(211, 185, 123, 0.35);
+    transform: translateY(-2px);
+}
+
+.reserva-banner-rodape__btn:hover svg {
+    stroke: #FFFFFF;
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .reserva-banner-rodape {
+        min-height: 380px;
+        padding: 3.5rem 1rem;
+    }
+
+    .reserva-banner-rodape__brand {
+        font-size: 0.95rem;
+        letter-spacing: 0.25em;
+    }
+
+    .reserva-banner-rodape__top {
+        max-width: 360px;
+        gap: 0.8rem;
+    }
+
+    .reserva-banner-rodape__script {
+        font-size: 2.5rem;
+    }
+
+    .reserva-banner-rodape__main {
+        font-size: 3.4rem;
+        letter-spacing: 0.12em;
+    }
+
+    .reserva-banner-rodape__sub {
+        font-size: 0.85rem;
+        letter-spacing: 0.18em;
+        gap: 0.5rem;
+    }
+
+    .reserva-banner-rodape__bottom {
+        max-width: 240px;
+    }
+
+    .reserva-banner-rodape__btn {
+        padding: 0.75rem 1.8rem;
+        font-size: 0.88rem;
+        letter-spacing: 0.14em;
+        margin-top: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .reserva-banner-rodape {
+        min-height: 320px;
+        padding: 3rem 0.8rem;
+    }
+
+    .reserva-banner-rodape__top {
+        max-width: 280px;
+    }
+
+    .reserva-banner-rodape__brand {
+        font-size: 0.82rem;
+        letter-spacing: 0.2em;
+    }
+
+    .reserva-banner-rodape__script {
+        font-size: 2rem;
+    }
+
+    .reserva-banner-rodape__main {
+        font-size: 2.5rem;
+        letter-spacing: 0.08em;
+    }
+
+    .reserva-banner-rodape__sub {
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+    }
+
+    .reserva-banner-rodape__btn {
+        padding: 0.68rem 1.4rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+    }
+}
+
+
 
