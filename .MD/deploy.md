@@ -1,14 +1,15 @@
-﻿# Deploy
+# Deploy - Villa Plaza Restaurante
 
-atualizado: 2026-07-08
+**Atualizado:** 2026-08-01
 
-## Ambiente
+## 🌐 Produção
+- **URL Pública:** `https://villaplaza.suporteide.digital/`
+- **Subdomínio:** `villaplaza.suporteide.digital`
+- **VPS Host:** `161.97.108.92`
+- **Diretório VPS:** `/opt/villaplaza-site/app`
+- **Container Docker:** `villaplaza-web`
 
-- Local (Desenvolvimento)
-
-## Processo
-
-- A definir.
-
-## Cuidados
-- A definir.
+## 🔄 Fluxo de CI/CD
+- **Gatilho:** Push na branch `main` no GitHub.
+- **Workflow:** `.github/workflows/deploy-vps.yml`
+- **Roteamento & SSL:** Traefik + Let's Encrypt automático via Cloudflare Proxy.
