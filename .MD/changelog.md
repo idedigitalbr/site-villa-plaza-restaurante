@@ -1,6 +1,13 @@
 # Changelog
 
+## 2026-08-01
+
+- Publicação e deploy automatizado do site em ambiente de produção na VPS no subdomínio [https://villaplaza.suporteide.digital/](https://villaplaza.suporteide.digital/).
+- Configuração de DNS no Cloudflare (registro A com proxy ativo), Dockerfile Nginx alpine, docker-compose.yml com SSL automático via Traefik Proxy / Let's Encrypt.
+- Geradas chaves SSH de deploy e cadastrados Repository Secrets no GitHub (`idedigitalbr/site-villa-plaza-restaurante`).
+
 ## 2026-07-31
+
 
 - Remoção da seção de CTA de Reserva (`.cta-reservation` / `#reserva` com "Sua mesa está pronta para receber bons momentos") de [index.html](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-villa-plaza-restaurante/index.html) a pedido do usuário.
 - Criação e integração da nova Seção Banner de Reserva próxima ao Rodapé (`.reserva-banner-rodape` / `#reserva-banner-rodape`), utilizando a foto de ambiente oficial `assets/ambiente/ambiente-interior-mezanino.webp` com overlay escuro refinado, tipografia idêntica ao design enviado pelo cliente:
