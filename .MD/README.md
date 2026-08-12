@@ -1,24 +1,23 @@
-﻿# Projeto VILLA PLAZA (Restaurante)
+# Projeto VILLA PLAZA (Restaurante)
 
-atualizado: 2026-07-09
+atualizado: 2026-08-03
 
 ## Resumo
 
-Descrição curta do projeto.
+Site institucional do Villa Plaza Restaurante em Belém-PA.
 
 ## Repositorio local
 
-- Caminho: G:\Meu Drive\.PROJETOS\Projetos JR Lopes 2026\Projeto VILLA PLAZA (Restaurante)
-- Branch atual: desconhecido
-- Git Remote: sem repositÃ³rio remoto
-- Stack principal: N/A
+- Caminho: G:\Meu Drive\.PROJETOS\Sites Institucionais\site-villa-plaza-restaurante
+- Branch atual: main
+- Git Remote: git@github.com:idedigitalbr/site-villa-plaza-restaurante.git
+- URL Produção: https://villaplaza.suporteide.digital/
+- Stack principal: HTML5 / Vanilla CSS3 / JavaScript / Docker Nginx Traefik
 
 ## Estado atual
 
-Sincronizado automaticamente da pasta local.
+Sincronizado e publicado na VPS com deploy automático via GitHub Actions.
 
 ## Proximos cuidados
 
-- Atualizar documentação e fluxos de trabalho.
-
-
+- Manter assets otimizados e sincronizar formulários de reserva.
