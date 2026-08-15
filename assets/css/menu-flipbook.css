@@ -1,0 +1,423 @@
+/* =============================================================
+   VILLA PLAZA - CARDÁPIO FLIPBOOK
+   Isolated styles: the global site stylesheet remains untouched.
+   ============================================================= */
+
+#menuModal.menu-modal-overlay {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0.65rem !important;
+    margin: 0 !important;
+    background: rgba(15, 2, 6, 0.95) !important;
+    backdrop-filter: blur(24px) saturate(125%) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(125%) !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 260ms ease, visibility 260ms ease;
+    z-index: 999999 !important;
+}
+
+#menuModal.menu-modal-overlay.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+#menuModal .menu-modal-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: min(1440px, calc(100vw - 1rem));
+    height: min(96vh, 960px);
+    max-height: 96vh;
+    overflow: hidden !important;
+    border: 1px solid rgba(211, 185, 123, 0.42);
+    border-radius: 14px;
+    background: #18070d;
+    box-shadow: 0 28px 90px rgba(0, 0, 0, 0.86), 0 0 50px rgba(87, 16, 29, 0.35);
+}
+
+.flipbook-header {
+    min-height: 60px;
+    display: grid;
+    grid-template-columns: minmax(180px, 1fr) auto auto;
+    align-items: center;
+    gap: 0.7rem;
+    flex-shrink: 0;
+    padding: 0.55rem 1rem;
+    color: var(--wine-cream, #F1E6D5);
+    background: linear-gradient(118deg, rgba(87, 16, 29, 0.98), rgba(35, 5, 12, 0.98));
+    border-bottom: 1px solid rgba(211, 185, 123, 0.28);
+}
+
+.flipbook-kicker {
+    display: block;
+    margin-bottom: 0.15rem;
+    color: var(--wine-gold-accent, #D3B97B);
+    font: 600 0.56rem var(--font-body, 'Montserrat', sans-serif);
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+}
+
+.flipbook-header h2 {
+    margin: 0;
+    color: var(--wine-cream, #F1E6D5);
+    font: 500 clamp(1.35rem, 2vw, 1.95rem) var(--font-display, 'Montserrat', sans-serif);
+    letter-spacing: 0.06em;
+}
+
+#menuModal .menu-modal-close {
+    position: static !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 40px !important;
+    height: 40px !important;
+    flex: 0 0 40px;
+    padding: 0 !important;
+    border: 1px solid var(--wine-gold-accent, #D3B97B) !important;
+    border-radius: 50% !important;
+    color: var(--wine-gold-accent, #D3B97B) !important;
+    background: rgba(211, 185, 123, 0.08) !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    outline: none !important;
+    transform: none !important;
+}
+
+#menuModal .menu-modal-close:hover {
+    color: var(--vp-wine-dark, #57101D) !important;
+    background: var(--wine-gold-accent, #D3B97B) !important;
+    border-color: var(--wine-gold-accent, #D3B97B) !important;
+    transform: rotate(90deg) !important;
+}
+
+.flipbook-toolbar {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    flex-wrap: nowrap;
+    padding: 0.3rem 0.55rem;
+    color: rgba(241, 230, 213, 0.88);
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(211, 185, 123, 0.2);
+    border-radius: 7px;
+    font: 0.7rem var(--font-body, 'Montserrat', sans-serif);
+}
+
+.flipbook-tool-group,
+.flipbook-tool-group-end,
+.flipbook-error-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.flipbook-tool-group-end {
+    justify-content: flex-end;
+}
+
+.flipbook-toolbar button,
+.flipbook-toolbar a,
+.flipbook-error-actions button,
+.flipbook-error-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 30px;
+    padding: 0.32rem 0.55rem;
+    border: 1px solid rgba(211, 185, 123, 0.38);
+    border-radius: 4px;
+    color: var(--wine-gold-accent, #D3B97B);
+    background: transparent;
+    font: 600 0.62rem var(--font-body, 'Montserrat', sans-serif);
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.flipbook-toolbar button:hover,
+.flipbook-toolbar a:hover,
+.flipbook-error-actions button:hover,
+.flipbook-error-actions a:hover {
+    color: var(--vp-wine-dark, #57101D);
+    background: var(--wine-gold-accent, #D3B97B);
+    border-color: var(--wine-gold-accent, #D3B97B);
+}
+
+.flipbook-toolbar .flipbook-tool-group button:first-child,
+.flipbook-toolbar .flipbook-tool-group button:last-child {
+    min-width: 30px;
+    padding-inline: 0.35rem;
+    font-size: 1.05rem;
+    line-height: 1;
+}
+
+.flipbook-page-control {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    white-space: nowrap;
+}
+
+.flipbook-page-control input {
+    width: 44px;
+    min-height: 30px;
+    padding: 0.28rem;
+    border: 1px solid rgba(211, 185, 123, 0.45);
+    border-radius: 4px;
+    color: var(--wine-cream, #F1E6D5);
+    background: rgba(0, 0, 0, 0.3);
+    font: 600 0.75rem var(--font-body, 'Montserrat', sans-serif);
+    text-align: center;
+}
+
+.flipbook-page-control strong {
+    color: var(--wine-gold-accent, #D3B97B);
+    font-weight: 600;
+}
+
+.flipbook-reader {
+    position: relative;
+    min-height: 0;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 50% 44%, rgba(87, 16, 29, 0.34), transparent 48%),
+        linear-gradient(145deg, #250912, #090306 72%);
+    perspective: 1600px;
+}
+
+#menuFlipbookPages {
+    position: relative;
+    z-index: 1;
+    width: min(94%, 1260px);
+    height: calc(100% - 1rem);
+    display: block;
+    flex: 0 1 auto;
+    transform-origin: center center;
+    transition: transform 180ms ease;
+}
+
+#menuFlipbookPages.is-zoomed {
+    overflow: visible;
+    transform: scale(var(--flipbook-zoom, 1));
+}
+
+#menuFlipbookPages.stf__parent {
+    width: min(98%, 1400px);
+    height: calc(100% - 0.35rem);
+    margin: 0 auto;
+    overflow: visible;
+    filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.5));
+}
+
+#menuFlipbookPages.stf__parent .stf__wrapper,
+#menuFlipbookPages.stf__parent .stf__block {
+    overflow: visible;
+}
+
+#menuFlipbookPages.stf__parent .stf__block {
+    border-radius: 4px;
+}
+
+#menuFlipbookPages.stf__parent .stf__item {
+    overflow: hidden;
+    background: #f5ede1;
+    border: 1px solid rgba(211, 185, 123, 0.34);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.62);
+}
+
+#menuFlipbookPages.stf__parent canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 3px;
+    transition: left 720ms ease;
+}
+
+@media (min-width: 821px) {
+    #menuFlipbookPages.stf__parent.is-cover canvas {
+        left: -25%;
+    }
+}
+
+.flipbook-nav {
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 72px;
+    border: 1px solid rgba(211, 185, 123, 0.32);
+    border-radius: 8px;
+    color: var(--wine-gold-accent, #D3B97B);
+    background: rgba(15, 2, 6, 0.72);
+    font: 3.1rem/1 Georgia, serif;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: background 180ms ease, color 180ms ease, border-color 180ms ease, opacity 180ms ease;
+}
+
+.flipbook-nav:hover:not(:disabled) {
+    color: var(--vp-wine-dark, #57101D);
+    background: var(--wine-gold-accent, #D3B97B);
+    border-color: var(--wine-gold-accent, #D3B97B);
+}
+
+.flipbook-nav:disabled {
+    cursor: default;
+    opacity: 0.22;
+}
+
+.flipbook-nav-prev { left: 1.2rem; }
+.flipbook-nav-next { right: 1.2rem; }
+
+.menu-pdf-loading,
+.menu-pdf-error {
+    position: absolute;
+    z-index: 5;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 2rem;
+    color: var(--wine-gold-accent, #D3B97B);
+    text-align: center;
+    background: rgba(15, 2, 6, 0.92);
+    font: 0.9rem var(--font-body, 'Montserrat', sans-serif);
+}
+
+.menu-pdf-loading[hidden],
+.menu-pdf-error[hidden] {
+    display: none !important;
+}
+
+.menu-pdf-error strong {
+    color: var(--wine-cream, #F1E6D5);
+    font: 500 1.5rem var(--font-display, 'Montserrat', sans-serif);
+}
+
+.menu-pdf-error span {
+    color: rgba(241, 230, 213, 0.72);
+}
+
+.pdf-spinner {
+    width: 42px;
+    height: 42px;
+    border: 3px solid rgba(211, 185, 123, 0.22);
+    border-top-color: var(--wine-gold-accent, #D3B97B);
+    border-radius: 50%;
+    animation: villaFlipbookSpin 0.9s linear infinite;
+}
+
+@keyframes villaFlipbookSpin {
+    to { transform: rotate(360deg); }
+}
+
+@media (max-width: 820px) {
+    #menuModal.menu-modal-overlay {
+        padding: 0.25rem !important;
+    }
+
+    #menuModal .menu-modal-card {
+        width: calc(100vw - 0.5rem);
+        height: 98vh;
+        max-height: 98vh;
+        border-radius: 10px;
+    }
+
+    .flipbook-header {
+        min-height: 54px;
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-rows: auto auto;
+        gap: 0.35rem;
+        padding: 0.5rem 0.7rem;
+    }
+
+    .flipbook-kicker {
+        font-size: 0.46rem;
+        letter-spacing: 0.2em;
+    }
+
+    .flipbook-header h2 {
+        font-size: 1.2rem;
+    }
+
+    #menuModal .menu-modal-close {
+        width: 38px !important;
+        height: 38px !important;
+        flex-basis: 38px;
+    }
+
+    .flipbook-header > .flipbook-toolbar {
+        order: 3;
+        grid-column: 1 / -1;
+        width: 100%;
+        min-height: 0;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 0.35rem 0 0;
+        border-top: 1px solid rgba(211, 185, 123, 0.18);
+        border-right: 0;
+        border-bottom: 0;
+        border-left: 0;
+    }
+
+    .flipbook-toolbar {
+        gap: 0.3rem;
+        padding: 0.25rem;
+    }
+
+    .flipbook-toolbar button,
+    .flipbook-toolbar a {
+        min-height: 28px;
+        padding-inline: 0.45rem;
+        font-size: 0.56rem;
+    }
+
+    .flipbook-page-control {
+        gap: 0.25rem;
+    }
+
+    #menuFlipbookPages,
+    #menuFlipbookPages.stf__parent {
+        width: calc(100% - 72px);
+        height: calc(100% - 0.6rem);
+    }
+
+    .flipbook-nav {
+        width: 34px;
+        height: 58px;
+        font-size: 2.4rem;
+    }
+
+    .flipbook-nav-prev { left: 0.3rem; }
+    .flipbook-nav-next { right: 0.3rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #menuFlipbookPages,
+    #menuFlipbookPages.stf__parent canvas {
+        transition: none;
+    }
+}
