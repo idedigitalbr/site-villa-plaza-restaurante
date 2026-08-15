@@ -80,8 +80,8 @@
     }
     </script>
 
-    <link rel="stylesheet" href="style.css?v=20260729_v43">
-    <link rel="stylesheet" href="assets/css/menu-flipbook.css?v=20260814_v1">
+    <link rel="stylesheet" href="style.css?v=20260815_v3">
+    <link rel="stylesheet" href="assets/css/menu-flipbook.css?v=20260815_v3">
 </head>
 <body>
 
@@ -1253,19 +1253,22 @@
                     <h2 id="menuModalTitle">Cardápio</h2>
                 </div>
                 <div class="flipbook-toolbar" aria-label="Controles do cardápio">
-                    <div class="flipbook-tool-group">
-                        <button id="menuZoomOut" type="button" aria-label="Diminuir zoom">−</button>
-                        <button id="menuFitBtn" type="button">Ajustar</button>
-                        <button id="menuZoomIn" type="button" aria-label="Aumentar zoom">+</button>
-                    </div>
                     <label class="flipbook-page-control">
                         <span>Página</span>
                         <input id="menuPageInput" type="number" min="1" value="1" aria-label="Número da página">
                         <span>/ <strong id="menuPageTotal">—</strong></span>
                     </label>
                     <div class="flipbook-tool-group flipbook-tool-group-end">
-                        <button id="menuFullscreenBtn" type="button">Tela cheia</button>
-                        <a id="menuDownloadBtn" href="assets/CardapioMenu/cardapio-villa-plaza.pdf" download>Baixar PDF</a>
+                        <button id="menuFullscreenBtn" class="flipbook-icon-button" type="button" aria-label="Abrir tela cheia" title="Abrir tela cheia">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M8 3H3v5M16 3h5v5M8 21H3v-5M21 16v5h-5" />
+                            </svg>
+                        </button>
+                        <a id="menuDownloadBtn" class="flipbook-icon-button" href="assets/CardapioMenu/cardapio-villa-plaza.pdf" download aria-label="Baixar PDF" title="Baixar PDF">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
                 <button class="menu-modal-close" id="menuModalCloseBtn" type="button" aria-label="Fechar cardápio">
@@ -1291,7 +1294,11 @@
                     <span>Você ainda pode baixar o PDF local para continuar.</span>
                     <div class="flipbook-error-actions">
                         <button id="menuRetryBtn" type="button">Tentar novamente</button>
-                        <a href="assets/CardapioMenu/cardapio-villa-plaza.pdf" download>Baixar PDF</a>
+                        <a class="flipbook-icon-button" href="assets/CardapioMenu/cardapio-villa-plaza.pdf" download aria-label="Baixar PDF" title="Baixar PDF">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1751,8 +1758,8 @@
             }
         });
     </script>
-    <script src="assets/js/page-flip.browser.js?v=20260814_v1"></script>
-    <script src="assets/js/menu-flipbook.js?v=20260814_v1"></script>
+    <script src="assets/js/page-flip.browser.js?v=20260815_v3"></script>
+    <script src="assets/js/menu-flipbook.js?v=20260815_v3"></script>
 
 </body>
 </html>
