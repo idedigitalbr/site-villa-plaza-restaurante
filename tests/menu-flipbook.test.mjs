@@ -176,3 +176,14 @@ test('uses the entire mobile viewport without reserving side gutters for navigat
   assert.match(css, /@media \(max-width: 820px\)[\s\S]*\.flipbook-nav-prev\s*\{\s*left:\s*0\.3rem/);
   assert.match(css, /@media \(max-width: 820px\)[\s\S]*\.flipbook-nav-next\s*\{\s*right:\s*0\.3rem/);
 });
+
+test('keeps the footer year current automatically', () => {
+  const html = read('index.html');
+  const currentYearScript = read('assets/js/current-year.js');
+
+  assert.match(html, /©\s*<span[^>]*data-current-year[^>]*>2026<\/span>\s*Villa Plaza/);
+  assert.match(html, /assets\/js\/current-year\.js\?v=20260815_v1/);
+  assert.doesNotMatch(html, /©\s*2024\s+Villa Plaza/);
+  assert.match(currentYearScript, /new Date\(\)\.getFullYear\(\)/);
+  assert.match(currentYearScript, /querySelector\(['"]\[data-current-year\]['"]\)/);
+});
