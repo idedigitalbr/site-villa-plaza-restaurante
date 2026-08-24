@@ -97,7 +97,7 @@ test('keeps the page state contract for cover, spreads and one-sheet navigation'
 
 test('uses cache-busted Villa Plaza assets and accessible action icons', () => {
   const html = read('index.html');
-  const version = 'v=20260824_v2';
+  const version = 'v=20260824_v3';
 
   for (const asset of [
     `assets/css/menu-flipbook.css?${version}`,
@@ -215,14 +215,16 @@ test('removes the modal frame and hides fullscreen only on mobile', () => {
   const css = read('assets/css/menu-flipbook.css');
 
   assert.match(css, /\.menu-modal-card\s*\{[\s\S]*border:\s*none\s*!important;/);
+  assert.match(css, /#menuModal\.menu-modal-overlay\s*\{[\s\S]*background:\s*#050406\s*!important;/);
+  assert.match(css, /#menuModal \.menu-modal-card\s*\{[\s\S]*background:\s*#090306\s*!important;/);
   assert.match(css, /\.flipbook-header\s*\{[\s\S]*border-bottom:\s*none\s*!important;/);
-  assert.match(css, /\.flipbook-header\s*\{\s*min-height:\s*108px[\s\S]*background:\s*transparent\s*!important;/);
+  assert.match(css, /\.flipbook-header\s*\{\s*min-height:\s*108px[\s\S]*background:\s*#090306\s*!important;/);
   assert.match(css, /\.flipbook-header\s*\{[\s\S]*flex-direction:\s*column;/);
   assert.match(css, /\.flipbook-brand-logo\s*\{[\s\S]*max-width:/);
   assert.match(css, /\.flipbook-toolbar\s*\{[\s\S]*justify-content:\s*center;/);
   assert.match(css, /\.flipbook-toolbar \.flipbook-toolbar-nav\s*\{[\s\S]*position:\s*static\s*!important;/);
   assert.match(css, /@media \(max-width: 820px\)[\s\S]*#menuFullscreenBtn\s*\{[\s\S]*display:\s*none\s*!important;/);
-  assert.match(html, /assets\/css\/menu-flipbook\.css\?v=20260824_v2/);
+  assert.match(html, /assets\/css\/menu-flipbook\.css\?v=20260824_v3/);
 });
 
 test('centers the cover using the real reader and restores the page after closing', () => {
