@@ -88,7 +88,10 @@ let isOpen = false;
 let isAnimating = false;
 let resizeTimer = null;
 let lastFocusedElement = null;
+let menuModalScrollY = 0;
 let pinchGesture = null;
+let pausedBackgroundVideos = [];
+let backgroundVideoPlayHandlers = new Map();
 
 function setLoading(visible) {
     if (!elements.loading) return;
@@ -179,11 +182,66 @@ function updateCanvasResolution() {
     render.update();
 }
 
+function centerCoverPage() {
+    const canvas = pageFlip?.getUI?.()?.getCanvas?.();
+    if (!canvas || !elements.pages || !elements.stage) return;
+
+    const isDesktop = window.matchMedia('(min-width: 821px)').matches;
+    if (!isDesktop || currentPage !== 1) {
+        canvas.style.removeProperty('left');
+        return;
+    }
+
+    const bounds = pageFlip.getBoundsRect?.();
+    const pageWidth = Number(bounds?.pageWidth);
+    if (!Number.isFinite(pageWidth) || pageWidth <= 0) return;
+
+    const stageRect = elements.stage.getBoundingClientRect();
+    const pagesRect = elements.pages.getBoundingClientRect();
+    const renderLeft = Number(bounds.left) || 0;
+    const coverCenter = renderLeft + (pageWidth * 1.5);
+    const targetLeft = (
+        stageRect.left
+        + stageRect.width / 2
+        - pagesRect.left
+        - coverCenter
+    );
+
+    canvas.style.left = `${Math.round(targetLeft * 100) / 100}px`;
+}
+
 function lockPageScroll(locked) {
     document.documentElement.classList.toggle('menu-modal-open', locked);
     document.body.classList.toggle('menu-modal-open', locked);
     document.body.style.overflow = locked ? 'hidden' : '';
     document.documentElement.style.overflow = locked ? 'hidden' : '';
+}
+
+function setBackgroundVideosPaused(paused) {
+    const backgroundVideos = Array.from(document.querySelectorAll('video'))
+        .filter((video) => !elements.modal?.contains(video));
+
+    if (paused) {
+        if (backgroundVideoPlayHandlers.size) return;
+
+        pausedBackgroundVideos = backgroundVideos.filter((video) => !video.paused);
+        backgroundVideos.forEach((video) => {
+            const preventBackgroundPlayback = () => video.pause();
+            backgroundVideoPlayHandlers.set(video, preventBackgroundPlayback);
+            video.addEventListener('play', preventBackgroundPlayback);
+            video.pause();
+        });
+        return;
+    }
+
+    backgroundVideoPlayHandlers.forEach((handler, video) => {
+        video.removeEventListener('play', handler);
+    });
+    backgroundVideoPlayHandlers.clear();
+    pausedBackgroundVideos.forEach((video) => {
+        video.play().catch(() => {});
+    });
+    pausedBackgroundVideos = [];
 }
 
 function handlePageFlip({ data }) {
@@ -192,6 +250,7 @@ function handlePageFlip({ data }) {
     setLoading(false);
     setError(false);
     updateControls();
+    centerCoverPage();
 }
 
 async function initializeReader() {
@@ -214,7 +273,10 @@ async function initializeReader() {
         pageFlip = new window.St.PageFlip(elements.pages, PAGE_FLIP_OPTIONS);
         pageFlip.on('init', handlePageFlip);
         pageFlip.on('flip', handlePageFlip);
-        pageFlip.on('changeOrientation', updateControls);
+        pageFlip.on('changeOrientation', () => {
+            updateControls();
+            centerCoverPage();
+        });
         updateResponsiveBookMode();
         pageFlip.loadFromImages(getPageImagesForViewport());
 
@@ -223,6 +285,7 @@ async function initializeReader() {
         updateCanvasResolution();
         setLoading(false);
         updateControls();
+        centerCoverPage();
         return pageFlip;
     })();
 
@@ -261,6 +324,7 @@ function goToPage(targetPage) {
         currentPage = target;
         isAnimating = false;
         updateControls();
+        centerCoverPage();
         return;
     }
 
@@ -272,8 +336,10 @@ function goToPage(targetPage) {
 function openMenuModal() {
     if (!elements.modal) return;
 
+    menuModalScrollY = window.scrollY;
     lastFocusedElement = document.activeElement;
     isOpen = true;
+    setBackgroundVideosPaused(true);
     elements.modal.style.display = 'flex';
     elements.modal.classList.add('active');
     elements.modal.setAttribute('aria-hidden', 'false');
@@ -282,6 +348,7 @@ function openMenuModal() {
 
     if (pageFlip) {
         updateControls();
+        centerCoverPage();
     } else {
         initializeReader();
     }
@@ -297,6 +364,9 @@ function closeMenuModal() {
     elements.modal.setAttribute('aria-hidden', 'true');
     elements.modal.style.display = 'none';
     lockPageScroll(false);
+    setBackgroundVideosPaused(false);
+    zoom = 1;
+    updateZoomState();
 
     if (document.fullscreenElement && document.exitFullscreen) {
         document.exitFullscreen().catch(() => {});
@@ -305,11 +375,16 @@ function closeMenuModal() {
     if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
         lastFocusedElement.focus({ preventScroll: true });
     }
+
+    window.requestAnimationFrame(() => {
+        window.scrollTo({ top: menuModalScrollY, left: 0, behavior: 'instant' });
+    });
 }
 
 function setZoom(nextZoom) {
     zoom = Math.min(1.35, Math.max(0.85, Number(nextZoom.toFixed(2))));
     updateZoomState();
+    centerCoverPage();
 }
 
 function getTouchDistance(touches) {
@@ -466,6 +541,7 @@ function bindEvents() {
             updateResponsiveBookMode();
             pageFlip.update();
             updateCanvasResolution();
+            centerCoverPage();
             updateZoomState();
         }, 180);
     }, { passive: true });

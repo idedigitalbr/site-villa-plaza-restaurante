@@ -81,7 +81,7 @@
     </script>
 
     <link rel="stylesheet" href="style.css?v=20260824_v1">
-    <link rel="stylesheet" href="assets/css/menu-flipbook.css?v=20260815_v3">
+    <link rel="stylesheet" href="assets/css/menu-flipbook.css?v=20260824_v2">
 </head>
 <body>
 
@@ -837,14 +837,12 @@
     <!-- ========================================
            CARDÁPIO FLIPBOOK MODAL (VILLA PLAZA)
            ======================================== -->
-    <div class="modal-overlay menu-modal-overlay" id="menuModal" role="dialog" aria-modal="true" aria-labelledby="menuModalTitle" aria-hidden="true">
+    <div class="modal-overlay menu-modal-overlay" id="menuModal" role="dialog" aria-modal="true" aria-label="Cardápio Villa Plaza" aria-hidden="true">
         <div class="menu-modal-card" role="document">
             <div class="flipbook-header">
-                <div>
-                    <span class="flipbook-kicker">VILLA PLAZA RESTAURANTE</span>
-                    <h2 id="menuModalTitle">Cardápio</h2>
-                </div>
+                <img class="flipbook-brand-logo" src="assets/logos/logo-villa-plaza-white.webp" alt="Villa Plaza Restaurante">
                 <div class="flipbook-toolbar" aria-label="Controles do cardápio">
+                    <button class="flipbook-icon-button flipbook-nav flipbook-toolbar-nav flipbook-nav-prev" id="menuPrevBtn" type="button" aria-label="Página anterior">‹</button>
                     <label class="flipbook-page-control">
                         <span>Página</span>
                         <input id="menuPageInput" type="number" min="1" value="1" aria-label="Número da página">
@@ -861,6 +859,7 @@
                                 <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" />
                             </svg>
                         </a>
+                        <button class="flipbook-icon-button flipbook-nav flipbook-toolbar-nav flipbook-nav-next" id="menuNextBtn" type="button" aria-label="Próxima página">›</button>
                     </div>
                 </div>
                 <button class="menu-modal-close" id="menuModalCloseBtn" type="button" aria-label="Fechar cardápio">
@@ -872,9 +871,7 @@
             </div>
 
             <div class="flipbook-reader" id="menuFlipbookStage" tabindex="0" aria-label="Leitor do cardápio">
-                <button class="flipbook-nav flipbook-nav-prev" id="menuPrevBtn" type="button" aria-label="Página anterior">‹</button>
                 <div class="flipbook-page-area" id="menuFlipbookPages" aria-live="polite"></div>
-                <button class="flipbook-nav flipbook-nav-next" id="menuNextBtn" type="button" aria-label="Próxima página">›</button>
 
                 <div class="menu-pdf-loading" id="menuPdfLoading" role="status">
                     <span class="pdf-spinner" aria-hidden="true"></span>
@@ -1352,7 +1349,7 @@
         });
     </script>
     <script src="assets/js/page-flip.browser.js?v=20260815_v3"></script>
-    <script src="assets/js/menu-flipbook.js?v=20260815_v3"></script>
+    <script src="assets/js/menu-flipbook.js?v=20260824_v2"></script>
     <script src="assets/js/current-year.js?v=20260815_v1" defer></script>
 
 </body>
