@@ -1,5 +1,57 @@
 # Changelog
 
+## 2026-08-24
+
+- **Ajustes de Paridade Mobile (Seções "Sobre Nós" e "Cardápio")**:
+  - **Seção "Sobre Nós / Bem-vindo ao Villa Plaza" (`#sobre`)**:
+    - Reorganização do fluxo vertical no mobile via `display: contents` para atender ao layout oficial: Header (`BEM-VINDO AO VILLA PLAZA`) centralizado -> Headline (`O PRAZER, elevado AO SEU MELHOR ENCONTRO.`) centralizado -> Foto do Ambiente (`assets/ambiente/sobre-nos-villa-plaza.webp`) full-width de ponta a ponta -> Parágrafos de apresentação com padding lateral no fundo creme.
+    - Calibração de tamanho de fonte (`clamp(1.15rem, 4.3vw, 1.45rem)`) para manter `AO SEU MELHOR ENCONTRO.` em linha única centralizada sem quebras indevidas mesmo em telas compactas (360px).
+  - **Seção "Cardápio à La Carte" (`#cardapio`)**:
+    - Correção do fundo creme unificado (`#ECE5DC` com gradiente radial suave e textura noise SVG) no mobile.
+    - Ocultação do bloco de vídeo/vinho escuro lateral no mobile (`.cardapio-right-video { display: none !important; }`), eliminando a caixa escura residual.
+    - Criação de card/painel sutil no mobile para o bloco de texto (`— MENU —`, `CONFIRA O`, `NOSSO cardápio`, parágrafo e botão `VER CARDÁPIO`).
+    - Posicionamento da foto do livro 3D aberto (`assets/CardapioMenu/cardapio-villa-plaza-open.png`) logo abaixo do botão, centralizada horizontalmente com sombra elegante (`drop-shadow`).
+    - Remoção do override em telas <= 480px que forçava a imagem do cardápio para o canto inferior como miniatura.
+  - **Desktop 100% Preservado**: Nenhuma alteração no layout desktop das seções.
+
+- **Rodapé Mobile (`.footer-premium`)**:
+  - Correção do fundo preto (`#080c0e`) que estava sendo aplicado via override mobile, restaurando a cor oficial Vermelho Vinho (`#57101D`) idêntica à versão desktop.
+  - Alinhamento de todos os elementos visuais no mobile (logo branco, divisores com estrela dourada `✦`, ícones de redes sociais, títulos e dados de localização, moldura do mapa, horários de funcionamento, botão e número do WhatsApp) mantendo contraste e acabamento idênticos ao desktop.
+  - Correção da barra inferior (`.footer-bottom`) com fundo branco, textos em vinho (`#57101D`) e separadores elegantes.
+  - Atualização do parâmetro de cache bust no [index.html](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-villa-plaza-restaurante/index.html) (`style.css?v=20260824_v1`).
+
+- **Seção 4 Cardápio Split (`.cardapio-split-section`)**:
+  - Imagem do cardápio aberto (`.cardapio-menu-float`) ajustada para **70% da altura da seção (`height: 70vh; max-height: 70vh;`)**, trazendo proporção harmônica e equilibrada com os textos e o fundo.
+  - Proporção da divisão em 62% creme / 38% vinho com lombada alinhada perfeitamente na divisa (`left: 62%; transform: translate(-50%, -50%)`).
+
+- **Seção 2 Sobre Nós (`.sobre-section`)**: Ajuste de paridade 100% visual com o print de referência:
+  - Mantida a altura imersiva de `100vh` em desktop com divisão exata de 42% (card creme) / 58% (foto do salão).
+  - Conteúdo do card creme centralizado perfeitamente na vertical (`justify-content: center; height: 100%`) com padding lateral fluido.
+  - Hierarquia tipográfica calibrada (`O PRAZER,`, `elevado`, `AO SEU MELHOR ENCONTRO.`, losango e parágrafos) em unidades proporcionais equilibradas.
+  - Elimina o corte inferior em notebooks (1366px/1440px) e mantém a grandiosidade estética sem encolhimento excessivo em Full HD e 4K.
+  - Ajuste de empilhamento fluido e limpo para tablets (<=1024px) e mobile (<=576px).
+
+- **Seção 3 (Carrossel Showcase de Experiências)**: Atualização das imagens de fundo dos slides:
+  - **Buffet (Almoço)**: Atualizado para `assets/gastronomia/buffet-churrasco-v0.webp`.
+  - **Jantar**: Atualizado para `assets/gastronomia/prato-comida.webp`.
+  - **Happy Hour**: Mantida foto atual da chopeira (`assets/experiencias/experiencia-chopp-heineken.webp`) aguardando nova imagem a ser enviada.
+
+- Atualização e inserção dos links oficiais completos nos ícones de redes sociais do **Header Desktop**, **Menu Gaveta Mobile** e **Rodapé**:
+  - **Facebook**: `https://www.facebook.com/villaplazabelem/`
+  - **Instagram**: `https://www.instagram.com/villaplazabelem/`
+  - **TikTok**: `https://www.tiktok.com/@villa.plaza` (substituído SVG preenchido sólido por vetor outline linear com traço `1.5px` idêntico aos demais ícones, equalizando peso visual, cor e opacidade).
+  - **WhatsApp**: `https://api.whatsapp.com/send/?phone=559192159505&text&type=phone_number&app_absent=0`
+  - Aplicação padrão de segurança `target="_blank"` e `rel="noopener noreferrer"` em todos os links externos.
+- Configuração dos CTAs "FAÇA SUA RESERVA" e pontos de contato de reserva para direcionar diretamente para o WhatsApp oficial (`https://api.whatsapp.com/send/?phone=559192159505&text&type=phone_number&app_absent=0`) em nova guia (`target="_blank"` e `rel="noopener noreferrer"`):
+  - Botão de Reserva do Header Desktop (`.btn-header-reserve`).
+  - Item "Faça Sua Reserva" da Gaveta de Navegação Mobile (`.mobile-nav-link`).
+  - Botão da Seção Mezanino no Rodapé (`.reserva-banner-rodape__btn`), restringindo o clique e cursor pointer exclusivamente ao botão e mantendo o restante da seção estático com cursor normal.
+  - Links de WhatsApp do Header, Gaveta Mobile e Rodapé (`footer-whatsapp-number` e `footer-whatsapp-btn`).
+  - Botão de contingência no modal de reservas.
+- Remoção da seção "Momentos para Compartilhar" (`.villa-moments-section` / `#conceito`) de [index.html](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-villa-plaza-restaurante/index.html).
+- Remoção da seção com o Mosaico de 6 Fotos (`.vp-feature-grid-section` / `#galeria`) de [index.html](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-villa-plaza-restaurante/index.html).
+- Limpeza e remoção do bloco de script legado e não utilizado de galeria/lightbox em `index.html`.
+
 ## 2026-08-01
 
 - Publicação e deploy automatizado do site em ambiente de produção na VPS no subdomínio [https://villaplaza.suporteide.digital/](https://villaplaza.suporteide.digital/).
@@ -23,6 +75,7 @@
 - Atualização do fundo e altura da seção Cardápio (`.cardapio-split-section` em `#cardapio`): altura ajustada para `100vh` (`height: 100vh; min-height: 100vh;`) e integração da nova imagem de fundo personalizada fornecida pelo cliente (`cardapio-bg.jpg`), apresentando o emblema circular "VP" com efeito luminoso em vermelho vinho e dourado.
 - Reestruturação total da seção "Momentos para Compartilhar" (`.villa-moments-section`) exatamente igual ao print de referência: uso exclusivo das fotografias oficiais do acervo do projeto (`assets/gastronomia/gastronomia-buffet-pratos-quentes.webp` para o buffet e `assets/experiencias/experiencia-chopp-heineken.webp` para a tiragem de chopp na torneira), fundo preto absoluto (`#000000`), divisão split 50/50 full bleed (sem margens). As 2 fotos oficiais na esquerda ocupam 25% + 25% da largura total da tela do topo ao fim da seção. Textos e ícones alinhados à direita com fundo preto, subtítulo dourado, título serifado/manuscrito em branco e dourado, 3 destaques operacionais com ícones dourados e botão com moldura dourada sutil.
 - Remoção da sombra (`box-shadow`) do mapa e dos estados de hover no rodapé, garantindo um visual minimalista e clean.
+- Refinamento tipográfico e minimalista do slogan do Hero ("UM LUGAR PRA VOLTAR SEMPRE"): ajuste rigoroso de escala proporcional em todos os breakpoints (tamanho compacto de `0.72rem` / `11-12px`, espaçamento entre letras refinado `0.28em`, cor Dourado Champanhe `#F1D093`, sem quebras de linha desalinhadas e remoção do override em telas móveis <= 768px que ampliava o texto indevidamente), garantindo acabamento idêntico ao padrão minimalista dos destaques.
 - Redesign luxuoso e refinamento estético total da Seção CTA de Reserva no Rodapé (`.cta-reservation` / `#reserva`), inspirado no modelo de alta gastronomia: inclusão de ornamento Fleur-de-lis em gradiente dourado no topo, linhas com diamantes com título "Villa Plaza", hierarquia tipográfica serifada em dois níveis ("Sua mesa está" em Cormorant Garamond leve / "pronta para receber" em tamanho expandido com gradiente dourado metálico), divisor ornamental central com nó/laço barroco SVG, tipografia cursiva fluida em "bons momentos" (Google Fonts Alex Brush / Great Vibes / Pinyon Script), iluminação radial ambiente no fundo e botão de reserva premium com efeito de brilho e elevação em hover.
 - Padronização rigorosa da Seção 2 Momentos para Compartilhar (`index.html` / `style.css`) idêntica ao Anexo 1:
   - Topo/Subtítulo (`.sobre-header-tag`): reestruturado em 2 linhas com `.sobre-sub` ("BUFFET, HAPPY HOUR") e `.sobre-brand` ("E ACOLHIMENTO").
