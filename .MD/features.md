@@ -1,8 +1,8 @@
 # Features & Status de Desenvolvimento — Villa Plaza Restaurante
 
 **Projeto**: `[SITE] Villa Plaza Restaurante`  
-**Domínio de Produção/Testes**: `https://villaplaza.suporteide.digital/`  
-**Status Geral**: `99% Concluído (Pronto para Homologação e Virada no Domínio Oficial)`  
+**Domínio de Produção/Oficial**: `https://villaplaza.com.br/` e `https://villaplaza.suporteide.digital/`  
+**Status Geral**: `100% Concluído (Publicado e Ativo no Domínio Oficial villaplaza.com.br)`  
 
 ---
 

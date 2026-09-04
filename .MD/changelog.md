@@ -2,6 +2,11 @@
 
 ## 2026-09-04
 
+- **Roteamento e Apontamento para o Domínio Oficial (`villaplaza.com.br` e `www.villaplaza.com.br`)**:
+  - Atualizada a regra de roteamento do Traefik no `docker-compose.yml` para incluir `Host(\`villaplaza.suporteide.digital\`) || Host(\`villaplaza.com.br\`) || Host(\`www.villaplaza.com.br\`)`.
+  - Habilitada emissão e renovação automática de certificado SSL Let's Encrypt para os novos domínios no proxy reverso Traefik.
+  - Validação de conectividade DNS via Cloudflare e deploy automatizado na VPS.
+
 - **Alinhamento e Diagramação Visual Fiel do Rodapé Principal (5 Colunas)**:
   - **Equalização da Linha de Base dos Títulos (Baselines)**:
     - Equalizada a coordenada vertical inicial dos títulos das colunas 2 (`LOCALIZAÇÃO`), 4 (`HORÁRIO DE FUNCIONAMENTO`) e 5 (`FALE CONOSCO`), garantindo linha de base perfeitamente nivelada no topo.

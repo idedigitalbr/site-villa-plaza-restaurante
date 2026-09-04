@@ -14,7 +14,7 @@ services:
       - proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.villaplaza-router.rule=Host(`villaplaza.suporteide.digital`)"
+      - "traefik.http.routers.villaplaza-router.rule=Host(`villaplaza.suporteide.digital`) || Host(`villaplaza.com.br`) || Host(`www.villaplaza.com.br`)"
       - "traefik.http.routers.villaplaza-router.entrypoints=websecure"
       - "traefik.http.routers.villaplaza-router.tls=true"
       - "traefik.http.routers.villaplaza-router.tls.certresolver=letsencrypt"
