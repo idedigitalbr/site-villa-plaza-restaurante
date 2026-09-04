@@ -23,7 +23,7 @@
   - [x] **`[PG] HOME`** (ID: `3b1b42b6-c517-817b-91f7-d2f1e367980d`)
     - [x] `HEADER MENU` (30/07/2026)
     - [x] `[S1] TOPO HERO - UM LUGAR PRA VOLTAR SEMPRE` (30/07/2026)
-    - [x] `[S2] FAIXA MARQUEE - DESTAQUES` (30/07/2026)
+    - [x] ~~`[S2] FAIXA MARQUEE - DESTAQUES`~~ (Removida a pedido do cliente em 04/09/2026)
     - [x] `[S3] SOBREZINHO - NOSSA HISTÓRIA` (15/07/2026)
     - [x] `[S4] 4 CARDS - CARROSSEL GRANDE FULLSCREEN` (15/07/2026)
     - [x] `[S5] NOSSO CARDÁPIO DIGITAL` (15/07/2026)

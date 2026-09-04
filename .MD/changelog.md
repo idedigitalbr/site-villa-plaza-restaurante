@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-09-04
+
+- **Remoção da Faixa de Transição Rotativa (Marquee Infinito)**:
+  - Removida completamente a seção `<section id="destaques" class="hero-highlights-strip">` de `index.html` (tarja com os cards e ícones rotativos de Almoço, Jantar, Happy Hour, Atendimento, Carta de Vinhos, Gastronomia, Ambiente e Eventos).
+  - Removidas todas as regras de estilo CSS, animação horizontal contínua (`@keyframes marqueeInfinite`) e media queries associadas em `style.css`.
+  - Transição contínua e limpa entre a seção Hero e a seção Sobre Nós (`#sobre`).
+  - Deploy em produção na VPS (`161.97.108.92` - container `villaplaza-web`) e sincronização no GitHub (Commit `0a885b6`).
+
 ## 2026-08-24
 
 - **Ajustes de Paridade Mobile (Seções "Sobre Nós" e "Cardápio")**:
