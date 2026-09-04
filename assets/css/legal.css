@@ -1,0 +1,678 @@
+/* ==========================================================================
+   PÁGINA LEGAL: POLÍTICA DE PRIVACIDADE & TERMOS DE USO
+   Villa Plaza Restaurante — Belém / PA
+   Identidade Visual: Villa Plaza Restaurante
+   Cores: #57101D (Wine/Bordô), #050505 (Ink), #0B0A08 (Panel), #D3B97B (Gold), #F1E6D5 (Cream)
+   Tipografia: Cormorant Garamond (Display), Montserrat (Body)
+   ========================================================================== */
+
+.legal-page {
+  background-color: var(--wine-ink, #050505);
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(87, 16, 29, 0.25) 0%, transparent 50%),
+    radial-gradient(circle at 85% 12%, rgba(211, 185, 123, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(87, 16, 29, 0.15) 0%, transparent 70%);
+  min-height: 100vh;
+  color: var(--wine-cream, #F1E6D5);
+  font-family: var(--font-body, 'Montserrat', sans-serif);
+  position: relative;
+  overflow-x: hidden;
+  padding-top: 86px;
+}
+
+/* ── Hero Legal ── */
+.legal-hero {
+  padding: 64px 0 42px;
+  position: relative;
+  text-align: center;
+  border-bottom: 1px solid rgba(211, 185, 123, 0.22);
+  background: radial-gradient(circle at 50% -20%, rgba(87, 16, 29, 0.4), transparent 70%);
+}
+
+.legal-breadcrumbs {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 18px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.legal-breadcrumbs a {
+  color: rgba(255, 255, 255, 0.65);
+  transition: color 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+}
+
+.legal-breadcrumbs a svg {
+  width: 14px;
+  height: 14px;
+}
+
+.legal-breadcrumbs a:hover {
+  color: #D3B97B;
+}
+
+.legal-breadcrumbs .separator {
+  color: rgba(211, 185, 123, 0.4);
+}
+
+.legal-breadcrumbs .current {
+  color: #D3B97B;
+  font-weight: 500;
+}
+
+.legal-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  border-radius: 9999px;
+  background: rgba(87, 16, 29, 0.4);
+  border: 1px solid rgba(211, 185, 123, 0.35);
+  color: #D3B97B;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  box-shadow: 0 0 25px rgba(87, 16, 29, 0.4);
+}
+
+.legal-hero-badge svg {
+  width: 15px;
+  height: 15px;
+}
+
+.legal-hero-title {
+  font-family: var(--font-script, 'Cormorant Garamond', serif);
+  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: #FFFFFF;
+  letter-spacing: 0.01em;
+  margin-bottom: 16px;
+}
+
+.legal-hero-title span {
+  color: #D3B97B;
+  font-family: 'Pinyon Script', cursive;
+  font-size: 1.25em;
+  font-weight: 400;
+  padding: 0 6px;
+}
+
+.legal-hero-desc {
+  max-width: 720px;
+  margin: 0 auto 28px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 300;
+  padding: 0 16px;
+}
+
+/* ── Meta Info Bar ── */
+.legal-meta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px 28px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 10px;
+}
+
+.legal-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.legal-meta-item svg {
+  color: #D3B97B;
+  width: 15px;
+  height: 15px;
+}
+
+.legal-meta-item strong {
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+.btn-print-page {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(211, 185, 123, 0.35);
+  background: rgba(211, 185, 123, 0.08);
+  color: #F1E6D5;
+  font-size: 0.78rem;
+  font-family: var(--font-body, 'Montserrat', sans-serif);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-print-page:hover {
+  background: #D3B97B;
+  border-color: #D3B97B;
+  color: #57101D;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(211, 185, 123, 0.25);
+}
+
+.btn-print-page svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ── Área de Conteúdo ── */
+.legal-content-wrapper {
+  padding: 56px 0 96px;
+  position: relative;
+}
+
+.legal-container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Card Principal de Documento ── */
+.legal-document-card {
+  max-width: 980px;
+  margin: 0 auto;
+  background: #0B0A08;
+  border: 1px solid rgba(211, 185, 123, 0.3);
+  border-radius: 20px;
+  padding: 56px 64px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.75), 0 0 40px rgba(87, 16, 29, 0.15);
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .legal-page {
+    padding-top: 70px;
+  }
+  .legal-document-card {
+    padding: 32px 20px;
+    border-radius: 14px;
+  }
+}
+
+/* ── Seções Internas ── */
+.legal-section {
+  scroll-margin-top: 140px;
+  margin-bottom: 56px;
+}
+
+.legal-section:last-child {
+  margin-bottom: 0;
+}
+
+.legal-section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(211, 185, 123, 0.4), transparent);
+  margin: 52px 0;
+}
+
+/* ── Cabeçalho dos Blocos ── */
+.legal-block-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(211, 185, 123, 0.2);
+}
+
+.legal-block-icon {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(87, 16, 29, 0.35), rgba(211, 185, 123, 0.15));
+  border: 1px solid rgba(211, 185, 123, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #D3B97B;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.legal-block-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.legal-block-info h2 {
+  font-family: var(--font-script, 'Cormorant Garamond', serif);
+  font-size: clamp(1.65rem, 3.2vw, 2.3rem);
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+  letter-spacing: 0.02em;
+}
+
+.legal-block-info p {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+}
+
+/* ── Cláusulas ── */
+.legal-clause {
+  margin-bottom: 36px;
+}
+
+.legal-clause:last-child {
+  margin-bottom: 0;
+}
+
+.legal-clause-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 14px;
+  letter-spacing: 0.02em;
+}
+
+.legal-clause-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  border-radius: 50%;
+  background: rgba(87, 16, 29, 0.5);
+  border: 1px solid rgba(211, 185, 123, 0.4);
+  color: #D3B97B;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.legal-text {
+  font-size: 0.94rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.78);
+  margin-bottom: 12px;
+  font-weight: 300;
+}
+
+.legal-text:last-child {
+  margin-bottom: 0;
+}
+
+.legal-text strong {
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+/* ── Lista de Compromissos (Cards A, B, C) ── */
+.legal-commit-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin: 18px 0;
+}
+
+.legal-commit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(211, 185, 123, 0.18);
+  border-radius: 12px;
+  padding: 16px 20px;
+  transition: all 0.3s ease;
+}
+
+.legal-commit-item:hover {
+  background: rgba(87, 16, 29, 0.15);
+  border-color: rgba(211, 185, 123, 0.35);
+}
+
+.legal-commit-letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(87, 16, 29, 0.6), rgba(211, 185, 123, 0.25));
+  border: 1px solid rgba(211, 185, 123, 0.3);
+  color: #D3B97B;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.legal-commit-desc {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.legal-commit-desc strong {
+  color: #FFFFFF;
+  display: block;
+  margin-bottom: 2px;
+  font-weight: 500;
+}
+
+/* ── Lista de Restrições e Direitos ── */
+.legal-restriction-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 16px 0;
+  padding-left: 0;
+}
+
+.legal-restriction-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.legal-restriction-item svg {
+  color: #D3B97B;
+  margin-top: 3px;
+  min-width: 17px;
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+}
+
+/* ── Callout Box (Cookies) ── */
+.legal-callout-box {
+  background: rgba(87, 16, 29, 0.12);
+  border: 1px solid rgba(211, 185, 123, 0.28);
+  border-left: 4px solid #D3B97B;
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin: 16px 0;
+}
+
+.legal-callout-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #D3B97B;
+  margin-bottom: 10px;
+}
+
+.legal-callout-title svg {
+  width: 18px;
+  height: 18px;
+}
+
+.legal-callout-box p {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 8px;
+}
+
+.legal-callout-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Caixa de Efetividade & Vigência ── */
+.legal-effective-badge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  background: #11100D;
+  border: 1px solid rgba(211, 185, 123, 0.22);
+  border-radius: 12px;
+  padding: 16px 22px;
+  margin-top: 28px;
+}
+
+.legal-effective-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.92rem;
+  color: #F1E6D5;
+  font-weight: 500;
+}
+
+.legal-effective-text svg {
+  color: #D3B97B;
+  width: 18px;
+  height: 18px;
+}
+
+.legal-effective-date {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #D3B97B;
+  background: rgba(211, 185, 123, 0.1);
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(211, 185, 123, 0.28);
+}
+
+/* ── Card de Suporte / Reservas ── */
+.legal-support-card {
+  margin-top: 56px;
+  background: linear-gradient(135deg, #11100D 0%, #19090E 100%);
+  border: 1px solid rgba(211, 185, 123, 0.35);
+  border-radius: 16px;
+  padding: 32px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+}
+
+.legal-support-text h3 {
+  font-family: var(--font-script, 'Cormorant Garamond', serif);
+  font-size: 1.45rem;
+  color: #FFFFFF;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.legal-support-text p {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+.legal-support-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-legal-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-family: var(--font-body, 'Montserrat', sans-serif);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-legal-primary {
+  background: #D3B97B;
+  color: #57101D !important;
+  border: 1px solid #D3B97B;
+  box-shadow: 0 4px 16px rgba(211, 185, 123, 0.25);
+}
+
+.btn-legal-primary:hover {
+  background: #F1D093;
+  border-color: #F1D093;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(211, 185, 123, 0.4);
+}
+
+.btn-legal-primary svg {
+  width: 16px;
+  height: 16px;
+}
+
+.btn-legal-outline {
+  background: transparent;
+  color: #F1E6D5 !important;
+  border: 1px solid rgba(211, 185, 123, 0.35);
+}
+
+.btn-legal-outline:hover {
+  background: rgba(211, 185, 123, 0.1);
+  border-color: #D3B97B;
+  color: #D3B97B !important;
+  transform: translateY(-2px);
+}
+
+.btn-legal-outline svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ── Botão Flutuante Voltar ao Topo ── */
+.legal-back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(11, 10, 8, 0.95);
+  border: 1px solid #D3B97B;
+  color: #D3B97B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 995;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.legal-back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.legal-back-to-top:hover {
+  background: #D3B97B;
+  color: #57101D;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(211, 185, 123, 0.4);
+}
+
+.legal-back-to-top svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ── Estilos de Impressão (Clean Print) ── */
+@media print {
+  header.header,
+  .mobile-overlay,
+  .mobile-nav,
+  .legal-breadcrumbs,
+  .legal-meta-bar .btn-print-page,
+  .legal-support-card,
+  .legal-back-to-top,
+  footer.footer-premium {
+    display: none !important;
+  }
+
+  body, .legal-page {
+    background: #ffffff !important;
+    color: #111111 !important;
+    padding-top: 0 !important;
+  }
+
+  .legal-hero {
+    border-bottom: 2px solid #333;
+    padding: 20px 0;
+    text-align: left;
+    background: none !important;
+  }
+
+  .legal-hero-title {
+    color: #000 !important;
+    font-size: 24pt !important;
+  }
+
+  .legal-hero-title span {
+    color: #000 !important;
+  }
+
+  .legal-hero-badge {
+    border: 1px solid #666 !important;
+    color: #333 !important;
+    background: none !important;
+  }
+
+  .legal-document-card {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    color: #111 !important;
+  }
+
+  .legal-block-info h2,
+  .legal-clause-title,
+  .legal-callout-title {
+    color: #000 !important;
+  }
+
+  .legal-text,
+  .legal-commit-desc,
+  .legal-restriction-item {
+    color: #222 !important;
+  }
+
+  .legal-callout-box {
+    background: #f8f8f8 !important;
+    border: 1px solid #ccc !important;
+    border-left: 4px solid #333 !important;
+    color: #111 !important;
+  }
+
+  .legal-commit-item {
+    background: #fafafa !important;
+    border: 1px solid #e0e0e0 !important;
+  }
+}

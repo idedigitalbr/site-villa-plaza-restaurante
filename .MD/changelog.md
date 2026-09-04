@@ -2,6 +2,65 @@
 
 ## 2026-09-04
 
+- **Alinhamento e Diagramação Visual Fiel do Rodapé Principal (5 Colunas)**:
+  - **Equalização da Linha de Base dos Títulos (Baselines)**:
+    - Equalizada a coordenada vertical inicial dos títulos das colunas 2 (`LOCALIZAÇÃO`), 4 (`HORÁRIO DE FUNCIONAMENTO`) e 5 (`FALE CONOSCO`), garantindo linha de base perfeitamente nivelada no topo.
+  - **Fidelidade Estrita ao Modelo Visual de Referência (`media_1788545863614.png`)**:
+    - Removidos os ornamentos estelares residuais (`.footer-title-star`) das colunas 4 e 5, preservando o ornamento estelar exclusivamente nas colunas 1 (sob o logotipo) e 2 (sob `LOCALIZAÇÃO`).
+    - **Coluna 5 ("FALE CONOSCO")**: Reestruturada para posicionar o ícone em contorno dourado (`.footer-whatsapp-icon-gold`) e o número de contato `(91) 9215-9505` (`.footer-whatsapp-number`) lado a lado na mesma linha horizontal via flexbox (`gap: 0.75rem`), seguido do botão pill-shaped (`border-radius: 50px`) `CHAMAR NO WHATSAPP`.
+    - **Coluna 4 ("HORÁRIO DE FUNCIONAMENTO")**: Centralização rigorosa de todos os blocos de horário e dias (`Segunda a Sábado` e `Domingo`), removendo recuos laterais assimétricos.
+    - **Coluna 3 (Mapa)**: Moldura com cantos arredondados (`border-radius: 12px`), borda dourada elegante (`rgba(211, 185, 123, 0.35)`) e centralização geométrica perfeita.
+    - **Unificação e Limpeza de CSS**: Eliminado bloco legado duplicado em `style.css` que sobrescrevia propriedades das colunas e da barra inferior.
+    - Sincronização espelhada em `index.html` e `termos-e-privacidade.html`.
+    - 19/19 testes automatizados aprovados com sucesso (`node --test tests/*.test.mjs`).
+
+
+  - Atualizada a barra inferior do rodapé (`.footer-bottom`) em padrão tripartido com centralização exata via CSS Grid (`grid-template-columns: 1fr auto 1fr`):
+    - **Esquerda**: `Copyright © 2026 Villa Plaza Restaurante – Todos os direitos reservados` em cor preta (`#000000`).
+    - **Centro**: Link `Termos & Privacidade` perfeitamente centralizado no eixo horizontal da página em cor preta (`#000000`), direcionando para `termos-e-privacidade.html`.
+    - **Direita**: Créditos da agência `Desenvolvido por:` em cor preta (`#000000`) acompanhado da logomarca oficial da **IDE Digital** (`assets/logos/logo-idedigital.png`) preta com fundo transparente.
+  - Fundo branco limpo (`#FFFFFF`) com divisor sutil, tipografia preta uniforme e responsividade com empilhamento limpo em dispositivos móveis.
+  - **Criação da Página Oficial de Termos de Uso & Política de Privacidade (`termos-e-privacidade.html`)**:
+    - Cabeçalho institucional e rodapé idênticos ao site oficial.
+    - Seção de Política de Privacidade em total conformidade com a LGPD (Lei nº 13.709/2018), detalhando finalidade de reservas, segurança, retenção, direitos dos titulares e uso responsável de cookies técnicos.
+    - Seção de Termos e Condições de Uso contendo regras de reservas, tolerância de pontualidade (15 minutos), cancelamento, propriedade intelectual e sazonalidade de insumos do cardápio e buffet.
+    - Suporte a rotas limpas no servidor web via diretório de fallback `termos-e-privacidade/index.html`.
+    - Botão de impressão direta do documento em PDF (`window.print()`) e botão flutuante para voltar ao topo.
+    - Suíte de testes automatizados expandida (`tests/footer-and-legal.test.mjs`), com 19/19 testes aprovados.
+
+- **Atualização Completa do Cardápio Digital (Edição 04/09/2026)**:
+  - Processado e integrado o novo cardápio oficial (`CARDÁPIO VILLA PLAZA-4-SET-2026.pdf`), sincronizado canonicamente como `assets/CardapioMenu/cardapio-villa-plaza.pdf`.
+  - Renderizadas e otimizadas todas as 12 páginas em altíssima resolução para desktop (`assets/CardapioMenu/pages/page-01.png` a `page-12.png` em 1489x2106).
+  - Renderizadas e otimizadas todas as 12 páginas para visualização mobile no Flipbook (`assets/CardapioMenu/pages/mobile/page-01.webp` a `page-12.webp` em 1862x2632).
+  - Atualizado o versionamento de cache busting para scripts e estilos do Flipbook (`menu-flipbook.css?v=20260904_v1` e `menu-flipbook.js?v=20260904_v1`).
+  - Suíte de testes de integridade do Flipbook (`tests/menu-flipbook.test.mjs`) 100% aprovada (14/14 testes passando).
+
+- **Remoção do Identificador Social no Rodapé**:
+  - Removido o texto `@villaplazabelem` (`.footer-handle`) da coluna de redes sociais/logo no rodapé.
+  - Ajustado o espaçamento inferior dos ícones de redes sociais (`.footer-socials`) para manter alinhamento vertical limpo e centralizado.
+
+
+- **Padronização dos Botões Arredondados (Pill Shape / 50px)**:
+  - Todos os botões e CTAs do site foram padronizados com bordas totalmente arredondadas (`border-radius: 50px;`), mantendo a mesma identidade visual e elegância do botão "FAÇA SUA RESERVA" do menu header (`.btn-header-reserve`).
+  - **Botão "VER CARDÁPIO" (`.btn-cardapio`)**: Atualizado de `4px` para `border-radius: 50px;` (desktop e mobile).
+  - **Botão "CHAMAR NO WHATSAPP" do Rodapé (`.footer-whatsapp-btn`, `.footer-whatsapp-btn-gold`)**: Atualizado de `4px`/`6px` para `border-radius: 50px;` (desktop e mobile).
+  - **Setas de Navegação do Carrossel (`.showcase-nav-arrow`)**: Atualizado de `4px` para `border-radius: 50px;` (círculo perfeito).
+  - **Botões do Flipbook / Modal de Cardápio (`.flipbook-toolbar button/a`, `.flipbook-icon-button`, `#menuRetryBtn`)**: Atualizado para `border-radius: 50px;`.
+  - **Botões Utilitários e de Ação (`.btn-gold-fill`, `.btn-gold-outline`, `.cta-reservation__btn`, etc.)**: Padronizados para `border-radius: 50px;`.
+  - **Cache Busting**: Versões atualizadas no [index.html](file:///g:/Meu%20Drive/.PROJETOS/Sites%20Institucionais/site-villa-plaza-restaurante/index.html) (`style.css?v=20260904_rounded` e `menu-flipbook.css?v=20260904_rounded`).
+
+- **Ajuste e Alinhamento de Localização no Rodapé**:
+  - Atualizado o texto complementar do endereço na coluna de Localização do rodapé (`.footer-subtext`) para: `(Mezanino do +B Supermercados – Unidade Plaza)`.
+  - Corrigido o alinhamento central do título `LOCALIZAÇÃO` e da coluna `.footer-col-contact` no desktop, alinhando perfeitamente o título com o ornamento estelar `— ✦ —` e o bloco de endereço.
+  - Sincronizado o endereço no Schema JSON-LD (`streetAddress`) para refletir a Unidade Plaza na Av. Gov. José Malcher, 2388.
+  - Atualizado o cache bust do CSS em `index.html` (`style.css?v=20260904_v1`).
+
+
+- **Remoção do Card de Eventos do Carrossel Showcase de Experiências**:
+  - Removido o slide de "EVENTOS" ("seus EVENTOS - ESPAÇOS VARIADOS E CLIMATIZADOS") de `index.html`.
+  - Removida a imagem de background correspondente (`assets/experiencias/experiencia-atendimento-garcom.webp`) para manter a perfeita paridade 1:1 entre slides e fundos.
+  - Carrossel mantido com os 3 cards gastronômicos: **Almoço**, **Jantar** e **Happy Hour**, com navegação por setas, arraste (drag/swipe) e clique totalmente preservados.
+
 - **Remoção da Faixa de Transição Rotativa (Marquee Infinito)**:
   - Removida completamente a seção `<section id="destaques" class="hero-highlights-strip">` de `index.html` (tarja com os cards e ícones rotativos de Almoço, Jantar, Happy Hour, Atendimento, Carta de Vinhos, Gastronomia, Ambiente e Eventos).
   - Removidas todas as regras de estilo CSS, animação horizontal contínua (`@keyframes marqueeInfinite`) e media queries associadas em `style.css`.

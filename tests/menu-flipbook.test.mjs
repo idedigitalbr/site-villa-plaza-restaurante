@@ -97,7 +97,7 @@ test('keeps the page state contract for cover, spreads and one-sheet navigation'
 
 test('uses cache-busted Villa Plaza assets and accessible action icons', () => {
   const html = read('index.html');
-  const version = 'v=20260824_v3';
+  const version = 'v=20260904_v1';
 
   for (const asset of [
     `assets/css/menu-flipbook.css?${version}`,
@@ -106,7 +106,7 @@ test('uses cache-busted Villa Plaza assets and accessible action icons', () => {
     assert.ok(html.includes(asset), `${asset} should invalidate stale browser caches`);
   }
 
-  assert.match(html, /style\.css\?v=20260824_v1/);
+  assert.match(html, /style\.css\?v=20260904_v3/);
   assert.match(html, /assets\/js\/page-flip\.browser\.js\?v=20260815_v3/);
 
   assert.match(html, /id="menuFullscreenBtn"[^>]*aria-label="Abrir tela cheia"[^>]*title="Abrir tela cheia"[\s\S]*?<svg/);
@@ -224,7 +224,7 @@ test('removes the modal frame and hides fullscreen only on mobile', () => {
   assert.match(css, /\.flipbook-toolbar\s*\{[\s\S]*justify-content:\s*center;/);
   assert.match(css, /\.flipbook-toolbar \.flipbook-toolbar-nav\s*\{[\s\S]*position:\s*static\s*!important;/);
   assert.match(css, /@media \(max-width: 820px\)[\s\S]*#menuFullscreenBtn\s*\{[\s\S]*display:\s*none\s*!important;/);
-  assert.match(html, /assets\/css\/menu-flipbook\.css\?v=20260824_v3/);
+  assert.match(html, /assets\/css\/menu-flipbook\.css\?v=20260904_v1/);
 });
 
 test('centers the cover using the real reader and restores the page after closing', () => {
