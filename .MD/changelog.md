@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-09-25
+
+- **Ajuste na Seção de Experiências (Almoço)**:
+  - Atualizada a imagem de fundo do slide de Almoço (`#experiencia`, slide `data-index="0"`) de `assets/gastronomia/buffet-churrasco-v0.webp` para a imagem oficial do buffet de saladas `assets/gastronomia/gastronomia-buffet-saladas.webp`.
+  - Preservado o overlay com gradiente suave (`linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55))`) garantindo legibilidade perfeita da tipografia e ornamentos dourados.
+
+- **Atualização dos Horários no Rodapé Oficial**:
+  - Horário de funcionamento corrigido nas páginas `index.html` e `termos-e-privacidade.html` para:
+    - **Segunda à sábado**: `12h às 15h / 19h às 23h`.
+    - Removido bloco obsoleto de Domingo.
+  - Sincronizado o Schema.org (`openingHoursSpecification` JSON-LD) em `index.html`.
+  - Suíte de testes automatizados expandida (`tests/footer-and-legal.test.mjs`) com 21/21 testes aprovados.
+
 ## 2026-09-04
 
 - **Roteamento e Apontamento para o Domínio Oficial (`villaplaza.com.br` e `www.villaplaza.com.br`)**:

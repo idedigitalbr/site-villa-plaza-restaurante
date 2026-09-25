@@ -56,3 +56,22 @@ test('assets/logos/logo-idedigital.png is present and valid', () => {
   const stat = fs.statSync(logoPath);
   assert.ok(stat.size > 1000, 'Logo file has valid size');
 });
+
+test('index.html uses gastronomia-buffet-saladas.webp in the lunch showcase slide', () => {
+  const html = read('index.html');
+  assert.match(html, /assets\/gastronomia\/gastronomia-buffet-saladas\.webp/);
+  const imgPath = path.join(rootDir, 'assets/gastronomia/gastronomia-buffet-saladas.webp');
+  assert.ok(fs.existsSync(imgPath), 'gastronomia-buffet-saladas.webp exists on disk');
+});
+
+test('footer displays updated opening hours (Segunda à sábado) across pages', () => {
+  const indexHtml = read('index.html');
+  const termosHtml = read('termos-e-privacidade.html');
+
+  for (const html of [indexHtml, termosHtml]) {
+    assert.match(html, /<span>Segunda à sábado<\/span>/);
+    assert.match(html, /<div class="footer-hours-time">12h às 15h \/ 19h às 23h<\/div>/);
+    assert.doesNotMatch(html, /<div class="footer-col footer-col-hours">[\s\S]*?<span>Domingo<\/span>/);
+  }
+});
+
