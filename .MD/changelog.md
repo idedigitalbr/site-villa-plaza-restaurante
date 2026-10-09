@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-10-09
+
+- **Vídeo do Topo (Hero Section) Responsivo e Otimizado para Web**:
+  - Substituído o vídeo antigo de 35.6 MB por versões dedicadas com altíssima fidelidade e peso reduzido:
+    - **Desktop (Horizontal 1920x1080)**: `hero-video-desktop.webm` (VP9, ~8.0 MB) e `hero-video-desktop.mp4` (H.264 faststart, ~10.3 MB).
+    - **Mobile (Vertical 1080x1920)**: `hero-video-mobile.webm` (VP9, ~6.1 MB) e `hero-video-mobile.mp4` (H.264 faststart, ~6.8 MB).
+    - **Poster WebP Instantâneo**: Adicionados `hero-video-desktop-poster.webp` (116 KB) e `hero-video-mobile-poster.webp` (85 KB) para eliminar qualquer tela preta durante o carregamento inicial.
+  - **Otimização Inteligente**: Remoção do fluxo de áudio redundante (`-an`), compressão visualmente idêntica com WebM/VP9 prioritário e fallback MP4 H.264 compatível com Safari/iOS.
+  - **Chaveamento Responsivo sem Desperdício de Banda**: Script inline inteligente e CSS responsivo (`@media (max-width: 768px)` e portrait) garantem que dispositivos móveis não baixem nem executem o vídeo horizontal e vice-versa.
+  - **Sincronização de Animação**: Controle unificado de reprodução e reinício suave da animação do logotipo no topo a cada repetição do vídeo ativo.
+  - Suíte de testes automatizados criada (`tests/hero-video.test.mjs`), com 25/25 testes aprovados.
+- **Correção do Número de WhatsApp Oficial**:
+  - Corrigido o número de telefone de contato exibido no rodapé de `(91) 9215-9505` para `(91) 99215-9505`, incluindo o 9º dígito faltante.
+  - Atualizados todos os links e botões de redirecionamento para o WhatsApp oficial (`https://api.whatsapp.com/send/?phone=5591992159505...`) em `index.html` e `termos-e-privacidade.html`.
+  - Atualizado o Schema.org (`telephone: "+5591992159505"`) e a cláusula 8 da Política de Privacidade em `termos-e-privacidade.html`.
+- **Remoção da Opção de Baixar PDF do Cardápio**:
+  - Removido o botão de download de PDF (`#menuDownloadBtn` / "Baixar PDF") da barra de ferramentas do modal do cardápio flipbook (`.flipbook-toolbar`) em `index.html`.
+  - Removido o link de download direto do bloco de fallback de erro (`#menuPdfError`) em `index.html`.
+  - Suíte de testes atualizada (`tests/menu-flipbook.test.mjs`) garantindo ausência do botão e validação de 21/21 testes aprovados.
+
 ## 2026-09-25
 
 - **Ajuste na Seção de Experiências (Almoço)**:

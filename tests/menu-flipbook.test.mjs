@@ -67,12 +67,13 @@ test('integrates a local flipbook modal without the PDF.js viewer or external PD
     'id="menuPrevBtn"',
     'id="menuNextBtn"',
     'id="menuPageInput"',
-    'assets/CardapioMenu/cardapio-villa-plaza.pdf',
     'assets/js/page-flip.browser.js',
     'assets/js/menu-flipbook.js',
   ]) {
     assert.match(html, new RegExp(marker.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
   }
+
+  assert.doesNotMatch(html, /id="menuDownloadBtn"/);
 
   assert.doesNotMatch(html, /cdnjs\.cloudflare\.com\/ajax\/libs\/pdf\.js/);
   assert.doesNotMatch(html, /pdfjsLib\.getDocument/);
@@ -110,7 +111,7 @@ test('uses cache-busted Villa Plaza assets and accessible action icons', () => {
   assert.match(html, /assets\/js\/page-flip\.browser\.js\?v=20260815_v3/);
 
   assert.match(html, /id="menuFullscreenBtn"[^>]*aria-label="Abrir tela cheia"[^>]*title="Abrir tela cheia"[\s\S]*?<svg/);
-  assert.match(html, /id="menuDownloadBtn"[^>]*href="assets\/CardapioMenu\/cardapio-villa-plaza\.pdf"[^>]*download[^>]*aria-label="Baixar PDF"[^>]*title="Baixar PDF"[\s\S]*?<svg/);
+  assert.doesNotMatch(html, /id="menuDownloadBtn"/);
   assert.doesNotMatch(html, /menuZoomOut|menuZoomIn|menuFitBtn/);
   assert.doesNotMatch(html, />Tela cheia<|>Baixar PDF</);
 });
@@ -202,7 +203,7 @@ test('organizes the Villa Plaza modal header with its logo above the controls', 
   );
   assert.match(html, /id="menuPageInput"/);
   assert.match(html, /id="menuFullscreenBtn"/);
-  assert.match(html, /id="menuDownloadBtn"/);
+  assert.doesNotMatch(html, /id="menuDownloadBtn"/);
   assert.match(html, /id="menuModalCloseBtn"/);
   assert.match(html, /class="flipbook-icon-button flipbook-nav flipbook-toolbar-nav flipbook-nav-prev" id="menuPrevBtn"/);
   assert.match(html, /class="flipbook-icon-button flipbook-nav flipbook-toolbar-nav flipbook-nav-next" id="menuNextBtn"/);

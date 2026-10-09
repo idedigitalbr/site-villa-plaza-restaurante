@@ -37,7 +37,7 @@ test('termos-e-privacidade.html is complete and well-structured', () => {
   assert.match(html, /LGPD/);
   assert.match(html, /Termos e Condições de Uso/);
   assert.match(html, /Av\. Gov\. José Malcher,\s*2388/);
-  assert.match(html, /9215-9505/);
+  assert.match(html, /99215-9505/);
   assert.match(html, /assets\/css\/legal\.css/);
   assert.match(html, /id="backToTopBtn"/);
   assert.match(html, /assets\/logos\/logo-idedigital\.png/);

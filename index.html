@@ -104,7 +104,7 @@
                             <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
                         </svg>
                     </a>
-                    <a href="https://api.whatsapp.com/send/?phone=559192159505&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="header-social-link" aria-label="Fale conosco no WhatsApp">
+                    <a href="https://api.whatsapp.com/send/?phone=5591992159505&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="header-social-link" aria-label="Fale conosco no WhatsApp">
                         <svg class="header-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
                             <path d="M9 10a.5.5 0 0 0 1 0v-1a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
@@ -129,7 +129,7 @@
                     <li><a href="#localizacao" class="nav-link">Contato & Localização</a></li>
                 </ul>
 
-                <a href="https://api.whatsapp.com/send/?phone=559192159505&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="btn-header-reserve">FAÇA SUA RESERVA</a>
+                <a href="https://api.whatsapp.com/send/?phone=5591992159505&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="btn-header-reserve">FAÇA SUA RESERVA</a>
             </div>
 
             <!-- Hamburger Button -->
@@ -175,7 +175,7 @@
 
         <!-- Botão Nobre de Ação: Reserva -->
         <div class="mobile-nav-action">
-            <a href="https://api.whatsapp.com/send/?phone=559192159505&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="mobile-nav-cta">
+            <a href="https://api.whatsapp.com/send/?phone=5591992159505&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="mobile-nav-cta">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
                     <path d="M9 10a.5.5 0 0 0 1 0v-1a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
@@ -204,7 +204,7 @@
                         <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
                     </svg>
                 </a>
-                <a href="https://api.whatsapp.com/send/?phone=559192159505&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco no WhatsApp">
+                <a href="https://api.whatsapp.com/send/?phone=5591992159505&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco no WhatsApp">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 19px; height: 19px;">
                         <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
                         <path d="M9 10a.5.5 0 0 0 1 0v-1a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
@@ -223,9 +223,32 @@
          ======================================== -->
     <section id="home" class="hero parallax-container" data-parallax-speed="0.38">
         <div class="hero-bg">
-            <video autoplay loop muted playsinline class="parallax-img" data-parallax-speed="0.38">
-                <source src="assets/hero/hero-video-villa-plaza.mp4" type="video/mp4">
+            <!-- Desktop Horizontal Video (Landscape / Telas amplas) -->
+            <video id="heroVideoDesktop" class="hero-video hero-video--desktop parallax-img" data-parallax-speed="0.38" autoplay loop muted playsinline poster="assets/hero/hero-video-desktop-poster.webp">
+                <source src="assets/hero/hero-video-desktop.webm" type="video/webm">
+                <source src="assets/hero/hero-video-desktop.mp4" type="video/mp4">
             </video>
+            <!-- Mobile Vertical Video (Portrait / Dispositivos móveis) -->
+            <video id="heroVideoMobile" class="hero-video hero-video--mobile" loop muted playsinline poster="assets/hero/hero-video-mobile-poster.webp">
+                <source src="assets/hero/hero-video-mobile.webm" type="video/webm">
+                <source src="assets/hero/hero-video-mobile.mp4" type="video/mp4">
+            </video>
+            <script>
+                (function() {
+                    try {
+                        var isMob = window.innerWidth <= 768 || (window.innerWidth <= 1024 && window.matchMedia && window.matchMedia('(orientation: portrait)').matches);
+                        var d = document.getElementById('heroVideoDesktop');
+                        var m = document.getElementById('heroVideoMobile');
+                        if (isMob) {
+                            if (d) { d.preload = 'none'; d.removeAttribute('autoplay'); d.pause(); }
+                            if (m) { m.setAttribute('autoplay', ''); m.preload = 'auto'; m.play && m.play().catch(function(){}); }
+                        } else {
+                            if (m) { m.preload = 'none'; m.removeAttribute('autoplay'); m.pause(); }
+                            if (d) { d.preload = 'auto'; }
+                        }
+                    } catch (e) {}
+                })();
+            </script>
         </div>
         
         <div class="hero-overlay-dark"></div>
@@ -428,7 +451,7 @@
             </div>
 
             <!-- Botão Minimalista Faça Sua Reserva -->
-            <a href="https://api.whatsapp.com/send/?phone=559192159505&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="reserva-banner-rodape__btn">
+            <a href="https://api.whatsapp.com/send/?phone=5591992159505&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="reserva-banner-rodape__btn">
                 <span>FAÇA SUA RESERVA</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="3" y="4" width="18" height="18" rx="3" ry="3"></rect>
@@ -529,7 +552,7 @@
                     FALE CONOSCO
                 </h3>
 
-                <a href="https://api.whatsapp.com/send/?phone=559192159505&text&type=phone_number&app_absent=0" 
+                <a href="https://api.whatsapp.com/send/?phone=5591992159505&text&type=phone_number&app_absent=0" 
                    target="_blank" 
                    rel="noopener noreferrer"
                    class="footer-whatsapp-contact-link">
@@ -537,10 +560,10 @@
                         <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
                         <path d="M9 10a.5.5 0 0 0 1 0v-1a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
                     </svg>
-                    <span class="footer-whatsapp-number">(91) 9215-9505</span>
+                    <span class="footer-whatsapp-number">(91) 99215-9505</span>
                 </a>
 
-                <a href="https://api.whatsapp.com/send/?phone=559192159505&text&type=phone_number&app_absent=0" 
+                <a href="https://api.whatsapp.com/send/?phone=5591992159505&text&type=phone_number&app_absent=0" 
                    target="_blank" 
                    rel="noopener noreferrer"
                    class="footer-whatsapp-btn">
@@ -581,7 +604,7 @@
             
             <h3 style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 500; color: var(--wine-gold); margin-bottom: 0.6rem; letter-spacing: 0.03em;">Fazer reserva</h3>
             <p style="font-family: 'Montserrat', sans-serif; font-size: 1.05rem; color: rgba(255, 255, 255, 0.9); font-weight: 300; margin-bottom: 1.5rem; line-height: 1.6; letter-spacing: 0.02em;">Sistema de reservas em construção...</p>
-            <a href="https://api.whatsapp.com/send/?phone=559192159505&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="btn-header-reserve" style="display: inline-block; text-decoration: none;">RESERVAR PELO WHATSAPP</a>
+            <a href="https://api.whatsapp.com/send/?phone=5591992159505&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="btn-header-reserve" style="display: inline-block; text-decoration: none;">RESERVAR PELO WHATSAPP</a>
         </div>
     </div>
 
@@ -605,11 +628,6 @@
                                 <path d="M8 3H3v5M16 3h5v5M8 21H3v-5M21 16v5h-5" />
                             </svg>
                         </button>
-                        <a id="menuDownloadBtn" class="flipbook-icon-button" href="assets/CardapioMenu/cardapio-villa-plaza.pdf" download aria-label="Baixar PDF" title="Baixar PDF">
-                            <svg viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" />
-                            </svg>
-                        </a>
                         <button class="flipbook-icon-button flipbook-nav flipbook-toolbar-nav flipbook-nav-next" id="menuNextBtn" type="button" aria-label="Próxima página">›</button>
                     </div>
                 </div>
@@ -631,14 +649,9 @@
 
                 <div class="menu-pdf-error" id="menuPdfError" role="alert" hidden>
                     <strong>Não foi possível carregar o cardápio.</strong>
-                    <span>Você ainda pode baixar o PDF local para continuar.</span>
+                    <span>Por favor, tente recarregar o cardápio.</span>
                     <div class="flipbook-error-actions">
                         <button id="menuRetryBtn" type="button">Tentar novamente</button>
-                        <a class="flipbook-icon-button" href="assets/CardapioMenu/cardapio-villa-plaza.pdf" download aria-label="Baixar PDF" title="Baixar PDF">
-                            <svg viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" />
-                            </svg>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -657,26 +670,60 @@
          JAVASCRIPT
          ======================================== -->
     <script>
-        // Synchronize Hero Logo animation restart on Hero Video loop
-        const heroVideo = document.querySelector('.hero-bg video');
+        // Responsive Hero Video controller & Logo animation sync
+        const heroVideoDesktop = document.getElementById('heroVideoDesktop');
+        const heroVideoMobile = document.getElementById('heroVideoMobile');
         const heroContent = document.querySelector('.hero-content');
-        if (heroVideo && heroContent) {
-            let lastVideoTime = 0;
+
+        if (heroVideoDesktop && heroVideoMobile) {
+            const isMobileHero = () => {
+                return window.innerWidth <= 768 || (window.innerWidth <= 1024 && window.matchMedia && window.matchMedia('(orientation: portrait)').matches);
+            };
+
+            let currentMobileState = null;
+
+            const syncHeroVideoPlayback = () => {
+                const mobileMode = isMobileHero();
+                if (currentMobileState === mobileMode) return;
+                currentMobileState = mobileMode;
+
+                if (mobileMode) {
+                    heroVideoDesktop.pause();
+                    if (heroVideoMobile.paused) {
+                        heroVideoMobile.play().catch(() => {});
+                    }
+                } else {
+                    heroVideoMobile.pause();
+                    if (heroVideoDesktop.paused) {
+                        heroVideoDesktop.play().catch(() => {});
+                    }
+                }
+            };
+
             const resetHeroLogoAnim = () => {
+                if (!heroContent) return;
                 heroContent.style.animation = 'none';
                 void heroContent.offsetHeight;
                 heroContent.style.animation = '';
             };
-            heroVideo.addEventListener('timeupdate', () => {
-                if (heroVideo.currentTime < lastVideoTime - 0.5) {
+
+            [heroVideoDesktop, heroVideoMobile].forEach((video) => {
+                let lastVideoTime = 0;
+                video.addEventListener('timeupdate', () => {
+                    if (video.currentTime < lastVideoTime - 0.5) {
+                        resetHeroLogoAnim();
+                    }
+                    lastVideoTime = video.currentTime;
+                });
+                video.addEventListener('ended', () => {
                     resetHeroLogoAnim();
-                }
-                lastVideoTime = heroVideo.currentTime;
+                    video.play().catch(() => {});
+                });
             });
-            heroVideo.addEventListener('ended', () => {
-                resetHeroLogoAnim();
-                heroVideo.play();
-            });
+
+            syncHeroVideoPlayback();
+            window.addEventListener('resize', syncHeroVideoPlayback, { passive: true });
+            window.addEventListener('orientationchange', syncHeroVideoPlayback, { passive: true });
         }
 
         // Navbar Scrolled & Autohide State

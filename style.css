@@ -722,10 +722,32 @@
         }
 
         .hero-bg video {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
             filter: none;
+        }
+
+        .hero-video--desktop {
+            display: block;
+        }
+
+        .hero-video--mobile {
+            display: none;
+        }
+
+        @media (max-width: 768px), (max-width: 1024px) and (orientation: portrait) {
+            .hero-video--desktop {
+                display: none !important;
+            }
+
+            .hero-video--mobile {
+                display: block !important;
+            }
         }
 
         .hero-overlay-dark {
