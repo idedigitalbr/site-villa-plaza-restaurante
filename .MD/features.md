@@ -28,5 +28,5 @@
     - [x] `[S4] CARROSSEL GRANDE FULLSCREEN (ALMOÇO, JANTAR, HAPPY HOUR)` (Atualizado para 3 cards em 04/09/2026)
     - [x] `[S5] NOSSO CARDÁPIO DIGITAL` (Flipbook otimizado; remoção de download de PDF em 09/10/2026)
     - [x] `[S6] CTA RESERVAS - MEZANINO` (31/07/2026)
-    - [x] `FOOTER` (Atualizado rodapé com 9º dígito no WhatsApp oficial em 09/10/2026)
+    - [x] `FOOTER` (Atualizado rodapé com 9º dígito no WhatsApp e novos horários de funcionamento em 09/10/2026)
   - [x] **`[PG] TERMOS E PRIVACIDADE`** (Página oficial de Termos de Uso e Política de Privacidade em conformidade com LGPD criada em 04/09/2026)

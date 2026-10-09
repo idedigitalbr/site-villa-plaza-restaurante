@@ -64,14 +64,20 @@ test('index.html uses gastronomia-buffet-saladas.webp in the lunch showcase slid
   assert.ok(fs.existsSync(imgPath), 'gastronomia-buffet-saladas.webp exists on disk');
 });
 
-test('footer displays updated opening hours (Segunda à sábado) across pages', () => {
+test('footer displays updated opening hours (Segunda à Sábado e Domingo) across pages', () => {
   const indexHtml = read('index.html');
   const termosHtml = read('termos-e-privacidade.html');
 
   for (const html of [indexHtml, termosHtml]) {
-    assert.match(html, /<span>Segunda à sábado<\/span>/);
-    assert.match(html, /<div class="footer-hours-time">12h às 15h \/ 19h às 23h<\/div>/);
-    assert.doesNotMatch(html, /<div class="footer-col footer-col-hours">[\s\S]*?<span>Domingo<\/span>/);
+    assert.match(html, /<span>Segunda à Sábado<\/span>/i);
+    assert.match(html, /<div class="footer-hours-time">11h30 às 15h \/ 17h30 às 22h<\/div>/);
+    assert.match(html, /<span>Domingo<\/span>/i);
+    assert.match(html, /<div class="footer-hours-time">11h30 às 21h<\/div>/);
   }
+
+  // Schema.org structured data check in index.html
+  assert.match(indexHtml, /"dayOfWeek": \["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"\],\s*"opens": "11:30",\s*"closes": "15:00"/);
+  assert.match(indexHtml, /"dayOfWeek": \["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"\],\s*"opens": "17:30",\s*"closes": "22:00"/);
+  assert.match(indexHtml, /"dayOfWeek": "Sunday",\s*"opens": "11:30",\s*"closes": "21:00"/);
 });
 

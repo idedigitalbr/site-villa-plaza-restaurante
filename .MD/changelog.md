@@ -15,6 +15,12 @@
   - Corrigido o número de telefone de contato exibido no rodapé de `(91) 9215-9505` para `(91) 99215-9505`, incluindo o 9º dígito faltante.
   - Atualizados todos os links e botões de redirecionamento para o WhatsApp oficial (`https://api.whatsapp.com/send/?phone=5591992159505...`) em `index.html` e `termos-e-privacidade.html`.
   - Atualizado o Schema.org (`telephone: "+5591992159505"`) e a cláusula 8 da Política de Privacidade em `termos-e-privacidade.html`.
+- **Atualização dos Horários de Funcionamento**:
+  - Atualizados os horários de funcionamento no rodapé oficial das páginas `index.html` e `termos-e-privacidade.html`:
+    - **Segunda à Sábado**: `11h30 às 15h / 17h30 às 22h`
+    - **Domingo**: `11h30 às 21h`
+  - Sincronizado o Schema.org (`openingHoursSpecification` JSON-LD) em `index.html` refletindo os novos intervalos e reintrodução dos domingos.
+  - Suíte de testes automatizados atualizada (`tests/footer-and-legal.test.mjs`) com 25/25 testes aprovados.
 - **Remoção da Opção de Baixar PDF do Cardápio**:
   - Removido o botão de download de PDF (`#menuDownloadBtn` / "Baixar PDF") da barra de ferramentas do modal do cardápio flipbook (`.flipbook-toolbar`) em `index.html`.
   - Removido o link de download direto do bloco de fallback de erro (`#menuPdfError`) em `index.html`.
