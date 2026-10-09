@@ -224,31 +224,15 @@
     <section id="home" class="hero parallax-container" data-parallax-speed="0.38">
         <div class="hero-bg">
             <!-- Desktop Horizontal Video (Landscape / Telas amplas) -->
-            <video id="heroVideoDesktop" class="hero-video hero-video--desktop parallax-img" data-parallax-speed="0.38" autoplay loop muted playsinline poster="assets/hero/hero-video-desktop-poster.webp">
-                <source src="assets/hero/hero-video-desktop.webm" type="video/webm">
+            <video id="heroVideoDesktop" class="hero-video hero-video--desktop parallax-img" data-parallax-speed="0.38" autoplay loop muted playsinline webkit-playsinline preload="auto" poster="assets/hero/hero-video-desktop-poster.webp">
                 <source src="assets/hero/hero-video-desktop.mp4" type="video/mp4">
+                <source src="assets/hero/hero-video-desktop.webm" type="video/webm">
             </video>
             <!-- Mobile Vertical Video (Portrait / Dispositivos móveis) -->
-            <video id="heroVideoMobile" class="hero-video hero-video--mobile" loop muted playsinline poster="assets/hero/hero-video-mobile-poster.webp">
-                <source src="assets/hero/hero-video-mobile.webm" type="video/webm">
+            <video id="heroVideoMobile" class="hero-video hero-video--mobile" autoplay loop muted playsinline webkit-playsinline preload="auto" poster="assets/hero/hero-video-mobile-poster.webp">
                 <source src="assets/hero/hero-video-mobile.mp4" type="video/mp4">
+                <source src="assets/hero/hero-video-mobile.webm" type="video/webm">
             </video>
-            <script>
-                (function() {
-                    try {
-                        var isMob = window.innerWidth <= 768 || (window.innerWidth <= 1024 && window.matchMedia && window.matchMedia('(orientation: portrait)').matches);
-                        var d = document.getElementById('heroVideoDesktop');
-                        var m = document.getElementById('heroVideoMobile');
-                        if (isMob) {
-                            if (d) { d.preload = 'none'; d.removeAttribute('autoplay'); d.pause(); }
-                            if (m) { m.setAttribute('autoplay', ''); m.preload = 'auto'; m.play && m.play().catch(function(){}); }
-                        } else {
-                            if (m) { m.preload = 'none'; m.removeAttribute('autoplay'); m.pause(); }
-                            if (d) { d.preload = 'auto'; }
-                        }
-                    } catch (e) {}
-                })();
-            </script>
         </div>
         
         <div class="hero-overlay-dark"></div>
@@ -680,22 +664,32 @@
                 return window.innerWidth <= 768 || (window.innerWidth <= 1024 && window.matchMedia && window.matchMedia('(orientation: portrait)').matches);
             };
 
-            let currentMobileState = null;
+            // Force native muted & inline properties for iOS/Android autoplay policy compliance
+            [heroVideoDesktop, heroVideoMobile].forEach((video) => {
+                video.muted = true;
+                video.defaultMuted = true;
+                video.playsInline = true;
+                video.setAttribute('muted', '');
+                video.setAttribute('playsinline', '');
+                video.setAttribute('webkit-playsinline', '');
+            });
 
             const syncHeroVideoPlayback = () => {
-                const mobileMode = isMobileHero();
-                if (currentMobileState === mobileMode) return;
-                currentMobileState = mobileMode;
+                const isMobile = isMobileHero();
+                const active = isMobile ? heroVideoMobile : heroVideoDesktop;
+                const inactive = isMobile ? heroVideoDesktop : heroVideoMobile;
 
-                if (mobileMode) {
-                    heroVideoDesktop.pause();
-                    if (heroVideoMobile.paused) {
-                        heroVideoMobile.play().catch(() => {});
-                    }
-                } else {
-                    heroVideoMobile.pause();
-                    if (heroVideoDesktop.paused) {
-                        heroVideoDesktop.play().catch(() => {});
+                if (inactive && !inactive.paused) {
+                    inactive.pause();
+                }
+
+                if (active) {
+                    active.muted = true;
+                    if (active.paused) {
+                        const playPromise = active.play();
+                        if (playPromise !== undefined) {
+                            playPromise.catch(() => {});
+                        }
                     }
                 }
             };
@@ -719,11 +713,26 @@
                     resetHeroLogoAnim();
                     video.play().catch(() => {});
                 });
+                video.addEventListener('loadedmetadata', syncHeroVideoPlayback, { passive: true });
+                video.addEventListener('canplay', syncHeroVideoPlayback, { passive: true });
             });
 
             syncHeroVideoPlayback();
             window.addEventListener('resize', syncHeroVideoPlayback, { passive: true });
             window.addEventListener('orientationchange', syncHeroVideoPlayback, { passive: true });
+
+            // Universal unlock for iOS Low Power Mode and strict mobile gesture policies
+            const unlockMobileVideo = () => {
+                const isMobile = isMobileHero();
+                const active = isMobile ? heroVideoMobile : heroVideoDesktop;
+                if (active && active.paused) {
+                    active.muted = true;
+                    active.play().catch(() => {});
+                }
+            };
+            ['touchstart', 'touchend', 'click', 'scroll', 'pointerdown'].forEach((evt) => {
+                window.addEventListener(evt, unlockMobileVideo, { once: true, passive: true });
+            });
         }
 
         // Navbar Scrolled & Autohide State
